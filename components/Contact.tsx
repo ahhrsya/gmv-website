@@ -43,9 +43,6 @@ export default function Contact({ lang }: ContactProps) {
           <p className="t-body-lg" style={{ color: 'rgba(255,255,255,0.65)', maxWidth: '520px', margin: '0 auto var(--space-xs)' }}>
             {t.p1}
           </p>
-          <p className="t-body" style={{ color: 'rgba(255,255,255,0.45)', maxWidth: '520px', margin: '0 auto' }}>
-            {t.p2}
-          </p>
         </div>
 
         {/* Two-column: form + info */}
