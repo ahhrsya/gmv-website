@@ -109,7 +109,7 @@ button {
   font-weight: 500;
   font-size: clamp(44px, 7vw, 92px);
   line-height: 1.05;
-  letter-spacing: -2px;
+  letter-spacing: -3px;
 }
 
 .t-section-title {
