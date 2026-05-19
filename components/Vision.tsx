@@ -13,7 +13,7 @@ export default function Vision({ lang }: VisionProps) {
     >
       <div
         className="section-photo__overlay"
-        style={{ background: 'rgba(10,10,10,0.85)' }}
+        style={{ background: 'rgba(0,33,86,0.85)' }}
       />
       <div className="section-photo__content container">
         {/* Vision block */}
@@ -25,7 +25,6 @@ export default function Vision({ lang }: VisionProps) {
             marginBottom: 'var(--space-4xl)',
           }}
         >
-          <p className="section-label section-label--light">{t.label}</p>
           <h2 className="t-section-title" style={{ color: 'var(--color-white)', marginBottom: 'var(--space-xl)' }}>
             {t.title}
           </h2>

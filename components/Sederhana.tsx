@@ -1,5 +1,4 @@
 import { content, Lang } from '@/lib/content'
-import { ShieldCheck } from 'lucide-react'
 
 interface SederhanaProps { lang: Lang }
 
@@ -33,19 +32,13 @@ export default function Sederhana({ lang }: SederhanaProps) {
             <p className="t-body" style={{ color: 'var(--color-navy)' }}>{t.p1}</p>
             <p className="t-body" style={{ color: 'var(--color-gray)' }}>{t.p2}</p>
             <p className="t-body" style={{ color: 'var(--color-gray)' }}>{t.p3}</p>
-            <div style={{ marginTop: 'var(--space-sm)' }}>
-              <div className="badge-certified">
-                <ShieldCheck size={14} />
-                {t.badge}
-              </div>
-            </div>
           </div>
 
           {/* Stats */}
           <div
             style={{
-              display: 'flex',
-              flexDirection: 'column',
+              display: 'grid',
+              gridTemplateColumns: 'repeat(2, 1fr)',
               gap: '1px',
               background: 'var(--color-sand)',
               border: '1px solid var(--color-sand)',
@@ -80,60 +73,28 @@ export default function Sederhana({ lang }: SederhanaProps) {
           </div>
         </div>
 
-        {/* Photo band placeholder */}
+        {/* Photo band image */}
         <div
           style={{
             width: '100%',
-            height: '360px',
-            background: 'linear-gradient(90deg, #0A0A0A 0%, #6B6B6B 50%, #0A0A0A 100%)',
-            opacity: 0.15,
-            borderRadius: '2px',
+            aspectRatio: '16/9',
+            borderRadius: '4px',
+            overflow: 'hidden',
             marginBottom: 'var(--space-3xl)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
           }}
-          aria-label="Sederhana food photography"
-          role="img"
         >
-          <span
+          <img
+            src="/assets/sederhana.png"
+            alt="Restoran Sederhana"
             style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '22px',
-              fontWeight: 600,
-              color: 'var(--color-navy)',
-              opacity: 0.4,
-              letterSpacing: '0.05em',
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
             }}
-          >
-            {lang === 'en' ? 'Photography coming soon' : 'Foto segera hadir'}
-          </span>
+          />
         </div>
 
-        {/* Timeline */}
-        <div>
-          <p
-            style={{
-              fontFamily: 'var(--font-body)',
-              fontWeight: 700,
-              fontSize: '11px',
-              letterSpacing: '0.1em',
-              textTransform: 'uppercase',
-              color: 'var(--color-gray)',
-              marginBottom: 'var(--space-xl)',
-            }}
-          >
-            {lang === 'en' ? 'Brand Timeline' : 'Kronologi Merek'}
-          </p>
-          <div className="timeline">
-            {t.timeline.map((item, i) => (
-              <div key={i} className="timeline-item">
-                <span className="timeline-item__date">{item.date}</span>
-                <p className="timeline-item__event">{item.event}</p>
-              </div>
-            ))}
-          </div>
-        </div>
+
       </div>
 
       <style>{`

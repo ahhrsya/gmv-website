@@ -24,29 +24,13 @@ export default function WhyGmv({ lang }: WhyGmvProps) {
         </div>
 
         {/* Cards */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(3, 1fr)',
-            gap: 'var(--space-sm)',
-          }}
-          className="why-cards-grid"
-        >
+        <div className="why-cards-grid">
           {t.points.map((point, i) => {
             const Icon = icons[i]
             return (
               <div
                 key={i}
-                className="why-card"
-                style={
-                  i === 4
-                    ? {
-                        gridColumn: 'span 3',
-                        background: 'rgba(255,255,255,0.08)',
-                        borderColor: 'rgba(255,255,255,0.25)',
-                      }
-                    : {}
-                }
+                className={`why-card why-card-${i}`}
               >
                 <Icon size={28} style={{ color: 'var(--color-white)', marginBottom: 'var(--space-md)' }} />
                 <div className="why-card__title">{point.title}</div>
@@ -58,13 +42,47 @@ export default function WhyGmv({ lang }: WhyGmvProps) {
       </div>
 
       <style>{`
-        @media (max-width: 1023px) {
-          .why-cards-grid { grid-template-columns: 1fr 1fr !important; }
-          .why-cards-grid > div:last-child { grid-column: span 2 !important; }
+        .why-cards-grid {
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
+          gap: var(--space-sm);
         }
+        .why-card {
+          grid-column: span 2 !important;
+        }
+        .why-card-3,
+        .why-card-4 {
+          grid-column: span 3 !important;
+        }
+
+        @media (max-width: 1023px) {
+          .why-cards-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+          }
+          .why-card {
+            grid-column: span 1 !important;
+          }
+          .why-card-3 {
+            grid-column-start: auto !important;
+          }
+          .why-card-4 {
+            grid-column: span 2 !important;
+          }
+        }
+
         @media (max-width: 767px) {
-          .why-cards-grid { grid-template-columns: 1fr !important; }
-          .why-cards-grid > div:last-child { grid-column: span 1 !important; }
+          .why-cards-grid {
+            grid-template-columns: 1fr !important;
+          }
+          .why-card {
+            grid-column: span 1 !important;
+          }
+          .why-card-3 {
+            grid-column-start: auto !important;
+          }
+          .why-card-4 {
+            grid-column: span 1 !important;
+          }
         }
       `}</style>
     </section>

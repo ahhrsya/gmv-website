@@ -28,7 +28,7 @@ export default function Hero({ lang }: HeroProps) {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        background: '#0A0A0A',
+        background: '#002156',
       }}
       aria-label="Hero section"
     >
@@ -49,9 +49,9 @@ export default function Hero({ lang }: HeroProps) {
           zIndex: 0,
         }}
       >
-        <source src="/heroanimate.mp4" type="video/mp4" />
+        <source src="/assets/hero.mp4" type="video/mp4" />
       </video>
-
+ 
       {/* Readability overlay — stronger than the previous diagonal so copy stays legible over motion */}
       <div
         className="section-photo__overlay"

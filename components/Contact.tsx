@@ -28,7 +28,7 @@ export default function Contact({ lang }: ContactProps) {
     >
       <div
         className="section-photo__overlay"
-        style={{ background: 'rgba(10,10,10,0.92)' }}
+        style={{ background: 'rgba(0,33,86,0.92)' }}
       />
       <div className="section-photo__content container">
         {/* Header */}

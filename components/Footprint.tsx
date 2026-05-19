@@ -1,4 +1,6 @@
+// @ts-nocheck
 import { content, Lang } from '@/lib/content'
+import { ComposableMap, Geographies, Geography, Marker, Line } from 'react-simple-maps'
 
 interface FootprintProps { lang: Lang }
 
@@ -8,14 +10,15 @@ export default function Footprint({ lang }: FootprintProps) {
   return (
     <section
       id="footprint"
-      className="section-photo bg-footprint-placeholder"
+      style={{
+        backgroundColor: '#1B2F6E',
+        padding: 'var(--space-3xl) 0',
+        position: 'relative',
+        overflow: 'hidden'
+      }}
       aria-label="Global Footprint section"
     >
-      <div
-        className="section-photo__overlay"
-        style={{ background: 'rgba(10,10,10,0.82)' }}
-      />
-      <div className="section-photo__content container" style={{ textAlign: 'center' }}>
+      <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
         <p className="section-label section-label--light">{t.label}</p>
         <h2
           className="t-section-title"
@@ -27,72 +30,216 @@ export default function Footprint({ lang }: FootprintProps) {
           {t.subtitle}
         </p>
 
-        {/* SVG World Map Outline */}
+        {/* Map Container - Exact Size and Blending */}
         <div
           style={{
             margin: 'var(--space-3xl) auto',
-            maxWidth: '860px',
+            width: '100%',
+            height: '500px',
             position: 'relative',
+            overflow: 'hidden',
+            border: 'none',
+            boxShadow: 'none',
           }}
         >
-          {/* Simplified world map SVG */}
-          <svg
-            viewBox="0 0 1000 500"
-            xmlns="http://www.w3.org/2000/svg"
-            style={{ width: '100%', opacity: 0.18 }}
-            aria-hidden="true"
+          {/* TOP Gradient Overlay */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              height: '80px',
+              background: 'linear-gradient(to bottom, #1B2F6E 0%, transparent 100%)',
+              pointerEvents: 'none',
+              zIndex: 10,
+            }}
+          />
+
+          {/* BOTTOM Gradient Overlay */}
+          <div
+            style={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              right: 0,
+              height: '80px',
+              background: 'linear-gradient(to top, #1B2F6E 0%, transparent 100%)',
+              pointerEvents: 'none',
+              zIndex: 10,
+            }}
+          />
+
+          {/* LEFT Gradient Overlay */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              bottom: 0,
+              width: '120px',
+              background: 'linear-gradient(to right, #1B2F6E 0%, transparent 100%)',
+              pointerEvents: 'none',
+              zIndex: 10,
+            }}
+          />
+
+          {/* RIGHT Gradient Overlay */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              right: 0,
+              bottom: 0,
+              width: '120px',
+              background: 'linear-gradient(to left, #1B2F6E 0%, transparent 100%)',
+              pointerEvents: 'none',
+              zIndex: 10,
+            }}
+          />
+
+          <style>{`
+            @keyframes pulse {
+              0% { r: 6; opacity: 0.8; }
+              100% { r: 24; opacity: 0; }
+            }
+            .pulse-animation {
+              animation: pulse 2s infinite;
+              transform-origin: center;
+            }
+            .pulse-animation-delayed {
+              animation: pulse 2s infinite;
+              animation-delay: 0.5s;
+              transform-origin: center;
+            }
+          `}</style>
+
+          <ComposableMap
+            projection="geoMercator"
+            projectionConfig={{
+              scale: 420,
+              center: [125, -8]
+            }}
+            style={{
+              width: '100%',
+              height: '100%',
+            }}
           >
-            {/* Simplified continent outlines */}
-            {/* North America */}
-            <path d="M 80 80 L 200 70 L 230 120 L 220 200 L 180 240 L 140 220 L 100 200 L 70 150 Z" fill="none" stroke="white" strokeWidth="1.5"/>
-            {/* South America */}
-            <path d="M 160 260 L 210 250 L 230 320 L 220 400 L 180 430 L 150 380 L 140 300 Z" fill="none" stroke="white" strokeWidth="1.5"/>
-            {/* Europe */}
-            <path d="M 430 60 L 510 55 L 530 100 L 510 130 L 470 135 L 440 110 Z" fill="none" stroke="white" strokeWidth="1.5"/>
-            {/* Africa */}
-            <path d="M 450 150 L 530 140 L 550 250 L 510 350 L 470 350 L 440 250 Z" fill="none" stroke="white" strokeWidth="1.5"/>
-            {/* Asia */}
-            <path d="M 540 50 L 800 45 L 820 180 L 750 220 L 650 200 L 570 160 L 540 100 Z" fill="none" stroke="white" strokeWidth="1.5"/>
-            {/* Australia */}
-            <path d="M 730 300 L 840 290 L 860 370 L 820 400 L 750 390 L 720 350 Z" fill="none" stroke="white" strokeWidth="1.5"/>
-            {/* Indonesia region */}
-            <path d="M 700 230 L 780 225 L 790 255 L 720 260 Z" fill="none" stroke="white" strokeWidth="1"/>
+            <Geographies geography="https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json">
+              {({ geographies }) =>
+                geographies.map((geo) => (
+                  <Geography
+                    key={geo.rsmKey}
+                    geography={geo}
+                    fill="#2A3F7E"
+                    stroke="#3D5499"
+                    strokeWidth={0.5}
+                    style={{
+                      default: { outline: 'none' },
+                      hover: { fill: '#39509E', outline: 'none' },
+                      pressed: { outline: 'none' }
+                    }}
+                  />
+                ))
+              }
+            </Geographies>
 
-            {/* Location pins */}
-            {/* Australia */}
-            <circle cx="790" cy="340" r="6" fill="#FFFFFF" stroke="#FFFFFF" strokeWidth="2"/>
-            <circle cx="790" cy="340" r="12" fill="none" stroke="#FFFFFF" strokeWidth="1" opacity="0.5"/>
+            {/* Connecting line */}
+            <Line
+              from={[103.8198, 1.3521]} // Singapore
+              to={[144.9631, -37.8136]} // Melbourne
+              stroke="#F5A623"
+              strokeWidth={1}
+              opacity={0.5}
+              strokeDasharray="4 4"
+            />
 
-            {/* Singapore */}
-            <circle cx="735" cy="245" r="6" fill="#FFFFFF" stroke="#FFFFFF" strokeWidth="2"/>
-            <circle cx="735" cy="245" r="12" fill="none" stroke="#FFFFFF" strokeWidth="1" opacity="0.5"/>
-
-            {/* Hamburg, Germany */}
-            <circle cx="480" cy="80" r="6" fill="#FFFFFF" stroke="#FFFFFF" strokeWidth="2"/>
-            <circle cx="480" cy="80" r="12" fill="none" stroke="#FFFFFF" strokeWidth="1" opacity="0.5"/>
-          </svg>
-        </div>
-
-        {/* Location cards */}
-        <div className="map-pins">
-          {t.locations.map((loc, i) => (
-            <div key={i} className="map-pin">
-              <div className="map-pin__dot" />
-              <div className="map-pin__country">{loc.country}</div>
-              <div className="map-pin__country" style={{ fontWeight: 400, opacity: 0.65, fontSize: '13px' }}>
-                {loc.city}
-              </div>
-              <span
-                className={`map-pin__status ${
-                  loc.status === 'active' ? 'map-pin__status--active' : 'map-pin__status--launching'
-                }`}
+            {/* Singapore Marker */}
+            <Marker coordinates={[103.8198, 1.3521]}>
+              <circle
+                cx={0}
+                cy={0}
+                r={14}
+                fill="#F5A623"
+                opacity={0.3}
+                className="pulse-animation"
+              />
+              <circle
+                cx={0}
+                cy={0}
+                r={6}
+                fill="#F5A623"
+              />
+              <text
+                textAnchor="middle"
+                y={-24}
+                fill="#FFFFFF"
+                fontSize={11}
+                fontWeight="bold"
+                style={{ fontFamily: 'var(--font-body)', letterSpacing: '0.5px' }}
               >
-                {loc.status === 'active'
-                  ? lang === 'en' ? 'Operational' : 'Beroperasi'
-                  : lang === 'en' ? 'Launching 2026' : 'Peluncuran 2026'}
-              </span>
-            </div>
-          ))}
+                SINGAPORE
+              </text>
+              <text
+                textAnchor="middle"
+                y={-12}
+                fill="#4CAF50"
+                fontSize={9}
+                fontWeight="bold"
+                style={{ fontFamily: 'var(--font-body)', letterSpacing: '0.5px' }}
+              >
+                • OPERATIONAL
+              </text>
+            </Marker>
+
+            {/* Melbourne Marker */}
+            <Marker coordinates={[144.9631, -37.8136]}>
+              <circle
+                cx={0}
+                cy={0}
+                r={14}
+                fill="#F5A623"
+                opacity={0.3}
+                className="pulse-animation-delayed"
+              />
+              <circle
+                cx={0}
+                cy={0}
+                r={6}
+                fill="#F5A623"
+              />
+              <text
+                textAnchor="middle"
+                y={-34}
+                fill="#FFFFFF"
+                fontSize={11}
+                fontWeight="bold"
+                style={{ fontFamily: 'var(--font-body)', letterSpacing: '0.5px' }}
+              >
+                MELBOURNE
+              </text>
+              <text
+                textAnchor="middle"
+                y={-22}
+                fill="rgba(255,255,255,0.6)"
+                fontSize={9}
+                fontWeight="bold"
+                style={{ fontFamily: 'var(--font-body)', letterSpacing: '0.5px' }}
+              >
+                AUSTRALIA
+              </text>
+              <text
+                textAnchor="middle"
+                y={-10}
+                fill="#4CAF50"
+                fontSize={9}
+                fontWeight="bold"
+                style={{ fontFamily: 'var(--font-body)', letterSpacing: '0.5px' }}
+              >
+                • OPERATIONAL
+              </text>
+            </Marker>
+          </ComposableMap>
         </div>
 
         {/* Closing */}

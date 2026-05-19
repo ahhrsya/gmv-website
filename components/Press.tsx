@@ -1,5 +1,4 @@
 import { content, Lang } from '@/lib/content'
-import { ExternalLink } from 'lucide-react'
 
 interface PressProps { lang: Lang }
 
@@ -19,21 +18,18 @@ export default function Press({ lang }: PressProps) {
 
         <div className="press-grid">
           {t.items.map((item, i) => (
-            <div key={i} className="press-card" role="button" tabIndex={0} aria-label={item.headline}>
+            <div key={i} className="press-card" aria-label={item.headline}>
               <div className="press-card__pub">{item.publication}</div>
               <div className="press-card__headline">
                 {item.headline}
-                <ExternalLink
-                  size={12}
-                  style={{ display: 'inline', marginLeft: '6px', opacity: 0.4, verticalAlign: 'middle' }}
-                />
               </div>
               <div className="press-card__date">{item.date}</div>
+              <a href="#" className="press-card__link">
+                {lang === 'en' ? 'Read Article →' : 'Baca Artikel →'}
+              </a>
             </div>
           ))}
         </div>
-
-        <p className="press-note">{t.note}</p>
       </div>
     </section>
   )

@@ -42,7 +42,7 @@ export default function Navbar({ lang, onLangChange }: NavbarProps) {
           alignItems: 'center',
           justifyContent: 'space-between',
           transition: 'background 0.35s ease, backdrop-filter 0.35s ease, box-shadow 0.35s ease',
-          background: scrolled ? 'rgba(10,10,10,0.92)' : 'transparent',
+          background: scrolled ? 'rgba(0,33,86,0.92)' : 'transparent',
           backdropFilter: scrolled ? 'blur(12px)' : 'none',
           boxShadow: scrolled ? '0 1px 0 rgba(255,255,255,0.06)' : 'none',
         }}
@@ -51,16 +51,23 @@ export default function Navbar({ lang, onLangChange }: NavbarProps) {
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           style={{
-            fontFamily: 'var(--font-body)',
-            fontWeight: 600,
-            fontSize: '15px',
-            color: 'var(--color-white)',
-            letterSpacing: '0.01em',
             cursor: 'pointer',
+            background: 'none',
+            border: 'none',
+            padding: 0,
+            display: 'flex',
+            alignItems: 'center',
           }}
         >
-          <span className="desktop-logo">Global Minang Ventura</span>
-          <span className="mobile-logo">GMV</span>
+          <img
+            src="/assets/logo.svg"
+            alt="Global Minang Ventura"
+            style={{
+              height: '100px',
+              width: 'auto',
+              display: 'block',
+            }}
+          />
         </button>
 
         {/* Desktop nav links */}
