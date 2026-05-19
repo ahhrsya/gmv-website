@@ -118,7 +118,7 @@ export const content = {
       stats: [
         { number: '1972', label: 'Est. Since' },
         { number: '200+', label: 'Local Branches in Indonesia' },
-        { number: '3', label: 'Countries of Expansion' },
+        { number: '5,000+', label: 'Total Employees' },
         { number: '2', label: 'Active International Locations' },
       ],
       badge: 'Certified by Sederhana Brand',
@@ -141,7 +141,7 @@ export const content = {
       stats: [
         { number: '1972', label: 'Berdiri Sejak' },
         { number: '200+', label: 'Cabang Lokal di Indonesia' },
-        { number: '3', label: 'Negara Ekspansi' },
+        { number: '5.000+', label: 'Total Karyawan' },
         { number: '2', label: 'Lokasi Internasional Aktif' },
       ],
       badge: 'Tersertifikasi oleh Merek Sederhana',
