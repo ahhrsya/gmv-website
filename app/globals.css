@@ -167,7 +167,7 @@ button {
 }
 
 .t-stat {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: clamp(36px, 4.5vw, 60px);
   line-height: 1.1;
@@ -175,7 +175,7 @@ button {
 }
 
 .t-step-number {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-weight: 300;
   font-size: clamp(48px, 6vw, 80px);
   line-height: 1;
@@ -375,7 +375,7 @@ button {
 }
 
 .stat-block__number {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-weight: 700;
   font-size: clamp(32px, 4vw, 52px);
   line-height: 1.1;
@@ -439,7 +439,7 @@ button {
 }
 
 .numbered-card__num {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-weight: 300;
   font-size: 72px;
   line-height: 1;
@@ -513,7 +513,7 @@ button {
 }
 
 .step-card__num {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-weight: 300;
   font-size: clamp(52px, 6vw, 80px);
   line-height: 1;
@@ -602,7 +602,7 @@ button {
 }
 
 .timeline-item__date {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: 13px;
   color: var(--color-black);
@@ -837,7 +837,7 @@ button {
 .press-card:last-child { border-right: 1px solid var(--color-mist); }
 
 .press-card__pub {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-weight: 600;
   font-size: 11px;
   letter-spacing: 0.08em;
