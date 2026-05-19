@@ -50,7 +50,7 @@ export const content = {
       missionLabel: 'MISSION',
       pillars: [
         { title: 'Expand', body: 'Expand across countries with a scalable approach, bringing Minang cuisine to high-potential international markets.' },
-        { title: 'Standardize', body: 'Build consistent operational systems and SOPs across every location worldwide, ensuring the same quality from Jakarta to Hamburg.' },
+        { title: 'Standardize', body: 'Build consistent operational systems and SOPs across every location worldwide, ensuring the same quality from Jakarta to Singapore.' },
         { title: 'Preserve Authenticity', body: 'Maintain the cultural and culinary integrity of every dish — no shortcuts, no dilution, no compromise on heritage.' },
         { title: 'Enable Partners', body: 'Enable long-term growth through strategic partnerships, empowering regional partners to succeed in their local markets.' },
       ],
@@ -63,7 +63,7 @@ export const content = {
       missionLabel: 'MISI',
       pillars: [
         { title: 'Ekspansi', body: 'Berekspansi ke berbagai negara dengan pendekatan yang terukur, membawa kuliner Minang ke pasar internasional berpotensi tinggi.' },
-        { title: 'Standarisasi', body: 'Membangun sistem operasional dan SOP yang konsisten di setiap lokasi di seluruh dunia, memastikan kualitas yang sama dari Jakarta hingga Hamburg.' },
+        { title: 'Standarisasi', body: 'Membangun sistem operasional dan SOP yang konsisten di setiap lokasi di seluruh dunia, memastikan kualitas yang sama dari Jakarta hingga Singapura.' },
         { title: 'Jaga Keaslian', body: 'Menjaga integritas budaya dan kuliner dari setiap hidangan — tanpa jalan pintas, tanpa pengenceran, tanpa kompromi pada warisan.' },
         { title: 'Dukung Mitra', body: 'Memungkinkan pertumbuhan jangka panjang melalui kemitraan strategis, memberdayakan mitra regional untuk sukses di pasar lokal mereka.' },
       ],
@@ -251,9 +251,9 @@ export const content = {
       label: 'IN THE PRESS',
       title: 'Media Coverage',
       items: [
-        { publication: 'DEUTSCHE WELLE', headline: 'Indonesian Venture Firm Eyes Hamburg for Padang Restaurant Launch', date: 'April 2026' },
-        { publication: 'KOMPAS.COM', headline: 'Global Minang Ventura: Membawa Padang Sederhana ke Panggung Eropa', date: 'March 2026' },
-        { publication: 'HAMBURGER ABENDBLATT', headline: 'Neue indonesische Restaurantkette plant Eröffnung in Hamburg', date: 'April 2026' },
+        { publication: 'THE STRAITS TIMES', headline: 'Indonesian Venture Firm Brings Iconic Padang Cuisine to Singapore', date: 'April 2026' },
+        { publication: 'KOMPAS.COM', headline: 'Global Minang Ventura: Membawa Padang Sederhana ke Panggung Asia-Pasifik', date: 'March 2026' },
+        { publication: 'THE AUSTRALIAN', headline: 'Melbourne Welcomes New Indonesian Restaurant Chain Padang Sederhana', date: 'April 2026' },
         { publication: 'TECH IN ASIA', headline: 'How a Minang VC is Betting Big on Indonesian Cuisine Going Global', date: 'May 2026' },
       ],
     },
@@ -261,9 +261,9 @@ export const content = {
       label: 'DI MEDIA',
       title: 'Liputan Media',
       items: [
-        { publication: 'DEUTSCHE WELLE', headline: 'Perusahaan Ventura Indonesia Bidik Hamburg untuk Peluncuran Restoran Padang', date: 'April 2026' },
-        { publication: 'KOMPAS.COM', headline: 'Global Minang Ventura: Membawa Padang Sederhana ke Panggung Eropa', date: 'Maret 2026' },
-        { publication: 'HAMBURGER ABENDBLATT', headline: 'Rantai Restoran Indonesia Baru Rencanakan Pembukaan di Hamburg', date: 'April 2026' },
+        { publication: 'THE STRAITS TIMES', headline: 'Perusahaan Ventura Indonesia Bawa Kuliner Padang Ikonik ke Singapura', date: 'April 2026' },
+        { publication: 'KOMPAS.COM', headline: 'Global Minang Ventura: Membawa Padang Sederhana ke Panggung Asia-Pasifik', date: 'Maret 2026' },
+        { publication: 'THE AUSTRALIAN', headline: 'Melbourne Sambut Jaringan Restoran Indonesia Baru Padang Sederhana', date: 'April 2026' },
         { publication: 'TECH IN ASIA', headline: 'Bagaimana Sebuah VC Minang Bertaruh Besar pada Kuliner Indonesia Go Global', date: 'Mei 2026' },
       ],
     },
