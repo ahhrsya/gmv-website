@@ -55,7 +55,7 @@ export default function Sederhana({ lang }: SederhanaProps) {
               >
                 <div
                   style={{
-                    fontFamily: 'var(--font-mono)',
+                    fontFamily: 'var(--font-body)',
                     fontWeight: 700,
                     fontSize: 'clamp(28px, 3.5vw, 44px)',
                     color: 'var(--color-black)',
@@ -98,7 +98,7 @@ export default function Sederhana({ lang }: SederhanaProps) {
       </div>
 
       <style>{`
-        @media (max-width: 767px) {
+        @media (max-width: 1023px) {
           .sederhana-split { grid-template-columns: 1fr !important; }
         }
       `}</style>

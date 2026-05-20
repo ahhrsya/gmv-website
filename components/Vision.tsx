@@ -65,33 +65,13 @@ export default function Vision({ lang }: VisionProps) {
           >
             {t.missionLabel}
           </p>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              gap: 0,
-            }}
-          >
+          <div className="vision-pillars-grid">
             {t.pillars.map((pillar, i) => (
               <div
                 key={i}
-                style={{
-                  padding: 'var(--space-lg)',
-                  borderLeft: i > 0 ? '1px solid rgba(255,255,255,0.1)' : 'none',
-                }}
+                className="vision-pillar"
               >
-                <div
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontWeight: 300,
-                    fontSize: '72px',
-                    lineHeight: 1,
-                    color: 'rgba(255,255,255,0.07)',
-                    letterSpacing: '-0.02em',
-                    marginBottom: 'var(--space-sm)',
-                    userSelect: 'none',
-                  }}
-                >
+                <div className="vision-pillar__num">
                   0{i + 1}
                 </div>
                 <div
@@ -119,6 +99,56 @@ export default function Vision({ lang }: VisionProps) {
           </div>
         </div>
       </div>
+
+      <style>{`
+        .vision-pillars-grid {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 0;
+        }
+        .vision-pillar {
+          padding: var(--space-lg);
+          border-left: 1px solid rgba(255,255,255,0.1);
+        }
+        .vision-pillar:first-child {
+          border-left: none;
+        }
+        .vision-pillar__num {
+          font-family: var(--font-body);
+          font-weight: 300;
+          font-size: 72px;
+          line-height: 1;
+          color: rgba(255,255,255,0.07);
+          letter-spacing: -0.02em;
+          margin-bottom: var(--space-sm);
+          user-select: none;
+        }
+        @media (max-width: 1023px) {
+          .vision-pillars-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          .vision-pillar:nth-child(1),
+          .vision-pillar:nth-child(3) {
+            border-left: none;
+          }
+          .vision-pillar:nth-child(n+3) {
+            border-top: 1px solid rgba(255,255,255,0.1);
+          }
+        }
+        @media (max-width: 767px) {
+          .vision-pillars-grid {
+            grid-template-columns: 1fr;
+          }
+          .vision-pillar {
+            border-left: none;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: var(--space-lg) 0;
+          }
+          .vision-pillar:first-child {
+            border-top: none;
+          }
+        }
+      `}</style>
     </section>
   )
 }

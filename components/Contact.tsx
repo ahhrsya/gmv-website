@@ -155,7 +155,7 @@ export default function Contact({ lang }: ContactProps) {
       </div>
 
       <style>{`
-        @media (max-width: 767px) {
+        @media (max-width: 1023px) {
           .contact-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
