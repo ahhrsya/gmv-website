@@ -4,229 +4,303 @@ import matter from 'gray-matter'
 
 export type Lang = 'en' | 'id'
 
-// ─── Raw file reader ──────────────────────────────────────────────────────────
+// ─── Read home.md ─────────────────────────────────────────────────────────────
 
-function readMd(filename: string) {
-  const fullPath = path.join(process.cwd(), 'content', `${filename}.md`)
-  const raw = fs.readFileSync(fullPath, 'utf8')
+function readHome() {
+  const filePath = path.join(process.cwd(), 'content', 'home.md')
+  const raw = fs.readFileSync(filePath, 'utf8')
   const { data } = matter(raw)
   return {
-    en: (data.en ?? {}) as Record<string, string>,
-    id: (data.id ?? {}) as Record<string, string>,
-    shared: (data.shared ?? {}) as Record<string, string | number>,
+    en:     (data.en     ?? {}) as Record<string, string>,
+    id:     (data.id     ?? {}) as Record<string, string>,
+    shared: (data.shared ?? {}) as Record<string, string>,
   }
 }
 
-// ─── Typed helpers ────────────────────────────────────────────────────────────
-
-function str(
-  block: Record<string, string>,
-  key: string
-): string {
-  return block[key] ?? ''
+function readNav() {
+  const filePath = path.join(process.cwd(), 'content', 'nav.md')
+  const raw = fs.readFileSync(filePath, 'utf8')
+  const { data } = matter(raw)
+  return {
+    en:     (data.en     ?? {}) as Record<string, string>,
+    id:     (data.id     ?? {}) as Record<string, string>,
+    shared: (data.shared ?? {}) as Record<string, string>,
+  }
 }
 
-function num(
-  block: Record<string, string | number>,
-  key: string
-): number {
-  return Number(block[key] ?? 0)
-}
+function buildContent() {
+  const home = readHome()
+  const nav  = readNav()
 
-// ─── Main getter — called once per request with lang ─────────────────────────
+  const e = home.en
+  const i = home.id
+  const s = home.shared
+  const ne = nav.en
+  const ni = nav.id
+  const ns = nav.shared
 
-export function getHomeContent(lang: Lang) {
-  const { en, id, shared } = readMd('home')
-  const t = lang === 'en' ? en : id
+  const navCount = Number(ns.nav_count ?? 9)
 
   return {
+    nav: {
+      en: Array.from({ length: navCount }, (_, idx) => ne[`nav_${idx}`] ?? ''),
+      id: Array.from({ length: navCount }, (_, idx) => ni[`nav_${idx}`] ?? ''),
+    },
+    langToggle: ns.lang_toggle ?? 'EN | ID',
+
     hero: {
-      label:         str(t, 'hero_label'),
-      headline:      str(t, 'hero_headline'),
-      subheadline:   str(t, 'hero_subheadline'),
-      ctaPrimary:    str(t, 'hero_cta_primary'),
-      ctaSecondary:  str(t, 'hero_cta_secondary'),
-      scrollLabel:   str(t, 'hero_scroll_label'),
-      videoSrc:      str(shared as Record<string, string>, 'hero_video_src'),
+      en: {
+        label:       e.hero_label        ?? '',
+        headline:    e.hero_headline     ?? '',
+        subheadline: e.hero_subheadline  ?? '',
+        ctaPrimary:  e.hero_cta_primary  ?? '',
+        ctaSecondary:e.hero_cta_secondary ?? '',
+      },
+      id: {
+        label:       i.hero_label        ?? '',
+        headline:    i.hero_headline     ?? '',
+        subheadline: i.hero_subheadline  ?? '',
+        ctaPrimary:  i.hero_cta_primary  ?? '',
+        ctaSecondary:i.hero_cta_secondary ?? '',
+      },
     },
 
     about: {
-      label: str(t, 'about_label'),
-      title: str(t, 'about_title'),
-      p1:    str(t, 'about_p1'),
-      p2:    str(t, 'about_p2'),
-      badge: str(t, 'about_badge'),
+      en: { label: e.about_label ?? '', title: e.about_title ?? '', p1: e.about_p1 ?? '', p2: e.about_p2 ?? '', badge: e.about_badge ?? '' },
+      id: { label: i.about_label ?? '', title: i.about_title ?? '', p1: i.about_p1 ?? '', p2: i.about_p2 ?? '', badge: i.about_badge ?? '' },
     },
 
     vision: {
-      label:        str(t, 'vision_label'),
-      title:        str(t, 'vision_title'),
-      visionLabel:  str(t, 'vision_vision_label'),
-      visionText:   str(t, 'vision_vision_text'),
-      missionLabel: str(t, 'vision_mission_label'),
-      pillars: Array.from(
-        { length: num(shared, 'vision_pillar_count') },
-        (_, i) => ({
-          title: str(t, `vision_pillar_${i}_title`),
-          body:  str(t, `vision_pillar_${i}_body`),
-        })
-      ),
+      en: {
+        label: e.vision_label ?? '', title: e.vision_title ?? '',
+        visionLabel: e.vision_vision_label ?? '', visionText: e.vision_vision_text ?? '',
+        missionLabel: e.vision_mission_label ?? '',
+        pillars: Array.from({ length: Number(s.vision_pillar_count ?? 4) }, (_, idx) => ({
+          title: e[`vision_pillar_${idx}_title`] ?? '',
+          body:  e[`vision_pillar_${idx}_body`]  ?? '',
+        })),
+      },
+      id: {
+        label: i.vision_label ?? '', title: i.vision_title ?? '',
+        visionLabel: i.vision_vision_label ?? '', visionText: i.vision_vision_text ?? '',
+        missionLabel: i.vision_mission_label ?? '',
+        pillars: Array.from({ length: Number(s.vision_pillar_count ?? 4) }, (_, idx) => ({
+          title: i[`vision_pillar_${idx}_title`] ?? '',
+          body:  i[`vision_pillar_${idx}_body`]  ?? '',
+        })),
+      },
     },
 
     market: {
-      label:   str(t, 'market_label'),
-      title:   str(t, 'market_title'),
-      p1:      str(t, 'market_p1'),
-      p2:      str(t, 'market_p2'),
-      closing: str(t, 'market_closing'),
-      stats: Array.from(
-        { length: num(shared, 'market_stat_count') },
-        (_, i) => ({
-          number: str(t, `market_stat_${i}_number`),
-          label:  str(t, `market_stat_${i}_label`),
-        })
-      ),
+      en: {
+        label: e.market_label ?? '', title: e.market_title ?? '',
+        p1: e.market_p1 ?? '', p2: e.market_p2 ?? '', closing: e.market_closing ?? '',
+        stats: Array.from({ length: Number(s.market_stat_count ?? 4) }, (_, idx) => ({
+          number: e[`market_stat_${idx}_number`] ?? '',
+          label:  e[`market_stat_${idx}_label`]  ?? '',
+        })),
+      },
+      id: {
+        label: i.market_label ?? '', title: i.market_title ?? '',
+        p1: i.market_p1 ?? '', p2: i.market_p2 ?? '', closing: i.market_closing ?? '',
+        stats: Array.from({ length: Number(s.market_stat_count ?? 4) }, (_, idx) => ({
+          number: i[`market_stat_${idx}_number`] ?? '',
+          label:  i[`market_stat_${idx}_label`]  ?? '',
+        })),
+      },
     },
 
     sederhana: {
-      label:    str(t, 'sederhana_label'),
-      title:    str(t, 'sederhana_title'),
-      subtitle: str(t, 'sederhana_subtitle'),
-      p1:       str(t, 'sederhana_p1'),
-      p2:       str(t, 'sederhana_p2'),
-      p3:       str(t, 'sederhana_p3'),
-      badge:    str(t, 'sederhana_badge'),
-      imageSrc: str(shared as Record<string, string>, 'sederhana_image_src'),
-      timeline: Array.from(
-        { length: num(shared, 'sederhana_timeline_count') },
-        (_, i) => ({
-          date:  str(shared as Record<string, string>, `sederhana_timeline_${i}_date`),
-          event: str(t, `sederhana_timeline_${i}_event`),
-        })
-      ),
-      stats: Array.from(
-        { length: num(shared, 'sederhana_stat_count') },
-        (_, i) => ({
-          number: str(shared as Record<string, string>, `sederhana_stat_${i}_number`),
-          label:  str(t, `sederhana_stat_${i}_label`),
-        })
-      ),
+      en: {
+        label: e.sederhana_label ?? '', title: e.sederhana_title ?? '',
+        subtitle: e.sederhana_subtitle ?? '', p1: e.sederhana_p1 ?? '',
+        p2: e.sederhana_p2 ?? '', p3: e.sederhana_p3 ?? '', badge: e.sederhana_badge ?? '',
+        timeline: Array.from({ length: Number(s.sederhana_timeline_count ?? 6) }, (_, idx) => ({
+          date:  s[`sederhana_timeline_${idx}_date`]      ?? '',
+          event: e[`sederhana_timeline_${idx}_event`]     ?? '',
+        })),
+        stats: Array.from({ length: Number(s.sederhana_stat_count ?? 4) }, (_, idx) => ({
+          number: s[`sederhana_stat_${idx}_number`] ?? '',
+          label:  e[`sederhana_stat_${idx}_label`]  ?? '',
+        })),
+      },
+      id: {
+        label: i.sederhana_label ?? '', title: i.sederhana_title ?? '',
+        subtitle: i.sederhana_subtitle ?? '', p1: i.sederhana_p1 ?? '',
+        p2: i.sederhana_p2 ?? '', p3: i.sederhana_p3 ?? '', badge: i.sederhana_badge ?? '',
+        timeline: Array.from({ length: Number(s.sederhana_timeline_count ?? 6) }, (_, idx) => ({
+          date:  s[`sederhana_timeline_${idx}_date`]  ?? '',
+          event: i[`sederhana_timeline_${idx}_event`] ?? '',
+        })),
+        stats: Array.from({ length: Number(s.sederhana_stat_count ?? 4) }, (_, idx) => ({
+          number: s[`sederhana_stat_${idx}_number`] ?? '',
+          label:  i[`sederhana_stat_${idx}_label`]  ?? '',
+        })),
+      },
     },
 
     expansion: {
-      label:    str(t, 'expansion_label'),
-      title:    str(t, 'expansion_title'),
-      subtitle: str(t, 'expansion_subtitle'),
-      steps: Array.from(
-        { length: num(shared, 'expansion_step_count') },
-        (_, i) => ({
-          num:   str(shared as Record<string, string>, `expansion_step_${i}_num`),
-          title: str(t, `expansion_step_${i}_title`),
-          body:  str(t, `expansion_step_${i}_body`),
-        })
-      ),
+      en: {
+        label: e.expansion_label ?? '', title: e.expansion_title ?? '', subtitle: e.expansion_subtitle ?? '',
+        steps: Array.from({ length: Number(s.expansion_step_count ?? 4) }, (_, idx) => ({
+          num:   s[`expansion_step_${idx}_num`]         ?? '',
+          title: e[`expansion_step_${idx}_title`]       ?? '',
+          body:  e[`expansion_step_${idx}_body`]        ?? '',
+        })),
+      },
+      id: {
+        label: i.expansion_label ?? '', title: i.expansion_title ?? '', subtitle: i.expansion_subtitle ?? '',
+        steps: Array.from({ length: Number(s.expansion_step_count ?? 4) }, (_, idx) => ({
+          num:   s[`expansion_step_${idx}_num`]   ?? '',
+          title: i[`expansion_step_${idx}_title`] ?? '',
+          body:  i[`expansion_step_${idx}_body`]  ?? '',
+        })),
+      },
     },
 
     whyGmv: {
-      label:    str(t, 'whygmv_label'),
-      title:    str(t, 'whygmv_title'),
-      subtitle: str(t, 'whygmv_subtitle'),
-      points: Array.from(
-        { length: num(shared, 'whygmv_point_count') },
-        (_, i) => ({
-          title: str(t, `whygmv_point_${i}_title`),
-          body:  str(t, `whygmv_point_${i}_body`),
-        })
-      ),
+      en: {
+        label: e.whygmv_label ?? '', title: e.whygmv_title ?? '', subtitle: e.whygmv_subtitle ?? '',
+        points: Array.from({ length: Number(s.whygmv_point_count ?? 5) }, (_, idx) => ({
+          title: e[`whygmv_point_${idx}_title`] ?? '',
+          body:  e[`whygmv_point_${idx}_body`]  ?? '',
+        })),
+      },
+      id: {
+        label: i.whygmv_label ?? '', title: i.whygmv_title ?? '', subtitle: i.whygmv_subtitle ?? '',
+        points: Array.from({ length: Number(s.whygmv_point_count ?? 5) }, (_, idx) => ({
+          title: i[`whygmv_point_${idx}_title`] ?? '',
+          body:  i[`whygmv_point_${idx}_body`]  ?? '',
+        })),
+      },
     },
 
     footprint: {
-      label:    str(t, 'footprint_label'),
-      title:    str(t, 'footprint_title'),
-      subtitle: str(t, 'footprint_subtitle'),
-      closing:  str(t, 'footprint_closing'),
-      locations: Array.from(
-        { length: num(shared, 'footprint_location_count') },
-        (_, i) => ({
-          country: str(t, `footprint_location_${i}_country`),
-          city:    str(t, `footprint_location_${i}_city`),
-          status:  'active' as const,
-        })
-      ),
+      en: {
+        label: e.footprint_label ?? '', title: e.footprint_title ?? '',
+        subtitle: e.footprint_subtitle ?? '', closing: e.footprint_closing ?? '',
+        locations: Array.from({ length: Number(s.footprint_location_count ?? 2) }, (_, idx) => ({
+          country: e[`footprint_location_${idx}_country`] ?? '',
+          city:    e[`footprint_location_${idx}_city`]    ?? '',
+          status: 'active' as const,
+        })),
+      },
+      id: {
+        label: i.footprint_label ?? '', title: i.footprint_title ?? '',
+        subtitle: i.footprint_subtitle ?? '', closing: i.footprint_closing ?? '',
+        locations: Array.from({ length: Number(s.footprint_location_count ?? 2) }, (_, idx) => ({
+          country: i[`footprint_location_${idx}_country`] ?? '',
+          city:    i[`footprint_location_${idx}_city`]    ?? '',
+          status: 'active' as const,
+        })),
+      },
     },
 
     team: {
-      label: str(t, 'team_label'),
-      title: str(t, 'team_title'),
-      members: Array.from(
-        { length: num(shared, 'team_member_count') },
-        (_, i) => ({
-          name:     str(shared as Record<string, string>, `team_member_${i}_name`),
-          initials: str(shared as Record<string, string>, `team_member_${i}_initials`),
-          role:     str(t, `team_member_${i}_role`),
-          bio:      str(t, `team_member_${i}_bio`),
-        })
-      ),
+      en: {
+        label: e.team_label ?? '', title: e.team_title ?? '',
+        members: Array.from({ length: Number(s.team_member_count ?? 4) }, (_, idx) => ({
+          name:     s[`team_member_${idx}_name`]     ?? '',
+          initials: s[`team_member_${idx}_initials`] ?? '',
+          role:     e[`team_member_${idx}_role`]     ?? '',
+          bio:      e[`team_member_${idx}_bio`]      ?? '',
+        })),
+      },
+      id: {
+        label: i.team_label ?? '', title: i.team_title ?? '',
+        members: Array.from({ length: Number(s.team_member_count ?? 4) }, (_, idx) => ({
+          name:     s[`team_member_${idx}_name`]     ?? '',
+          initials: s[`team_member_${idx}_initials`] ?? '',
+          role:     i[`team_member_${idx}_role`]     ?? '',
+          bio:      i[`team_member_${idx}_bio`]      ?? '',
+        })),
+      },
     },
 
     press: {
-      label: str(t, 'press_label'),
-      title: str(t, 'press_title'),
-      items: Array.from(
-        { length: num(shared, 'press_item_count') },
-        (_, i) => ({
-          publication: str(shared as Record<string, string>, `press_item_${i}_publication`),
-          url:         str(shared as Record<string, string>, `press_item_${i}_url`),
-          headline:    str(t, `press_item_${i}_headline`),
-          date:        str(t, `press_item_${i}_date`),
-        })
-      ),
+      en: {
+        label: e.press_label ?? '', title: e.press_title ?? '',
+        items: Array.from({ length: Number(s.press_item_count ?? 4) }, (_, idx) => ({
+          publication: s[`press_item_${idx}_publication`] ?? '',
+          headline:    e[`press_item_${idx}_headline`]    ?? '',
+          date:        e[`press_item_${idx}_date`]        ?? '',
+        })),
+      },
+      id: {
+        label: i.press_label ?? '', title: i.press_title ?? '',
+        items: Array.from({ length: Number(s.press_item_count ?? 4) }, (_, idx) => ({
+          publication: s[`press_item_${idx}_publication`] ?? '',
+          headline:    i[`press_item_${idx}_headline`]    ?? '',
+          date:        i[`press_item_${idx}_date`]        ?? '',
+        })),
+      },
     },
 
     contact: {
-      label:     str(t, 'contact_label'),
-      title:     str(t, 'contact_title'),
-      p1:        str(t, 'contact_p1'),
-      ctaButton: str(t, 'contact_cta_button'),
-      email:     str(shared as Record<string, string>, 'contact_email'),
-      phone:     str(shared as Record<string, string>, 'contact_phone'),
-      instagram: str(shared as Record<string, string>, 'contact_instagram'),
-      offices: Array.from(
-        { length: num(shared, 'contact_office_count') },
-        (_, i) => ({
-          label:   str(t, `contact_office_${i}_label`),
-          city:    str(shared as Record<string, string>, `contact_office_${i}_city`),
-          address: str(t, `contact_office_${i}_address`),
-        })
-      ),
-      fields: {
-        name:    str(t, 'contact_field_name'),
-        email:   str(t, 'contact_field_email'),
-        org:     str(t, 'contact_field_org'),
-        market:  str(t, 'contact_field_market'),
-        message: str(t, 'contact_field_message'),
-        submit:  str(t, 'contact_field_submit'),
+      en: {
+        label: e.contact_label ?? '', title: e.contact_title ?? '',
+        p1: e.contact_p1 ?? '', ctaButton: e.contact_cta_button ?? '',
+        email: s.contact_email ?? '', phone: s.contact_phone ?? '',
+        instagram: s.contact_instagram ?? '',
+        offices: Array.from({ length: Number(s.contact_office_count ?? 1) }, (_, idx) => ({
+          label:   e[`contact_office_${idx}_label`]   ?? '',
+          city:    s[`contact_office_${idx}_city`]    ?? '',
+          address: e[`contact_office_${idx}_address`] ?? '',
+        })),
+        fields: {
+          name:    e.contact_field_name    ?? '',
+          email:   e.contact_field_email   ?? '',
+          org:     e.contact_field_org     ?? '',
+          market:  e.contact_field_market  ?? '',
+          message: e.contact_field_message ?? '',
+          submit:  e.contact_field_submit  ?? '',
+        },
+      },
+      id: {
+        label: i.contact_label ?? '', title: i.contact_title ?? '',
+        p1: i.contact_p1 ?? '', ctaButton: i.contact_cta_button ?? '',
+        email: s.contact_email ?? '', phone: s.contact_phone ?? '',
+        instagram: s.contact_instagram ?? '',
+        offices: Array.from({ length: Number(s.contact_office_count ?? 1) }, (_, idx) => ({
+          label:   i[`contact_office_${idx}_label`]   ?? '',
+          city:    s[`contact_office_${idx}_city`]    ?? '',
+          address: i[`contact_office_${idx}_address`] ?? '',
+        })),
+        fields: {
+          name:    i.contact_field_name    ?? '',
+          email:   i.contact_field_email   ?? '',
+          org:     i.contact_field_org     ?? '',
+          market:  i.contact_field_market  ?? '',
+          message: i.contact_field_message ?? '',
+          submit:  i.contact_field_submit  ?? '',
+        },
       },
     },
 
     footer: {
-      copyright: str(t, 'footer_copyright'),
-      tagline:   str(t, 'footer_tagline'),
-      legal: [
-        str(t, 'footer_legal_0'),
-        str(t, 'footer_legal_1'),
-      ],
+      en: {
+        copyright: e.footer_copyright ?? '',
+        tagline:   e.footer_tagline   ?? '',
+        navCols: [
+          { heading: 'Navigate', links: ['About','Vision','Market','Sederhana','Expansion','Why GMV'] },
+          { heading: 'Presence', links: ['Footprint','Press'] },
+          { heading: 'Connect',  links: ['Contact','LinkedIn','Instagram','Twitter/X'] },
+        ],
+        legal: [e.footer_legal_0 ?? '', e.footer_legal_1 ?? ''],
+      },
+      id: {
+        copyright: i.footer_copyright ?? '',
+        tagline:   i.footer_tagline   ?? '',
+        navCols: [
+          { heading: 'Navigasi', links: ['Tentang','Visi','Pasar','Sederhana','Ekspansi','Mengapa GMV'] },
+          { heading: 'Kehadiran', links: ['Jejak Global','Media'] },
+          { heading: 'Terhubung', links: ['Kontak','LinkedIn','Instagram','Twitter/X'] },
+        ],
+        legal: [i.footer_legal_0 ?? '', i.footer_legal_1 ?? ''],
+      },
     },
   }
 }
 
-export function getNavContent(lang: Lang) {
-  const { en, id, shared } = readMd('nav')
-  const t = lang === 'en' ? en : id
-  const count = num(shared, 'nav_count')
-
-  return {
-    items: Array.from({ length: count }, (_, i) => str(t, `nav_${i}`)),
-    langToggle: str(shared as Record<string, string>, 'lang_toggle'),
-  }
-}
+// Build once at module load (server-side, build time)
+export const content = buildContent()
