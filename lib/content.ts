@@ -67,6 +67,7 @@ export const content = {
     { number: "5,000+", label: "Total Karyawan" },
     { number: "2", label: "Lokasi Internasional Aktif" }
   ] },
+    imageSrc: "/assets/sederhana.png",
   },
   expansion: {
     en: { label: "EXPANSION MODEL", title: "Our Path to Global Expansion", subtitle: "A structured system for bringing Padang cuisine to any market in the world.", steps: [
@@ -110,30 +111,31 @@ export const content = {
   },
   team: {
     en: { label: "TEAM", title: "The People Behind GMV", members: [
-    { name: "Muhammad Badaruddin", initials: "MB", role: "Managing Partner", bio: "Badaruddin leads GMV's strategy, partnerships, and international expansion. With deep roots in the Minangkabau entrepreneurial tradition and extensive experience in cross-border business operations, he drives the vision of bringing Padang cuisine to global markets." },
-    { name: "Arya Pradana", initials: "AP", role: "Tech Advisor", bio: "Founder & CEO of Elux Space, a UI/UX design agency based in Yogyakarta. Arya advises GMV on digital infrastructure, brand experience, and technology strategy Ã¢ÂÂ ensuring every market launch is backed by world-class digital presence and operational tools." },
-    { name: "To Be Announced", initials: "TBA", role: "Advisor Ã¢ÂÂ F&B Operations", bio: "An experienced food & beverage operator with international franchise management experience. Announcement coming soon." },
-    { name: "To Be Announced", initials: "TBA", role: "Advisor Ã¢ÂÂ International Markets", bio: "An experienced advisor with deep connections and expertise in global expansion strategy. Announcement coming soon." }
+    { name: "Muhammad Badaruddin", initials: "MB", role: "Managing Partner", bio: "Badaruddin leads GMV's strategy, partnerships, and international expansion. With deep roots in the Minangkabau entrepreneurial tradition and extensive experience in cross-border business operations, he drives the vision of bringing Padang cuisine to global markets.", photo: "" },
+    { name: "Arya Pradana", initials: "AP", role: "Tech Advisor", bio: "Founder & CEO of Elux Space, a UI/UX design agency based in Yogyakarta. Arya advises GMV on digital infrastructure, brand experience, and technology strategy \u00c3\u00a2\u00c2\u0080\u00c2\u0094 ensuring every market launch is backed by world-class digital presence and operational tools.", photo: "" },
+    { name: "To Be Announced", initials: "TBA", role: "Advisor \u00c3\u00a2\u00c2\u0080\u00c2\u0094 F&B Operations", bio: "An experienced food & beverage operator with international franchise management experience. Announcement coming soon.", photo: "" },
+    { name: "To Be Announced", initials: "TBA", role: "Advisor \u00c3\u00a2\u00c2\u0080\u00c2\u0094 International Markets", bio: "An experienced advisor with deep connections and expertise in global expansion strategy. Announcement coming soon.", photo: "" }
   ] },
     id: { label: "TIM", title: "Tim di Balik GMV", members: [
-    { name: "Muhammad Badaruddin", initials: "MB", role: "Managing Partner", bio: "Badaruddin memimpin strategi, kemitraan, dan ekspansi internasional GMV. Dengan akar kuat dalam tradisi kewirausahaan Minangkabau dan pengalaman luas dalam operasi bisnis lintas negara." },
-    { name: "Arya Pradana", initials: "AP", role: "Tech Advisor", bio: "Founder & CEO Elux Space, agensi desain UI/UX berbasis di Yogyakarta. Arya memberikan saran kepada GMV tentang infrastruktur digital, pengalaman merek, dan strategi teknologi." },
-    { name: "To Be Announced", initials: "TBA", role: "Advisor Ã¢ÂÂ Operasi F&B", bio: "Praktisi F&B berpengalaman dengan keahlian manajemen franchise internasional. Pengumuman segera." },
-    { name: "To Be Announced", initials: "TBA", role: "Advisor Ã¢ÂÂ Pasar Internasional", bio: "Penasihat berpengalaman dengan koneksi mendalam dan keahlian dalam strategi ekspansi global. Pengumuman segera." }
+    { name: "Muhammad Badaruddin", initials: "MB", role: "Managing Partner", bio: "Badaruddin memimpin strategi, kemitraan, dan ekspansi internasional GMV. Dengan akar kuat dalam tradisi kewirausahaan Minangkabau dan pengalaman luas dalam operasi bisnis lintas negara.", photo: "" },
+    { name: "Arya Pradana", initials: "AP", role: "Tech Advisor", bio: "Founder & CEO Elux Space, agensi desain UI/UX berbasis di Yogyakarta. Arya memberikan saran kepada GMV tentang infrastruktur digital, pengalaman merek, dan strategi teknologi.", photo: "" },
+    { name: "To Be Announced", initials: "TBA", role: "Advisor \u00c3\u00a2\u00c2\u0080\u00c2\u0094 Operasi F&B", bio: "Praktisi F&B berpengalaman dengan keahlian manajemen franchise internasional. Pengumuman segera.", photo: "" },
+    { name: "To Be Announced", initials: "TBA", role: "Advisor \u00c3\u00a2\u00c2\u0080\u00c2\u0094 Pasar Internasional", bio: "Penasihat berpengalaman dengan koneksi mendalam dan keahlian dalam strategi ekspansi global. Pengumuman segera.", photo: "" }
   ] },
   },
-  press: {
+  press:
+    press: {
     en: { label: "IN THE PRESS", title: "Media Coverage", items: [
-    { publication: "THE STRAITS TIMES", headline: "Indonesian Venture Firm Brings Iconic Padang Cuisine to Singapore", date: "April 2026" },
-    { publication: "KOMPAS.COM", headline: "Global Minang Ventura: Bringing Padang Sederhana to the Asia-Pacific Stage", date: "March 2026" },
-    { publication: "THE AUSTRALIAN", headline: "Melbourne Welcomes New Indonesian Restaurant Chain Padang Sederhana", date: "April 2026" },
-    { publication: "TECH IN ASIA", headline: "How a Minang VC is Betting Big on Indonesian Cuisine Going Global", date: "May 2026" }
+    { publication: "THE STRAITS TIMES", headline: "Indonesian Venture Firm Brings Iconic Padang Cuisine to Singapore", date: "April 2026", url: "\"\"", image: "" },
+    { publication: "KOMPAS.COM", headline: "Global Minang Ventura: Bringing Padang Sederhana to the Asia-Pacific Stage", date: "March 2026", url: "\"\"", image: "" },
+    { publication: "THE AUSTRALIAN", headline: "Melbourne Welcomes New Indonesian Restaurant Chain Padang Sederhana", date: "April 2026", url: "\"\"", image: "" },
+    { publication: "TECH IN ASIA", headline: "How a Minang VC is Betting Big on Indonesian Cuisine Going Global", date: "May 2026", url: "\"\"", image: "" }
   ] },
     id: { label: "DI MEDIA", title: "Liputan Media", items: [
-    { publication: "THE STRAITS TIMES", headline: "Perusahaan Ventura Indonesia Bawa Kuliner Padang Ikonik ke Singapura", date: "April 2026" },
-    { publication: "KOMPAS.COM", headline: "Global Minang Ventura: Membawa Padang Sederhana ke Panggung Asia-Pasifik", date: "Maret 2026" },
-    { publication: "THE AUSTRALIAN", headline: "Melbourne Sambut Jaringan Restoran Indonesia Baru Padang Sederhana", date: "April 2026" },
-    { publication: "TECH IN ASIA", headline: "Bagaimana Sebuah VC Minang Bertaruh Besar pada Kuliner Indonesia Go Global", date: "Mei 2026" }
+    { publication: "THE STRAITS TIMES", headline: "Perusahaan Ventura Indonesia Bawa Kuliner Padang Ikonik ke Singapura", date: "April 2026", url: "\"\"", image: "" },
+    { publication: "KOMPAS.COM", headline: "Global Minang Ventura: Membawa Padang Sederhana ke Panggung Asia-Pasifik", date: "Maret 2026", url: "\"\"", image: "" },
+    { publication: "THE AUSTRALIAN", headline: "Melbourne Sambut Jaringan Restoran Indonesia Baru Padang Sederhana", date: "April 2026", url: "\"\"", image: "" },
+    { publication: "TECH IN ASIA", headline: "Bagaimana Sebuah VC Minang Bertaruh Besar pada Kuliner Indonesia Go Global", date: "Mei 2026", url: "\"\"", image: "" }
   ] },
   },
   contact: {
