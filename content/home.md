@@ -268,6 +268,16 @@ id:
   footer_legal_0: Kebijakan Privasi
   footer_legal_1: Syarat Penggunaan
 shared:
+  section_about_visible: true
+  section_vision_visible: true
+  section_market_visible: true
+  section_sederhana_visible: true
+  section_expansion_visible: true
+  section_whygmv_visible: true
+  section_footprint_visible: true
+  section_team_visible: false
+  section_press_visible: true
+  section_contact_visible: true
   nav_count: 9
   hero_video_src: /assets/02178055573667900000000000000000000ffffc0a8b0d3236198.mp4
   sederhana_image_src: /assets/sederhana.png
