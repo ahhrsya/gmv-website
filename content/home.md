@@ -1,14 +1,14 @@
 ---
 en:
-  nav_0: "About"
-  nav_1: "Vision"
-  nav_2: "Market"
-  nav_3: "Sederhana"
-  nav_4: "Expansion"
-  nav_5: "Why GMV"
-  nav_6: "Footprint"
-  nav_7: "Press"
-  nav_8: "Contact"
+  nav_0: About
+  nav_1: Vision
+  nav_2: Market
+  nav_3: Sederhana
+  nav_4: Expansion
+  nav_5: Why GMV
+  nav_6: Footprint
+  nav_7: Press
+  nav_8: Contact
   hero_label: GLOBAL MINANG VENTURA
   hero_headline: |
     From Minang
@@ -134,15 +134,15 @@ en:
   footer_legal_0: Privacy Policy
   footer_legal_1: Terms of Use
 id:
-  nav_0: "Tentang"
-  nav_1: "Visi"
-  nav_2: "Pasar"
-  nav_3: "Sederhana"
-  nav_4: "Ekspansi"
-  nav_5: "Mengapa GMV"
-  nav_6: "Jejak Global"
-  nav_7: "Media"
-  nav_8: "Kontak"
+  nav_0: Tentang Kami
+  nav_1: Visi
+  nav_2: Pasar
+  nav_3: Sederhana
+  nav_4: Ekspansi
+  nav_5: Mengapa GMV
+  nav_6: Jejak Global
+  nav_7: Media
+  nav_8: Kontak
   hero_label: GLOBAL MINANG VENTURA
   hero_headline: |
     Dari Minang
