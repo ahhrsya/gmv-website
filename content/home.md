@@ -281,7 +281,7 @@ shared:
   section_press_visible: true
   section_contact_visible: true
   nav_count: 9
-  hero_video_src: /assets/02178055573667900000000000000000000ffffc0a8b0d3236198.mp4
+  hero_video_src: /assets/hero.mp4
   sederhana_image_src: /assets/sederhana.png
   sederhana_timeline_0_date: 1972
   sederhana_timeline_1_date: 1975
