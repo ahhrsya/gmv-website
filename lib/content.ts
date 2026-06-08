@@ -7,7 +7,6 @@ export const content = {
   hero: {
     en: { label: "GLOBAL MINANG VENTURA", headline: "From Minang\nTo the World", subheadline: "Minang cuisine is heritage. Indonesia holds untapped global culinary power. We are the bridge that brings it to every table on earth.", ctaPrimary: "Join Our Journey", ctaSecondary: "Explore Our Vision" },
     id: { label: "GLOBAL MINANG VENTURA", headline: "Dari Minang\nuntuk Dunia", subheadline: "Kuliner Minang adalah warisan. Indonesia menyimpan kekuatan kuliner global yang belum tersentuh. Kami adalah jembatan yang membawanya ke setiap meja makan di dunia.", ctaPrimary: "Bergabung dalam Perjalanan", ctaSecondary: "Jelajahi Visi Kami" },
-  ,
     videoSrc: "/assets/02178055573667900000000000000000000ffffc0a8b0d3236198.mp4",
   },
   about: {
