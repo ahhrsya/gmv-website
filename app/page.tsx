@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Lang } from '@/lib/content'
+import { content, Lang } from '@/lib/content'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
@@ -16,6 +16,8 @@ import Press from '@/components/Press'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
 
+const s = content.sections
+
 export default function Home() {
   const [lang, setLang] = useState<Lang>('en')
 
@@ -24,16 +26,16 @@ export default function Home() {
       <Navbar lang={lang} onLangChange={setLang} />
       <main>
         <Hero lang={lang} />
-        <About lang={lang} />
-        <Vision lang={lang} />
-        <Market lang={lang} />
-        <Sederhana lang={lang} />
-        <Expansion lang={lang} />
-        <WhyGmv lang={lang} />
-        <Footprint lang={lang} />
-        {/* <Team lang={lang} /> */}
-        <Press lang={lang} />
-        <Contact lang={lang} />
+        {s.about     && <About lang={lang} />}
+        {s.vision    && <Vision lang={lang} />}
+        {s.market    && <Market lang={lang} />}
+        {s.sederhana && <Sederhana lang={lang} />}
+        {s.expansion && <Expansion lang={lang} />}
+        {s.whyGmv    && <WhyGmv lang={lang} />}
+        {s.footprint && <Footprint lang={lang} />}
+        {s.team      && <Team lang={lang} />}
+        {s.press     && <Press lang={lang} />}
+        {s.contact   && <Contact lang={lang} />}
       </main>
       <Footer lang={lang} />
     </>
