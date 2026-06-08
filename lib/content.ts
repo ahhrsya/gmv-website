@@ -5,6 +5,8 @@ export const content = {
   hero: {
     en: { label: "GLOBAL MINANG VENTURA", headline: "From Minang\nTo the World", subheadline: "Minang cuisine is heritage. Indonesia holds untapped global culinary power. We are the bridge that brings it to every table on earth.", ctaPrimary: "Join Our Journey", ctaSecondary: "Explore Our Vision" },
     id: { label: "GLOBAL MINANG VENTURA", headline: "Dari Minang\nuntuk Dunia", subheadline: "Kuliner Minang adalah warisan. Indonesia menyimpan kekuatan kuliner global yang belum tersentuh. Kami adalah jembatan yang membawanya ke setiap meja makan di dunia.", ctaPrimary: "Bergabung dalam Perjalanan", ctaSecondary: "Jelajahi Visi Kami" },
+  ,
+    videoSrc: "/assets/02178055573667900000000000000000000ffffc0a8b0d3236198.mp4",
   },
   about: {
     en: { label: "WHO WE ARE", title: "We Don't Just Build Brands. We Scale Heritage.", p1: "Global Minang Ventura is a venture capital firm built on a singular conviction: Minang cuisine deserves a place on the global stage. We are the official licensed partner of Restoran Sederhana Ã¢ÂÂ Indonesia's most iconic Padang restaurant chain Ã¢ÂÂ and we bring its legacy to international markets through structured expansion, cultural integrity, and strategic partnerships.", p2: "GMV provides the licensing, operational framework, quality control, and market entry strategy that transforms a regional giant into a global brand. Our role is to ensure that every plate served internationally tastes as authentic as one served in Indonesia. With active operations in Australia and Singapore, GMV is building the infrastructure for Indonesian cuisine to become the next great global food movement.", badge: "Official Licensed Partner of Restoran Sederhana" },
