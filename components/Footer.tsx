@@ -104,7 +104,7 @@ export default function Footer({ lang }: FooterProps) {
       <div className="footer-watermark" aria-hidden="true">
         <img
           className="footer-watermark__logo"
-          src={content.footer_logo_src || "/assets/Logo-Footer.svg"}
+          src={(content as any).footer_logo_src || "/assets/Logo-Footer.svg"}
           alt=""
         />
       </div>
