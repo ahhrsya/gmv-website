@@ -19,9 +19,17 @@ export default function Team({ lang }: TeamProps) {
         <div className="team-grid">
           {t.members.map((member, i) => (
             <div key={i} className="team-card">
-              {/* Photo placeholder */}
+              {/* Photo */}
               <div className="team-card__photo">
-                <span className="team-card__photo-placeholder">{member.initials}</span>
+                {member.photo ? (
+                  <img
+                    src={member.photo}
+                    alt={member.name}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit' }}
+                  />
+                ) : (
+                  <span className="team-card__photo-placeholder">{member.initials}</span>
+                )}
               </div>
               <div className="team-card__name">{member.name}</div>
               <div className="team-card__role">{member.role}</div>
