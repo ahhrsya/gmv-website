@@ -60,7 +60,7 @@ export default function Navbar({ lang, onLangChange }: NavbarProps) {
           }}
         >
           <img
-            src="/assets/logo.svg"
+            src={content.nav_logo_src || "/assets/logo.svg"}
             alt="Global Minang Ventura"
             style={{
               height: '100px',
