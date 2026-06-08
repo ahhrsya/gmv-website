@@ -49,7 +49,7 @@ export default function Hero({ lang }: HeroProps) {
           zIndex: 0,
         }}
       >
-        <source src="/assets/hero.mp4" type="video/mp4" />
+        <source src={content.hero.videoSrc || "/assets/hero.mp4"} type="video/mp4" />
       </video>
  
       {/* Readability overlay — stronger than the previous diagonal so copy stays legible over motion */}
