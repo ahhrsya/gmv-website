@@ -84,7 +84,7 @@ export default function Sederhana({ lang }: SederhanaProps) {
           }}
         >
           <img
-            src="/assets/sederhana.png"
+            src={content.sederhana.imageSrc || "/assets/sederhana.png"}
             alt="Restoran Sederhana"
             style={{
               width: '100%',
