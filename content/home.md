@@ -268,6 +268,8 @@ id:
   footer_legal_0: Kebijakan Privasi
   footer_legal_1: Syarat Penggunaan
 shared:
+  nav_logo_src: /assets/logo.svg
+  footer_logo_src: /assets/Logo-Footer.svg
   section_about_visible: true
   section_vision_visible: true
   section_market_visible: true
