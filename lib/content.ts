@@ -149,5 +149,17 @@ export const content = {
   footer: {
     en: { copyright: "ÃÂ© 2026 Global Minang Ventura. All rights reserved.", tagline: "From Minang to the World.", navCols: [{ heading: 'Navigate', links: ['About','Vision','Market','Sederhana','Expansion','Why GMV'] },{ heading: 'Presence', links: ['Footprint','Press'] },{ heading: 'Connect', links: ['Contact','LinkedIn','Instagram','Twitter/X'] }], legal: ["Privacy Policy", "Terms of Use"] },
     id: { copyright: "ÃÂ© 2026 Global Minang Ventura. Hak cipta dilindungi.", tagline: "Dari Minang untuk Dunia.", navCols: [{ heading: 'Navigasi', links: ['Tentang','Visi','Pasar','Sederhana','Ekspansi','Mengapa GMV'] },{ heading: 'Kehadiran', links: ['Jejak Global','Media'] },{ heading: 'Terhubung', links: ['Kontak','LinkedIn','Instagram','Twitter/X'] }], legal: ["Kebijakan Privasi", "Syarat Penggunaan"] },
-  },
+  },,
+  sections: {
+    about: true,
+    vision: true,
+    market: true,
+    sederhana: true,
+    expansion: true,
+    whyGmv: true,
+    footprint: true,
+    team: false,
+    press: true,
+    contact: true,
+  }
 }
