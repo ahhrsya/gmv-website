@@ -23,7 +23,7 @@ export default function Team({ lang }: TeamProps) {
               <div className="team-card__photo">
                 {member.photo ? (
                   <img
-                    src={member.photo}
+                    src={(member as any).photo}
                     alt={member.name}
                     style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit' }}
                   />
