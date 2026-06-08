@@ -31,7 +31,7 @@ export default function Home() {
         <Expansion lang={lang} />
         <WhyGmv lang={lang} />
         <Footprint lang={lang} />
-        <Team lang={lang} />
+        {/* <Team lang={lang} /> */}
         <Press lang={lang} />
         <Contact lang={lang} />
       </main>

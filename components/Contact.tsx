@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { content, Lang } from '@/lib/content'
-import { ArrowRight, Mail, Phone, MapPin } from 'lucide-react'
+import { ArrowRight, Mail } from 'lucide-react'
 
 interface ContactProps { lang: Lang }
 
@@ -145,9 +145,11 @@ export default function Contact({ lang }: ContactProps) {
                 <Mail size={15} style={{ color: 'var(--color-white)' }} />
                 {t.email}
               </a>
-              <a href={`tel:${t.phone}`} style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                <Phone size={15} style={{ color: 'var(--color-white)' }} />
-                {t.phone}
+              <a href={`https://instagram.com/${t.instagram}`} target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: 'var(--color-white)' }}>
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+                @{t.instagram}
               </a>
             </div>
           </div>

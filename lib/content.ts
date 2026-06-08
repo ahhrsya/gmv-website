@@ -2,8 +2,8 @@ export type Lang = 'en' | 'id'
 
 export const content = {
   nav: {
-    en: ['About', 'Vision', 'Market', 'Sederhana', 'Expansion', 'Why GMV', 'Footprint', 'Team', 'Press', 'Contact'],
-    id: ['Tentang', 'Visi', 'Pasar', 'Sederhana', 'Ekspansi', 'Mengapa GMV', 'Jejak Global', 'Tim', 'Media', 'Kontak'],
+    en: ['About', 'Vision', 'Market', 'Sederhana', 'Expansion', 'Why GMV', 'Footprint', 'Press', 'Contact'],
+    id: ['Tentang', 'Visi', 'Pasar', 'Sederhana', 'Ekspansi', 'Mengapa GMV', 'Jejak Global', 'Media', 'Kontak'],
   },
   langToggle: 'EN | ID',
 
@@ -29,7 +29,7 @@ export const content = {
       label: 'WHO WE ARE',
       title: 'We Don\'t Just Build Brands. We Scale Heritage.',
       p1: 'Global Minang Ventura is a venture capital firm built on a singular conviction: Minang cuisine deserves a place on the global stage. We are the official licensed partner of Restoran Sederhana — Indonesia\'s most iconic Padang restaurant chain — and we bring its legacy to international markets through structured expansion, cultural integrity, and strategic partnerships.',
-      p2: 'GMV provides the licensing, operational framework, quality control, and market entry strategy that transforms a regional giant into a global brand. Our role is to ensure that every plate served internationally tastes as authentic as one served in Jakarta. With active operations in Australia and Singapore, GMV is building the infrastructure for Indonesian cuisine to become the next great global food movement.',
+      p2: 'GMV provides the licensing, operational framework, quality control, and market entry strategy that transforms a regional giant into a global brand. Our role is to ensure that every plate served internationally tastes as authentic as one served in Indonesia. With active operations in Australia and Singapore, GMV is building the infrastructure for Indonesian cuisine to become the next great global food movement.',
       badge: 'Official Licensed Partner of Restoran Sederhana',
     },
     id: {
@@ -156,7 +156,7 @@ export const content = {
       steps: [
         { num: '01', title: 'Brand Licensing', body: 'As the official licensed partner of Restoran Sederhana, GMV holds the rights to expand the brand internationally. Regional partners operate under the Sederhana name with full brand authorization and support.' },
         { num: '02', title: 'Expansion Support', body: 'GMV provides end-to-end market entry support — from location scouting and legal setup to supply chain sourcing and local market adaptation. We don\'t leave partners to figure it out alone.' },
-        { num: '03', title: 'Operational Standards', body: 'Every location operates with standardized SOPs, kitchen training programs, and service protocols. Whether in Singapore or Sydney, the experience is consistent, the quality is non-negotiable.' },
+        { num: '03', title: 'Operational Standards', body: 'Every location operates with standardized SOPs, kitchen training programs, and service protocols. Across every market, the experience is consistent — the quality is non-negotiable.' },
         { num: '04', title: 'Quality Control', body: 'Ongoing compliance monitoring ensures every location upholds the Sederhana standard. Regular audits, ingredient sourcing oversight, and brand consistency reviews protect the integrity of the name.' },
       ],
     },
@@ -167,7 +167,7 @@ export const content = {
       steps: [
         { num: '01', title: 'Lisensi Merek', body: 'Sebagai mitra lisensi resmi Restoran Sederhana, GMV memegang hak untuk mengembangkan merek secara internasional. Mitra regional beroperasi di bawah nama Sederhana dengan otorisasi dan dukungan merek penuh.' },
         { num: '02', title: 'Dukungan Ekspansi', body: 'GMV menyediakan dukungan masuk pasar secara menyeluruh — dari pencarian lokasi dan pendirian badan hukum hingga pengadaan rantai pasok dan adaptasi pasar lokal.' },
-        { num: '03', title: 'Standar Operasional', body: 'Setiap lokasi beroperasi dengan SOP terstandarisasi, program pelatihan dapur, dan protokol layanan. Baik di Singapura maupun Sydney, pengalamannya konsisten, kualitasnya tidak bisa ditawar.' },
+        { num: '03', title: 'Standar Operasional', body: 'Setiap lokasi beroperasi dengan SOP terstandarisasi, program pelatihan dapur, dan protokol layanan. Di setiap pasar, pengalamannya konsisten — kualitasnya tidak bisa ditawar.' },
         { num: '04', title: 'Kontrol Kualitas', body: 'Pemantauan kepatuhan berkelanjutan memastikan setiap lokasi menjunjung standar Sederhana. Audit rutin, pengawasan sumber bahan, dan tinjauan konsistensi merek melindungi integritas nama.' },
       ],
     },
@@ -275,8 +275,9 @@ export const content = {
       title: 'Join the Journey',
       p1: 'We\'re looking for regional partners with market access and expansion experience.',
       ctaButton: 'Partner With Us',
-      email: 'hello@globalminangventura.com',
+      email: 'globalminangventura@gmail.com',
       phone: '+62 XXX XXXX XXXX',
+      instagram: 'sederhanaglobal',
       offices: [
         { label: 'Headquarters', city: 'Indonesia', address: 'Address to be confirmed' },
       ],
@@ -294,8 +295,9 @@ export const content = {
       title: 'Bergabung dalam Perjalanan',
       p1: 'Kami mencari mitra regional dengan akses pasar dan pengalaman ekspansi.',
       ctaButton: 'Bermitra Dengan Kami',
-      email: 'hello@globalminangventura.com',
+      email: 'globalminangventura@gmail.com',
       phone: '+62 XXX XXXX XXXX',
+      instagram: 'sederhanaglobal',
       offices: [
         { label: 'Kantor Pusat', city: 'Indonesia', address: 'Alamat akan dikonfirmasi' },
       ],
@@ -316,7 +318,7 @@ export const content = {
       tagline: 'From Minang to the World.',
       navCols: [
         { heading: 'Navigate', links: ['About', 'Vision', 'Market', 'Sederhana', 'Expansion', 'Why GMV'] },
-        { heading: 'Presence', links: ['Footprint', 'Team', 'Press'] },
+        { heading: 'Presence', links: ['Footprint', 'Press'] },
         { heading: 'Connect', links: ['Contact', 'LinkedIn', 'Instagram', 'Twitter/X'] },
       ],
       legal: ['Privacy Policy', 'Terms of Use'],
@@ -326,7 +328,7 @@ export const content = {
       tagline: 'Dari Minang untuk Dunia.',
       navCols: [
         { heading: 'Navigasi', links: ['Tentang', 'Visi', 'Pasar', 'Sederhana', 'Ekspansi', 'Mengapa GMV'] },
-        { heading: 'Kehadiran', links: ['Jejak Global', 'Tim', 'Media'] },
+        { heading: 'Kehadiran', links: ['Jejak Global', 'Media'] },
         { heading: 'Terhubung', links: ['Kontak', 'LinkedIn', 'Instagram', 'Twitter/X'] },
       ],
       legal: ['Kebijakan Privasi', 'Syarat Penggunaan'],

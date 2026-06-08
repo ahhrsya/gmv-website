@@ -14,7 +14,7 @@ export default function Navbar({ lang, onLangChange }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false)
   const t = content.nav
 
-  const navIds = ['about', 'vision', 'market', 'sederhana', 'expansion', 'why-gmv', 'footprint', 'team', 'press', 'contact']
+  const navIds = ['about', 'vision', 'market', 'sederhana', 'expansion', 'why-gmv', 'footprint', 'press', 'contact']
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)

@@ -23,12 +23,12 @@ interface FooterProps { lang: Lang }
 const navAnchors: Record<string, string> = {
   'About': '#about', 'Vision': '#vision', 'Market': '#market',
   'Sederhana': '#sederhana', 'Expansion': '#expansion', 'Why GMV': '#why-gmv',
-  'Footprint': '#footprint', 'Team': '#team', 'Press': '#press',
+  'Footprint': '#footprint', 'Press': '#press',
   'Contact': '#contact', 'LinkedIn': '#', 'Instagram': '#', 'Twitter/X': '#',
   // ID
   'Tentang': '#about', 'Visi': '#vision', 'Pasar': '#market',
   'Ekspansi': '#expansion', 'Mengapa GMV': '#why-gmv',
-  'Jejak Global': '#footprint', 'Tim': '#team', 'Media': '#press',
+  'Jejak Global': '#footprint', 'Media': '#press',
   'Kontak': '#contact',
 }
 
@@ -53,7 +53,7 @@ export default function Footer({ lang }: FooterProps) {
                 onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.35)')}>
                 <LinkedinIcon />
               </a>
-              <a href="#" aria-label="Instagram" style={{ color: 'rgba(255,255,255,0.35)', transition: 'color 0.2s' }}
+              <a href="https://instagram.com/sederhanaglobal" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ color: 'rgba(255,255,255,0.35)', transition: 'color 0.2s' }}
                 onMouseEnter={e => (e.currentTarget.style.color = 'var(--color-white)')}
                 onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.35)')}>
                 <InstagramIcon />
@@ -102,8 +102,27 @@ export default function Footer({ lang }: FooterProps) {
 
       {/* Watermark */}
       <div className="footer-watermark" aria-hidden="true">
-        <span className="t-footer-watermark">GLOBAL MINANG VENTURA</span>
+        <img
+          className="footer-watermark__logo"
+          src="/assets/Logo-Footer.svg"
+          alt=""
+        />
       </div>
+
+      <style>{`
+        .footer-watermark__logo {
+          width: 60%;
+          height: auto;
+          opacity: 0.06;
+          display: block;
+          margin: 0 auto;
+        }
+        @media (min-width: 1024px) {
+          .footer-watermark__logo {
+            width: 30%;
+          }
+        }
+      `}</style>
     </footer>
   )
 }
