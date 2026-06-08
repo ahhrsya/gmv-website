@@ -14,47 +14,47 @@ export const content = {
   },
 
   about: {
-    en: { label: "WHO WE ARE", title: "We Don't Just Build Brands. We Scale Heritage.", p1: "Global Minang Ventura is a venture capital firm built on a singular conviction: Minang cuisine deserves a place on the global stage. We are the official licensed partner of Restoran Sederhana \u00c3\u00a2\u00c2\u0080\u00c2\u0094 Indonesia's most iconic Padang restaurant chain \u00c3\u00a2\u00c2\u0080\u00c2\u0094 and we bring its legacy to international markets through structured expansion, cultural integrity, and strategic partnerships.", p2: "GMV provides the licensing, operational framework, quality control, and market entry strategy that transforms a regional giant into a global brand. Our role is to ensure that every plate served internationally tastes as authentic as one served in Indonesia. With active operations in Australia and Singapore, GMV is building the infrastructure for Indonesian cuisine to become the next great global food movement.", badge: "Official Licensed Partner of Restoran Sederhana" },
-    id: { label: "SIAPA KAMI", title: "Kami Tidak Sekadar Membangun Merek. Kami Mengembangkan Warisan.", p1: "Global Minang Ventura adalah perusahaan modal ventura yang dibangun di atas satu keyakinan: kuliner Minang layak tampil di panggung dunia. Kami adalah mitra lisensi resmi Restoran Sederhana \u00c3\u00a2\u00c2\u0080\u00c2\u0094 jaringan restoran Padang paling ikonik di Indonesia \u00c3\u00a2\u00c2\u0080\u00c2\u0094 dan kami membawa warisannya ke pasar internasional melalui ekspansi terstruktur, integritas budaya, dan kemitraan strategis.", p2: "GMV menyediakan lisensi, kerangka operasional, kontrol kualitas, dan strategi masuk pasar yang mengubah raksasa regional menjadi merek global. Dengan operasi aktif di Australia dan Singapura, GMV membangun infrastruktur agar kuliner Indonesia menjadi gerakan kuliner global berikutnya.", badge: "Mitra Lisensi Resmi Restoran Sederhana" },
+    en: { label: "WHO WE ARE", title: "We Don't Just Build Brands. We Scale Heritage.", p1: "Global Minang Ventura is a venture capital firm built on a singular conviction: Minang cuisine deserves a place on the global stage. We are the official licensed partner of Restoran Sederhana \u2014 Indonesia's most iconic Padang restaurant chain \u2014 and we bring its legacy to international markets through structured expansion, cultural integrity, and strategic partnerships.", p2: "GMV provides the licensing, operational framework, quality control, and market entry strategy that transforms a regional giant into a global brand. Our role is to ensure that every plate served internationally tastes as authentic as one served in Indonesia. With active operations in Australia and Singapore, GMV is building the infrastructure for Indonesian cuisine to become the next great global food movement.", badge: "Official Licensed Partner of Restoran Sederhana" },
+    id: { label: "SIAPA KAMI", title: "Kami Tidak Sekadar Membangun Merek. Kami Mengembangkan Warisan.", p1: "Global Minang Ventura adalah perusahaan modal ventura yang dibangun di atas satu keyakinan: kuliner Minang layak tampil di panggung dunia. Kami adalah mitra lisensi resmi Restoran Sederhana \u2014 jaringan restoran Padang paling ikonik di Indonesia \u2014 dan kami membawa warisannya ke pasar internasional melalui ekspansi terstruktur, integritas budaya, dan kemitraan strategis.", p2: "GMV menyediakan lisensi, kerangka operasional, kontrol kualitas, dan strategi masuk pasar yang mengubah raksasa regional menjadi merek global. Dengan operasi aktif di Australia dan Singapura, GMV membangun infrastruktur agar kuliner Indonesia menjadi gerakan kuliner global berikutnya.", badge: "Mitra Lisensi Resmi Restoran Sederhana" },
   },
 
   vision: {
     en: { label: "OUR PURPOSE", title: "The Future We Build", visionLabel: "VISION", visionText: "To establish Minang cuisine as a globally recognized culinary force.", missionLabel: "MISSION", pillars: [
     { title: "Expand", body: "Expand across countries with a scalable approach, bringing Minang cuisine to high-potential international markets." },
     { title: "Standardize", body: "Build consistent operational systems and SOPs across every location worldwide, ensuring the same quality from Jakarta to Singapore." },
-    { title: "Preserve Authenticity", body: "Maintain the cultural and culinary integrity of every dish \u00c3\u00a2\u00c2\u0080\u00c2\u0094 no shortcuts, no dilution, no compromise on heritage." },
+    { title: "Preserve Authenticity", body: "Maintain the cultural and culinary integrity of every dish \u2014 no shortcuts, no dilution, no compromise on heritage." },
     { title: "Enable Partners", body: "Enable long-term growth through strategic partnerships, empowering regional partners to succeed in their local markets." }
   ] },
     id: { label: "TUJUAN KAMI", title: "Masa Depan yang Kami Bangun", visionLabel: "VISI", visionText: "Menjadikan kuliner Minang sebagai kekuatan kuliner yang diakui secara global.", missionLabel: "MISI", pillars: [
     { title: "Ekspansi", body: "Berekspansi ke berbagai negara dengan pendekatan yang terukur, membawa kuliner Minang ke pasar internasional berpotensi tinggi." },
     { title: "Standarisasi", body: "Membangun sistem operasional dan SOP yang konsisten di setiap lokasi di seluruh dunia, memastikan kualitas yang sama dari Jakarta hingga Singapura." },
-    { title: "Jaga Keaslian", body: "Menjaga integritas budaya dan kuliner dari setiap hidangan \u00c3\u00a2\u00c2\u0080\u00c2\u0094 tanpa jalan pintas, tanpa pengenceran, tanpa kompromi pada warisan." },
+    { title: "Jaga Keaslian", body: "Menjaga integritas budaya dan kuliner dari setiap hidangan \u2014 tanpa jalan pintas, tanpa pengenceran, tanpa kompromi pada warisan." },
     { title: "Dukung Mitra", body: "Memungkinkan pertumbuhan jangka panjang melalui kemitraan strategis, memberdayakan mitra regional untuk sukses di pasar lokal mereka." }
   ] },
   },
 
   market: {
-    en: { label: "MARKET OPPORTUNITY", title: "Unlocking the Market", p1: "Indonesian cuisine is one of the world's richest culinary traditions \u00c3\u00a2\u00c2\u0080\u00c2\u0094 yet it remains one of the most underrepresented globally. While Thai restaurants exceed 15,000 worldwide and Japanese cuisine anchors every major food scene, Indonesian food barely registers outside Southeast Asia.", p2: "Padang cuisine, specifically, is uniquely positioned for global scale. Its bold flavors, communal dining format, and operational model \u00c3\u00a2\u00c2\u0080\u00c2\u0094 standardized recipes served across hundreds of locations \u00c3\u00a2\u00c2\u0080\u00c2\u0094 make it one of the most franchise-ready cuisines on earth. The world just hasn't had the infrastructure to access it. Until now.", closing: "The gap between Indonesia's culinary strength and its global presence is not a quality problem \u00c3\u00a2\u00c2\u0080\u00c2\u0094 it's an infrastructure problem. GMV builds that infrastructure.", stats: [
+    en: { label: "MARKET OPPORTUNITY", title: "Unlocking the Market", p1: "Indonesian cuisine is one of the world's richest culinary traditions \u2014 yet it remains one of the most underrepresented globally. While Thai restaurants exceed 15,000 worldwide and Japanese cuisine anchors every major food scene, Indonesian food barely registers outside Southeast Asia.", p2: "Padang cuisine, specifically, is uniquely positioned for global scale. Its bold flavors, communal dining format, and operational model \u2014 standardized recipes served across hundreds of locations \u2014 make it one of the most franchise-ready cuisines on earth. The world just hasn't had the infrastructure to access it. Until now.", closing: "The gap between Indonesia's culinary strength and its global presence is not a quality problem \u2014 it's an infrastructure problem. GMV builds that infrastructure.", stats: [
     { number: "280M+", label: "Indonesians with access to Padang cuisine daily" },
-    { number: "#1", label: "Rendang \u00c3\u00a2\u00c2\u0080\u00c2\u0094 CNN's World's Best Food" },
+    { number: "#1", label: "Rendang \u2014 CNN's World's Best Food" },
     { number: "15,000+", label: "Thai restaurants globally vs. ~400 Indonesian in Europe" },
     { number: "$2.5T", label: "Projected global halal food market by 2028" }
   ] },
-    id: { label: "PELUANG PASAR", title: "Membuka Pasar", p1: "Kuliner Indonesia adalah salah satu tradisi kuliner terkaya di dunia \u00c3\u00a2\u00c2\u0080\u00c2\u0094 namun tetap menjadi salah satu yang paling kurang terwakili secara global. Sementara restoran Thailand melebihi 15.000 di seluruh dunia dan masakan Jepang menjadi andalan di setiap kancah kuliner besar, makanan Indonesia nyaris tak terdengar di luar Asia Tenggara.", p2: "Masakan Padang, secara khusus, memiliki posisi unik untuk skala global. Cita rasanya yang kuat, format makan bersama, dan model operasionalnya menjadikannya salah satu kuliner paling siap-franchise di dunia. Dunia hanya belum punya infrastruktur untuk mengaksesnya. Sampai sekarang.", closing: "Kesenjangan antara kekuatan kuliner Indonesia dan kehadirannya secara global bukan masalah kualitas \u00c3\u00a2\u00c2\u0080\u00c2\u0094 ini masalah infrastruktur. GMV membangun infrastruktur itu.", stats: [
+    id: { label: "PELUANG PASAR", title: "Membuka Pasar", p1: "Kuliner Indonesia adalah salah satu tradisi kuliner terkaya di dunia \u2014 namun tetap menjadi salah satu yang paling kurang terwakili secara global. Sementara restoran Thailand melebihi 15.000 di seluruh dunia dan masakan Jepang menjadi andalan di setiap kancah kuliner besar, makanan Indonesia nyaris tak terdengar di luar Asia Tenggara.", p2: "Masakan Padang, secara khusus, memiliki posisi unik untuk skala global. Cita rasanya yang kuat, format makan bersama, dan model operasionalnya menjadikannya salah satu kuliner paling siap-franchise di dunia. Dunia hanya belum punya infrastruktur untuk mengaksesnya. Sampai sekarang.", closing: "Kesenjangan antara kekuatan kuliner Indonesia dan kehadirannya secara global bukan masalah kualitas \u2014 ini masalah infrastruktur. GMV membangun infrastruktur itu.", stats: [
     { number: "280JT+", label: "Warga Indonesia dengan akses kuliner Padang setiap hari" },
-    { number: "#1", label: "Rendang \u00c3\u00a2\u00c2\u0080\u00c2\u0094 Makanan Terbaik Dunia versi CNN" },
+    { number: "#1", label: "Rendang \u2014 Makanan Terbaik Dunia versi CNN" },
     { number: "15.000+", label: "Restoran Thailand global vs. ~400 Indonesia di Eropa" },
     { number: "$2,5T", label: "Proyeksi pasar makanan halal global 2028" }
   ] },
   },
 
   sederhana: {
-    en: { label: "OUR CORE BRAND", title: "Padang Sederhana", subtitle: "54 Years of Heritage. 200+ Locations. Indonesia's Most Iconic Restaurant.", p1: "Restoran Sederhana is a pioneer and iconic Padang brand in Indonesia, established in 1972. Built on authentic taste, accessible pricing, and consistent quality \u00c3\u00a2\u00c2\u0080\u00c2\u0094 it has preserved its heritage across generations.", p2: "Today, with approximately 200 locations, Restoran Sederhana stands as a proven and scalable brand. Now evolving for a new generation, reimagined for the global stage.", p3: "Global Minang Ventura is the official licensed partner of Restoran Sederhana for international markets \u00c3\u00a2\u00c2\u0080\u00c2\u0094 carrying this legacy abroad with the same commitment to authenticity and cultural integrity.", badge: "Certified by Sederhana Brand", timeline: [
+    en: { label: "OUR CORE BRAND", title: "Padang Sederhana", subtitle: "54 Years of Heritage. 200+ Locations. Indonesia's Most Iconic Restaurant.", p1: "Restoran Sederhana is a pioneer and iconic Padang brand in Indonesia, established in 1972. Built on authentic taste, accessible pricing, and consistent quality \u2014 it has preserved its heritage across generations.", p2: "Today, with approximately 200 locations, Restoran Sederhana stands as a proven and scalable brand. Now evolving for a new generation, reimagined for the global stage.", p3: "Global Minang Ventura is the official licensed partner of Restoran Sederhana for international markets \u2014 carrying this legacy abroad with the same commitment to authenticity and cultural integrity.", badge: "Certified by Sederhana Brand", timeline: [
     { date: "1972", event: "Bustaman opens a small Padang roadside stall in Bendungan Hilir, Jakarta" },
-    { date: "1975", event: "Second location opens \u00c3\u00a2\u00c2\u0080\u00c2\u0094 the brand begins expanding across Jakarta" },
+    { date: "1975", event: "Second location opens \u2014 the brand begins expanding across Jakarta" },
     { date: "1998", event: "First franchise investor joins. Expansion beyond Java begins" },
     { date: "2000", event: "Trademark registered and legally protected" },
-    { date: "2017\u00c3\u00a2\u00c2\u0080\u00c2\u009318", event: "28.4 million annual visitors \u00c3\u00a2\u00c2\u0080\u00c2\u0094 Indonesia's #1 restaurant chain" },
+    { date: "2017\u201318", event: "28.4 million annual visitors \u2014 Indonesia's #1 restaurant chain" },
     { date: "2026", event: "GMV expands Padang Sederhana to new international markets" }
   ], stats: [
     { number: "1972", label: "Est. Since" },
@@ -62,12 +62,12 @@ export const content = {
     { number: "5,000+", label: "Total Employees" },
     { number: "2", label: "Active International Locations" }
   ] },
-    id: { label: "MEREK INTI KAMI", title: "Padang Sederhana", subtitle: "54 Tahun Warisan. 200+ Lokasi. Restoran Paling Ikonik di Indonesia.", p1: "Restoran Sederhana adalah pelopor dan merek Padang ikonik di Indonesia, didirikan pada tahun 1972. Dibangun di atas cita rasa otentik, harga terjangkau, dan kualitas yang konsisten \u00c3\u00a2\u00c2\u0080\u00c2\u0094 ia telah menjaga warisannya lintas generasi.", p2: "Hari ini, dengan sekitar 200 lokasi, Restoran Sederhana berdiri sebagai merek yang terbukti dan terukur. Kini berevolusi untuk generasi baru, dirancang ulang untuk panggung global.", p3: "Global Minang Ventura adalah mitra lisensi resmi Restoran Sederhana untuk pasar internasional \u00c3\u00a2\u00c2\u0080\u00c2\u0094 membawa warisan ini ke luar negeri dengan komitmen yang sama terhadap keaslian dan integritas budaya.", badge: "Tersertifikasi oleh Merek Sederhana", timeline: [
+    id: { label: "MEREK INTI KAMI", title: "Padang Sederhana", subtitle: "54 Tahun Warisan. 200+ Lokasi. Restoran Paling Ikonik di Indonesia.", p1: "Restoran Sederhana adalah pelopor dan merek Padang ikonik di Indonesia, didirikan pada tahun 1972. Dibangun di atas cita rasa otentik, harga terjangkau, dan kualitas yang konsisten \u2014 ia telah menjaga warisannya lintas generasi.", p2: "Hari ini, dengan sekitar 200 lokasi, Restoran Sederhana berdiri sebagai merek yang terbukti dan terukur. Kini berevolusi untuk generasi baru, dirancang ulang untuk panggung global.", p3: "Global Minang Ventura adalah mitra lisensi resmi Restoran Sederhana untuk pasar internasional \u2014 membawa warisan ini ke luar negeri dengan komitmen yang sama terhadap keaslian dan integritas budaya.", badge: "Tersertifikasi oleh Merek Sederhana", timeline: [
     { date: "1972", event: "Bustaman membuka warung Padang kecil di Bendungan Hilir, Jakarta" },
-    { date: "1975", event: "Lokasi kedua dibuka \u00c3\u00a2\u00c2\u0080\u00c2\u0094 merek mulai berkembang di Jakarta" },
+    { date: "1975", event: "Lokasi kedua dibuka \u2014 merek mulai berkembang di Jakarta" },
     { date: "1998", event: "Investor franchise pertama bergabung. Ekspansi ke luar Jawa dimulai" },
     { date: "2000", event: "Merek dagang didaftarkan dan dilindungi secara hukum" },
-    { date: "2017\u00c3\u00a2\u00c2\u0080\u00c2\u009318", event: "28,4 juta pengunjung per tahun \u00c3\u00a2\u00c2\u0080\u00c2\u0094 jaringan restoran #1 di Indonesia" },
+    { date: "2017\u201318", event: "28,4 juta pengunjung per tahun \u2014 jaringan restoran #1 di Indonesia" },
     { date: "2026", event: "GMV mengekspansi Padang Sederhana ke pasar internasional baru" }
   ], stats: [
     { number: "1972", label: "Berdiri Sejak" },
@@ -81,41 +81,41 @@ export const content = {
   expansion: {
     en: { label: "EXPANSION MODEL", title: "Our Path to Global Expansion", subtitle: "A structured system for bringing Padang cuisine to any market in the world.", steps: [
     { num: "01", title: "Brand Licensing", body: "As the official licensed partner of Restoran Sederhana, GMV holds the rights to expand the brand internationally. Regional partners operate under the Sederhana name with full brand authorization and support." },
-    { num: "02", title: "Expansion Support", body: "GMV provides end-to-end market entry support \u00c3\u00a2\u00c2\u0080\u00c2\u0094 from location scouting and legal setup to supply chain sourcing and local market adaptation. We don't leave partners to figure it out alone." },
-    { num: "03", title: "Operational Standards", body: "Every location operates with standardized SOPs, kitchen training programs, and service protocols. Across every market, the experience is consistent \u00c3\u00a2\u00c2\u0080\u00c2\u0094 the quality is non-negotiable." },
+    { num: "02", title: "Expansion Support", body: "GMV provides end-to-end market entry support \u2014 from location scouting and legal setup to supply chain sourcing and local market adaptation. We don't leave partners to figure it out alone." },
+    { num: "03", title: "Operational Standards", body: "Every location operates with standardized SOPs, kitchen training programs, and service protocols. Across every market, the experience is consistent \u2014 the quality is non-negotiable." },
     { num: "04", title: "Quality Control", body: "Ongoing compliance monitoring ensures every location upholds the Sederhana standard. Regular audits, ingredient sourcing oversight, and brand consistency reviews protect the integrity of the name." }
   ] },
     id: { label: "MODEL EKSPANSI", title: "Jalur Kami Menuju Ekspansi Global", subtitle: "Sistem terstruktur untuk membawa masakan Padang ke pasar mana pun di dunia.", steps: [
     { num: "01", title: "Lisensi Merek", body: "Sebagai mitra lisensi resmi Restoran Sederhana, GMV memegang hak untuk mengembangkan merek secara internasional. Mitra regional beroperasi di bawah nama Sederhana dengan otorisasi dan dukungan merek penuh." },
-    { num: "02", title: "Dukungan Ekspansi", body: "GMV menyediakan dukungan masuk pasar secara menyeluruh \u00c3\u00a2\u00c2\u0080\u00c2\u0094 dari pencarian lokasi dan pendirian badan hukum hingga pengadaan rantai pasok dan adaptasi pasar lokal." },
-    { num: "03", title: "Standar Operasional", body: "Setiap lokasi beroperasi dengan SOP terstandarisasi, program pelatihan dapur, dan protokol layanan. Di setiap pasar, pengalamannya konsisten \u00c3\u00a2\u00c2\u0080\u00c2\u0094 kualitasnya tidak bisa ditawar." },
+    { num: "02", title: "Dukungan Ekspansi", body: "GMV menyediakan dukungan masuk pasar secara menyeluruh \u2014 dari pencarian lokasi dan pendirian badan hukum hingga pengadaan rantai pasok dan adaptasi pasar lokal." },
+    { num: "03", title: "Standar Operasional", body: "Setiap lokasi beroperasi dengan SOP terstandarisasi, program pelatihan dapur, dan protokol layanan. Di setiap pasar, pengalamannya konsisten \u2014 kualitasnya tidak bisa ditawar." },
     { num: "04", title: "Kontrol Kualitas", body: "Pemantauan kepatuhan berkelanjutan memastikan setiap lokasi menjunjung standar Sederhana. Audit rutin, pengawasan sumber bahan, dan tinjauan konsistensi merek melindungi integritas nama." }
   ] },
   },
 
   whyGmv: {
     en: { label: "WHY GMV", title: "Why Partner With Us", subtitle: "What sets Global Minang Ventura apart.", points: [
-    { title: "Proven Brand", body: "You're not betting on an idea \u00c3\u00a2\u00c2\u0080\u00c2\u0094 you're partnering with a 54-year-old brand that serves 28.4 million people a year. Padang Sederhana is Indonesia's #1 restaurant chain by customer volume." },
-    { title: "Cultural Authenticity", body: "We are rooted in the Minangkabau tradition. Our expansion isn't about creating a 'fusion' version of Padang food \u00c3\u00a2\u00c2\u0080\u00c2\u0094 it's about bringing the real thing to the world, with full cultural integrity." },
-    { title: "Structured System", body: "GMV provides complete operational playbooks \u00c3\u00a2\u00c2\u0080\u00c2\u0094 from kitchen SOPs and supply chain sourcing to staff training and brand guidelines. Partners receive a system, not a concept." },
+    { title: "Proven Brand", body: "You're not betting on an idea \u2014 you're partnering with a 54-year-old brand that serves 28.4 million people a year. Padang Sederhana is Indonesia's #1 restaurant chain by customer volume." },
+    { title: "Cultural Authenticity", body: "We are rooted in the Minangkabau tradition. Our expansion isn't about creating a 'fusion' version of Padang food \u2014 it's about bringing the real thing to the world, with full cultural integrity." },
+    { title: "Structured System", body: "GMV provides complete operational playbooks \u2014 from kitchen SOPs and supply chain sourcing to staff training and brand guidelines. Partners receive a system, not a concept." },
     { title: "Scalable Model", body: "Our licensing and operational framework is designed to replicate across markets. What works in Singapore works in Sydney. What works in Sydney works in regional hubs." },
-    { title: "Certified by Sederhana Brand", body: "GMV operates under official certification from Restoran Sederhana. This is not an imitation \u00c3\u00a2\u00c2\u0080\u00c2\u0094 this is the authorized global expansion of Indonesia's most trusted Padang restaurant." }
+    { title: "Certified by Sederhana Brand", body: "GMV operates under official certification from Restoran Sederhana. This is not an imitation \u2014 this is the authorized global expansion of Indonesia's most trusted Padang restaurant." }
   ] },
     id: { label: "MENGAPA GMV", title: "Mengapa Bermitra Dengan Kami", subtitle: "Yang membedakan Global Minang Ventura.", points: [
-    { title: "Merek Terbukti", body: "Anda tidak bertaruh pada sebuah ide \u00c3\u00a2\u00c2\u0080\u00c2\u0094 Anda bermitra dengan merek berusia 54 tahun yang melayani 28,4 juta orang setahun." },
-    { title: "Keaslian Budaya", body: "Kami berakar pada tradisi Minangkabau. Ekspansi kami bukan tentang menciptakan versi 'fusion' makanan Padang \u00c3\u00a2\u00c2\u0080\u00c2\u0094 ini tentang membawa yang asli ke dunia." },
-    { title: "Sistem Terstruktur", body: "GMV menyediakan buku panduan operasional lengkap \u00c3\u00a2\u00c2\u0080\u00c2\u0094 dari SOP dapur hingga pedoman merek. Mitra menerima sistem, bukan konsep." },
+    { title: "Merek Terbukti", body: "Anda tidak bertaruh pada sebuah ide \u2014 Anda bermitra dengan merek berusia 54 tahun yang melayani 28,4 juta orang setahun." },
+    { title: "Keaslian Budaya", body: "Kami berakar pada tradisi Minangkabau. Ekspansi kami bukan tentang menciptakan versi 'fusion' makanan Padang \u2014 ini tentang membawa yang asli ke dunia." },
+    { title: "Sistem Terstruktur", body: "GMV menyediakan buku panduan operasional lengkap \u2014 dari SOP dapur hingga pedoman merek. Mitra menerima sistem, bukan konsep." },
     { title: "Model Terukur", body: "Kerangka lisensi dan operasional kami dirancang untuk direplikasi lintas pasar. Yang berhasil di Singapura berhasil di Sydney. Yang berhasil di Sydney berhasil di pusat regional." },
     { title: "Tersertifikasi oleh Merek Sederhana", body: "GMV beroperasi di bawah sertifikasi resmi dari Restoran Sederhana. Ini adalah ekspansi global resmi dari restoran Padang paling terpercaya di Indonesia." }
   ] },
   },
 
   footprint: {
-    en: { label: "GLOBAL FOOTPRINT", title: "Our Global Footprint", subtitle: "Already operating across two continents.", closing: "From Minang Indonesia to the world \u00c3\u00a2\u00c2\u0080\u00c2\u0094 GMV is building a global network for Minang cuisine. Next markets under evaluation.", locations: [
+    en: { label: "GLOBAL FOOTPRINT", title: "Our Global Footprint", subtitle: "Already operating across two continents.", closing: "From Minang Indonesia to the world \u2014 GMV is building a global network for Minang cuisine. Next markets under evaluation.", locations: [
     { country: "Australia", city: "Operational", status: "active" as const },
     { country: "Singapore", city: "Operational", status: "active" as const }
   ] },
-    id: { label: "JEJAK GLOBAL", title: "Jejak Global Kami", subtitle: "Sudah beroperasi di dua benua.", closing: "Dari Minang Indonesia ke dunia \u00c3\u00a2\u00c2\u0080\u00c2\u0094 GMV membangun jaringan global untuk kuliner Minang. Pasar berikutnya sedang dievaluasi.", locations: [
+    id: { label: "JEJAK GLOBAL", title: "Jejak Global Kami", subtitle: "Sudah beroperasi di dua benua.", closing: "Dari Minang Indonesia ke dunia \u2014 GMV membangun jaringan global untuk kuliner Minang. Pasar berikutnya sedang dievaluasi.", locations: [
     { country: "Australia", city: "Beroperasi", status: "active" as const },
     { country: "Singapura", city: "Beroperasi", status: "active" as const }
   ] },
@@ -124,15 +124,15 @@ export const content = {
   team: {
     en: { label: "TEAM", title: "The People Behind GMV", members: [
     { name: "Muhammad Badaruddin", initials: "MB", role: "Managing Partner", bio: "Badaruddin leads GMV's strategy, partnerships, and international expansion. With deep roots in the Minangkabau entrepreneurial tradition and extensive experience in cross-border business operations, he drives the vision of bringing Padang cuisine to global markets.", photo: "" },
-    { name: "Arya Pradana", initials: "AP", role: "Tech Advisor", bio: "Founder & CEO of Elux Space, a UI/UX design agency based in Yogyakarta. Arya advises GMV on digital infrastructure, brand experience, and technology strategy \u00c3\u00a2\u00c2\u0080\u00c2\u0094 ensuring every market launch is backed by world-class digital presence and operational tools.", photo: "" },
-    { name: "To Be Announced", initials: "TBA", role: "Advisor \u00c3\u00a2\u00c2\u0080\u00c2\u0094 F&B Operations", bio: "An experienced food & beverage operator with international franchise management experience. Announcement coming soon.", photo: "" },
-    { name: "To Be Announced", initials: "TBA", role: "Advisor \u00c3\u00a2\u00c2\u0080\u00c2\u0094 International Markets", bio: "An experienced advisor with deep connections and expertise in global expansion strategy. Announcement coming soon.", photo: "" }
+    { name: "Arya Pradana", initials: "AP", role: "Tech Advisor", bio: "Founder & CEO of Elux Space, a UI/UX design agency based in Yogyakarta. Arya advises GMV on digital infrastructure, brand experience, and technology strategy \u2014 ensuring every market launch is backed by world-class digital presence and operational tools.", photo: "" },
+    { name: "To Be Announced", initials: "TBA", role: "Advisor \u2014 F&B Operations", bio: "An experienced food & beverage operator with international franchise management experience. Announcement coming soon.", photo: "" },
+    { name: "To Be Announced", initials: "TBA", role: "Advisor \u2014 International Markets", bio: "An experienced advisor with deep connections and expertise in global expansion strategy. Announcement coming soon.", photo: "" }
   ] },
     id: { label: "TIM", title: "Tim di Balik GMV", members: [
     { name: "Muhammad Badaruddin", initials: "MB", role: "Managing Partner", bio: "Badaruddin memimpin strategi, kemitraan, dan ekspansi internasional GMV. Dengan akar kuat dalam tradisi kewirausahaan Minangkabau dan pengalaman luas dalam operasi bisnis lintas negara.", photo: "" },
     { name: "Arya Pradana", initials: "AP", role: "Tech Advisor", bio: "Founder & CEO Elux Space, agensi desain UI/UX berbasis di Yogyakarta. Arya memberikan saran kepada GMV tentang infrastruktur digital, pengalaman merek, dan strategi teknologi.", photo: "" },
-    { name: "To Be Announced", initials: "TBA", role: "Advisor \u00c3\u00a2\u00c2\u0080\u00c2\u0094 Operasi F&B", bio: "Praktisi F&B berpengalaman dengan keahlian manajemen franchise internasional. Pengumuman segera.", photo: "" },
-    { name: "To Be Announced", initials: "TBA", role: "Advisor \u00c3\u00a2\u00c2\u0080\u00c2\u0094 Pasar Internasional", bio: "Penasihat berpengalaman dengan koneksi mendalam dan keahlian dalam strategi ekspansi global. Pengumuman segera.", photo: "" }
+    { name: "To Be Announced", initials: "TBA", role: "Advisor \u2014 Operasi F&B", bio: "Praktisi F&B berpengalaman dengan keahlian manajemen franchise internasional. Pengumuman segera.", photo: "" },
+    { name: "To Be Announced", initials: "TBA", role: "Advisor \u2014 Pasar Internasional", bio: "Penasihat berpengalaman dengan koneksi mendalam dan keahlian dalam strategi ekspansi global. Pengumuman segera.", photo: "" }
   ] },
   },
 
