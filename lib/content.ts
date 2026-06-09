@@ -5,8 +5,8 @@ export const content = {
   footer_logo_src: "/assets/Logo-Footer.svg",
   nav: { en: ["About","Vision","Market","Sederhana","Expansion","Why GMV","Footprint","Press","Contact"], id: ["Tentang Kami","Visi","Pasar","Sederhana","Ekspansi","Mengapa GMV","Jejak Global","Media","Kontak"] },
   hero: {
-    en: { label: "GLOBAL MINANG VENTURA", headline: "From Indonesia\nTo the World", subheadline: "Minang cuisine is heritage. Indonesia holds untapped global culinary power. We are the bridge that brings it to every table on earth.", ctaPrimary: "Join Our Journey", ctaSecondary: "Explore Our Vision" },
-    id: { label: "GLOBAL MINANG VENTURA", headline: "Dari Indonesia\nuntuk Dunia", subheadline: "Kuliner Minang adalah warisan. Indonesia menyimpan kekuatan kuliner global yang belum tersentuh. Kami adalah jembatan yang membawanya ke setiap meja makan di dunia.", ctaPrimary: "Bergabung dalam Perjalanan", ctaSecondary: "Jelajahi Visi Kami" },
+    en: { label: "GLOBAL MINANG VENTURA", headline: "From Minang\nTo the World", subheadline: "Minang cuisine is heritage. Indonesia holds untapped global culinary power. We are the bridge that brings it to every table on earth.", ctaPrimary: "Join Our Journey", ctaSecondary: "Explore Our Vision" },
+    id: { label: "GLOBAL MINANG VENTURA", headline: "Dari Minang\nuntuk Dunia", subheadline: "Kuliner Minang adalah warisan. Indonesia menyimpan kekuatan kuliner global yang belum tersentuh. Kami adalah jembatan yang membawanya ke setiap meja makan di dunia.", ctaPrimary: "Bergabung dalam Perjalanan", ctaSecondary: "Jelajahi Visi Kami" },
     videoSrc: "/assets/02178055573667900000000000000000000ffffc0a8b0d3236198.mp4",
   },
   about: {
