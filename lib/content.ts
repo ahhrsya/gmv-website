@@ -67,8 +67,8 @@ export const content = {
     { number: "200+", label: "Cabang Lokal di Indonesia" },
     { number: "5,000+", label: "Total Karyawan" },
     { number: "2", label: "Lokasi Internasional Aktif" }
-  ] ,
-    imageSrc: "/assets/asset-6.png"},
+  ],
+    imageSrc: "/assets/asset-6.png",
   },
   expansion: {
     en: { label: "EXPANSION MODEL", title: "Our Path to Global Expansion", subtitle: "A structured system for bringing Padang cuisine to any market in the world.", steps: [
