@@ -282,7 +282,7 @@ shared:
   section_contact_visible: true
   nav_count: 9
   hero_video_src: /assets/3D_map_of_Indonesia_Singapore_202605191432 (online-video-cutter.com).mp4
-  sederhana_image_src: /assets/sederhana.png
+  sederhana_image_src: /assets/asset-6.png
   sederhana_timeline_0_date: 1972
   sederhana_timeline_1_date: 1975
   sederhana_timeline_2_date: 1998
