@@ -11,7 +11,7 @@ en:
   nav_8: Contact
   hero_label: GLOBAL MINANG VENTURA
   hero_headline: |
-    From Minang
+    From Indonesia
     To the World
   hero_subheadline: Minang cuisine is heritage. Indonesia holds untapped global culinary power. We are the bridge that brings it to every table on earth.
   hero_cta_primary: Join Our Journey
@@ -145,7 +145,7 @@ id:
   nav_8: Kontak
   hero_label: GLOBAL MINANG VENTURA
   hero_headline: |
-    Dari Minang
+    Dari Indonesia
     untuk Dunia
   hero_subheadline: Kuliner Minang adalah warisan. Indonesia menyimpan kekuatan kuliner global yang belum tersentuh. Kami adalah jembatan yang membawanya ke setiap meja makan di dunia.
   hero_cta_primary: Bergabung dalam Perjalanan
@@ -281,7 +281,7 @@ shared:
   section_press_visible: true
   section_contact_visible: true
   nav_count: 9
-  hero_video_src: /assets/hero.mp4
+  hero_video_src: /assets/3D_map_of_Indonesia_Singapore_202605191432 (online-video-cutter.com).mp4
   sederhana_image_src: /assets/sederhana.png
   sederhana_timeline_0_date: 1972
   sederhana_timeline_1_date: 1975
