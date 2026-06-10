@@ -29,8 +29,14 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
   const [notFound, setNotFound] = useState(false)
   const [copied, setCopied] = useState(false)
 
+  // Next.js 15/16: unwrap params safely
+  const slug = typeof params?.then === 'function'
+    ? (typeof window !== 'undefined' ? window.location.pathname.split('/').pop() || '' : '')
+    : (params as { slug: string }).slug
+
   useEffect(() => {
-    fetch(`/articles/${params.slug}.json`)
+    if (!slug) return
+    fetch(`/articles/${slug}.json`)
       .then(r => { if (!r.ok) throw new Error('not found'); return r.json() })
       .then((data: ArticleData) => {
         setArticle(data)
@@ -38,11 +44,11 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
         fetch('/articles-index.json')
           .then(r => r.json())
           .then((all: ArticleData[]) =>
-            setRelated(all.filter(a => a.slug !== params.slug && a.published && a.category === data.category).slice(0, 3))
+            setRelated(all.filter(a => a.slug !== slug && a.published && a.category === data.category).slice(0, 3))
           ).catch(() => {})
       })
       .catch(() => { setNotFound(true); setLoading(false) })
-  }, [params.slug])
+  }, [slug])
 
   const formatDate = (d: string) => {
     try { return new Date(d).toLocaleDateString(lang === 'en' ? 'en-GB' : 'id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) }
