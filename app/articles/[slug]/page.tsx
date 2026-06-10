@@ -35,24 +35,30 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
   useEffect(() => {
     if (!slug) return
     
-    // Find article from imported data
-    const found = (articlesData as ArticleData[]).find(a => a.slug === slug && a.published)
-    
-    if (!found) {
-      setNotFound(true)
-      setLoading(false)
-      return
-    }
-    
-    setArticle(found)
-    
-    // Get related articles
-    const relatedArticles = (articlesData as ArticleData[])
-      .filter(a => a.slug !== slug && a.published && a.category === found.category)
-      .slice(0, 3)
-    
-    setRelated(relatedArticles)
-    setLoading(false)
+    // Fetch individual article JSON which has full content
+    fetch(`/articles/${slug}.json`)
+      .then(r => { if (!r.ok) throw new Error('not found'); return r.json() })
+      .then((data: ArticleData) => {
+        if (!data.published) {
+          setNotFound(true)
+          setLoading(false)
+          return
+        }
+        
+        setArticle(data)
+        
+        // Get related articles from index
+        const relatedArticles = (articlesData as ArticleData[])
+          .filter(a => a.slug !== slug && a.published && a.category === data.category)
+          .slice(0, 3)
+        
+        setRelated(relatedArticles)
+        setLoading(false)
+      })
+      .catch(() => {
+        setNotFound(true)
+        setLoading(false)
+      })
   }, [slug])
 
   const formatDate = (d: string) => {
