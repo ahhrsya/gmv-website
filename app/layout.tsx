@@ -7,8 +7,7 @@ const headScripts = (content as any).head_scripts || ''
 
 export const metadata: Metadata = {
   title: 'Global Minang Ventura — From Minang to the World',
-  description:
-    'Global Minang Ventura is a venture capital firm and the official licensed partner of Restoran Sederhana — scaling authentic Padang cuisine to international markets through brand licensing, operational standards, and cultural integrity.',
+  description: 'Global Minang Ventura is a venture capital firm and the official licensed partner of Restoran Sederhana — scaling authentic Padang cuisine to international markets through brand licensing, operational standards, and cultural integrity.',
   keywords: 'Global Minang Ventura, Padang Sederhana, Minang cuisine, Indonesian food, brand licensing, F&B expansion, Singapore, Australia, Sydney',
   authors: [{ name: 'Global Minang Ventura' }],
   openGraph: {
@@ -26,11 +25,7 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -41,8 +36,6 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        {/* Custom head scripts from CMS — GA4, FB Pixel, GTM, etc */}
         {headScripts && (
           <Script
             id="cms-head-scripts"
