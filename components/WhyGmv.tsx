@@ -1,9 +1,9 @@
 import { content, Lang } from '@/lib/content'
-import { CheckCircle, Globe, Layers, TrendingUp, ShieldCheck, Users } from 'lucide-react'
+// icons removed — using index numbers
 
 interface WhyGmvProps { lang: Lang }
 
-const icons = [CheckCircle, Globe, Layers, TrendingUp, ShieldCheck, Users]
+
 
 export default function WhyGmv({ lang }: WhyGmvProps) {
   const t = content.whyGmv[lang]
@@ -26,13 +26,12 @@ export default function WhyGmv({ lang }: WhyGmvProps) {
         {/* Cards */}
         <div className="why-cards-grid">
           {t.points.map((point, i) => {
-            const Icon = icons[i]
             return (
               <div
                 key={i}
                 className={`why-card why-card-${i}`}
               >
-                <Icon size={28} style={{ color: 'var(--color-white)', marginBottom: 'var(--space-md)' }} />
+                <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: 'var(--space-md)', fontFamily: 'var(--font-mono)' }}>0{i + 1}</div>
                 <div className="why-card__title">{point.title}</div>
                 <p className="why-card__body">{point.body}</p>
               </div>
