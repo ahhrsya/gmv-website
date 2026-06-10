@@ -1,9 +1,9 @@
 import { content, Lang } from '@/lib/content'
-import { CheckCircle, Globe, Layers, TrendingUp, ShieldCheck } from 'lucide-react'
+import { CheckCircle, Globe, Layers, TrendingUp, ShieldCheck, Users } from 'lucide-react'
 
 interface WhyGmvProps { lang: Lang }
 
-const icons = [CheckCircle, Globe, Layers, TrendingUp, ShieldCheck]
+const icons = [CheckCircle, Globe, Layers, TrendingUp, ShieldCheck, Users]
 
 export default function WhyGmv({ lang }: WhyGmvProps) {
   const t = content.whyGmv[lang]
@@ -44,15 +44,20 @@ export default function WhyGmv({ lang }: WhyGmvProps) {
       <style>{`
         .why-cards-grid {
           display: grid;
-          grid-template-columns: repeat(6, 1fr);
-          gap: var(--space-sm);
+          grid-template-columns: repeat(3, 1fr);
+          gap: 0;
         }
         .why-card {
-          grid-column: span 2 !important;
+          border-bottom: 1px solid rgba(255,255,255,0.06);
+          border-right: 1px solid rgba(255,255,255,0.06);
+          padding: var(--space-xl) var(--space-lg);
+        }
+        .why-card:nth-child(3n) {
+          border-right: none;
         }
         .why-card-3,
         .why-card-4 {
-          grid-column: span 3 !important;
+          grid-column: span 1 !important;
         }
 
         @media (max-width: 1023px) {
