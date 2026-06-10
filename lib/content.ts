@@ -99,7 +99,8 @@ export const content = {
     { title: "Keaslian Budaya", body: "Kami berakar pada tradisi Minangkabau. Ekspansi kami bukan tentang menciptakan versi 'fusion' makanan Padang — ini tentang membawa yang asli ke dunia." },
     { title: "Sistem Terstruktur", body: "GMV menyediakan buku panduan operasional lengkap — dari SOP dapur hingga pedoman merek. Mitra menerima sistem, bukan konsep." },
     { title: "Model Terukur", body: "Kerangka lisensi dan operasional kami dirancang untuk direplikasi lintas pasar. Yang berhasil di Singapura berhasil di Sydney. Yang berhasil di Sydney berhasil di pusat regional." },
-    { title: "Tersertifikasi oleh Merek Sederhana", body: "GMV beroperasi di bawah sertifikasi resmi dari Restoran Sederhana. Ini adalah ekspansi global resmi dari restoran Padang paling terpercaya di Indonesia." }
+    { title: "Tersertifikasi oleh Merek Sederhana", body: "GMV beroperasi di bawah sertifikasi resmi dari Restoran Sederhana. Ini adalah ekspansi global resmi dari restoran Padang paling terpercaya di Indonesia." },
+    { title: "Jaringan Global & Dukungan", body: "Sebagai mitra GMV, Anda mendapatkan akses ke jaringan internasional kami yang terus berkembang — rantai pasokan bersama, pemasaran lintas pasar, dan komunitas operator yang membangun masa depan kuliner Padang bersama." }
   ] },
   },
   footprint: {
