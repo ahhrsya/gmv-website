@@ -89,6 +89,8 @@ en:
   whygmv_point_3_body: Our licensing and operational framework is designed to replicate across markets. What works in Singapore works in Sydney. What works in Sydney works in regional hubs.
   whygmv_point_4_title: Certified by Sederhana Brand
   whygmv_point_4_body: "GMV operates under official certification from Restoran Sederhana. This is not an imitation — this is the authorized global expansion of Indonesia's most trusted Padang restaurant."
+  whygmv_point_5_title: "Global Network & Support"
+  whygmv_point_5_body: "As a GMV partner, you gain access to our growing international network — shared supply chains, cross-market marketing, and a community of operators building the future of Padang cuisine together."
   footprint_label: GLOBAL FOOTPRINT
   footprint_title: Our Global Footprint
   footprint_subtitle: Already operating across two continents.
@@ -223,6 +225,8 @@ id:
   whygmv_point_3_body: Kerangka lisensi dan operasional kami dirancang untuk direplikasi lintas pasar. Yang berhasil di Singapura berhasil di Sydney. Yang berhasil di Sydney berhasil di pusat regional.
   whygmv_point_4_title: Tersertifikasi oleh Merek Sederhana
   whygmv_point_4_body: GMV beroperasi di bawah sertifikasi resmi dari Restoran Sederhana. Ini adalah ekspansi global resmi dari restoran Padang paling terpercaya di Indonesia.
+  whygmv_point_5_title: "Jaringan Global & Dukungan"
+  whygmv_point_5_body: "Sebagai mitra GMV, Anda mendapatkan akses ke jaringan internasional kami yang terus berkembang — rantai pasokan bersama, pemasaran lintas pasar, dan komunitas operator yang membangun masa depan kuliner Padang bersama."
   footprint_label: JEJAK GLOBAL
   footprint_title: Jejak Global Kami
   footprint_subtitle: Sudah beroperasi di dua benua.
@@ -303,7 +307,7 @@ shared:
   expansion_step_count: 4
   vision_pillar_count: 4
   market_stat_count: 4
-  whygmv_point_count: 5
+  whygmv_point_count: 6
   footprint_location_count: 2
   team_member_0_name: Muhammad Badaruddin
   team_member_0_initials: MB
