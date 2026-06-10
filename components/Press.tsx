@@ -1,8 +1,6 @@
-'use client'
-
-import { useState, useEffect } from 'react'
-import Link from 'next/link'
 import { content, Lang } from '@/lib/content'
+import Link from 'next/link'
+import articlesData from '@/public/articles-index.json'
 
 interface Article {
   slug: string
@@ -20,18 +18,11 @@ interface Article {
 
 interface PressProps { lang: Lang }
 
+const articles: Article[] = articlesData as Article[]
+
 export default function Press({ lang }: PressProps) {
   const t = content.press[lang]
-  const [articles, setArticles] = useState<Article[]>([])
-
-  useEffect(() => {
-    fetch('/articles-index.json')
-      .then(r => r.json())
-      .then((data: Article[]) => {
-        setArticles(data.filter(a => a.published).slice(0, 4))
-      })
-      .catch(() => setArticles([]))
-  }, [])
+  const filteredArticles = articles.filter(a => a.published).slice(0, 4)
 
   const formatDate = (d: string) => {
     try {
@@ -53,7 +44,7 @@ export default function Press({ lang }: PressProps) {
         </div>
 
         <div className="press-grid">
-          {articles.map((article, i) => (
+          {filteredArticles.map((article) => (
             <Link
               key={article.slug}
               href={`/articles/${article.slug}`}
