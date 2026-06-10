@@ -268,6 +268,8 @@ id:
   footer_legal_0: Kebijakan Privasi
   footer_legal_1: Syarat Penggunaan
 shared:
+  ga4_id: 
+  fb_pixel_id: 
   nav_logo_src: /assets/logo.svg
   footer_logo_src: /assets/Logo-Footer.svg
   section_about_visible: true
