@@ -141,43 +141,59 @@ export default function ArticlesPage() {
                   {lang === 'en' ? `${filtered.length} article${filtered.length !== 1 ? 's' : ''}` : `${filtered.length} artikel`}
                 </p>
 
-                {/* Article grid — no thumbnails */}
+                {/* Article grid with thumbnails */}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', borderTop: '1px solid var(--color-mist)', borderLeft: '1px solid var(--color-mist)' }} className="articles-grid">
                   {paginated.map((article) => (
                     <Link key={article.slug} href={`/articles/${article.slug}`} style={{ textDecoration: 'none' }}>
                       <article
-                        style={{ borderRight: '1px solid var(--color-mist)', borderBottom: '1px solid var(--color-mist)', padding: 'var(--space-xl) var(--space-lg)', display: 'flex', flexDirection: 'column', minHeight: '240px', cursor: 'pointer', transition: 'background 0.2s' }}
+                        style={{ borderRight: '1px solid var(--color-mist)', borderBottom: '1px solid var(--color-mist)', display: 'flex', flexDirection: 'column', height: '100%', cursor: 'pointer', transition: 'background 0.2s' }}
                         onMouseEnter={e => (e.currentTarget.style.background = 'var(--color-bone)')}
                         onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
                       >
-                        {/* Category + date */}
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: 'var(--space-md)' }}>
-                          <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-navy)', background: 'var(--color-bone)', padding: '3px 8px', borderRadius: '2px' }}>
-                            {article.category}
-                          </span>
-                          <span style={{ fontSize: '11px', color: 'var(--color-silver)' }}>
-                            {formatDate(article.date)}
-                          </span>
-                        </div>
+                        {/* Cover image */}
+                        {article.cover_image && (
+                          <div style={{ aspectRatio: '16/9', overflow: 'hidden', background: 'var(--color-black)', borderRadius: 0 }}>
+                            <img
+                              src={article.cover_image}
+                              alt={lang === 'en' ? article.title_en : article.title_id}
+                              style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.4s var(--ease-out)' }}
+                              onMouseEnter={e => ((e.currentTarget as HTMLImageElement).style.transform = 'scale(1.04)')}
+                              onMouseLeave={e => ((e.currentTarget as HTMLImageElement).style.transform = 'scale(1)')}
+                            />
+                          </div>
+                        )}
+                        
+                        {/* Content */}
+                        <div style={{ padding: 'var(--space-xl) var(--space-lg)', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                          {/* Category + date */}
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: 'var(--space-md)' }}>
+                            <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-navy)', background: 'var(--color-bone)', padding: '3px 8px', borderRadius: '0px' }}>
+                              {article.category}
+                            </span>
+                            <span style={{ fontSize: '11px', color: 'var(--color-silver)' }}>
+                              {formatDate(article.date)}
+                            </span>
+                          </div>
 
-                        {/* Title */}
-                        <h2 className="t-body-lg" style={{ color: 'var(--color-navy)', fontWeight: 700, marginBottom: 'var(--space-sm)', lineHeight: 1.3 }}>
-                          {lang === 'en' ? article.title_en : article.title_id}
-                        </h2>
+                          {/* Title */}
+                          <h2 className="t-body-lg" style={{ color: 'var(--color-navy)', fontWeight: 700, marginBottom: 'var(--space-sm)', lineHeight: 1.3 }}>
+                            {lang === 'en' ? article.title_en : article.title_id}
+                          </h2>
 
-                        {/* Excerpt */}
-                        <p className="t-body" style={{ color: 'var(--color-gray)', flex: 1, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                          {lang === 'en' ? article.excerpt_en : article.excerpt_id}
-                        </p>
+                          {/* Excerpt */}
+                          <p className="t-body" style={{ color: 'var(--color-gray)', flex: 1, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                            {lang === 'en' ? article.excerpt_en : article.excerpt_id}
+                          </p>
 
-                        {/* Footer */}
-                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'var(--space-lg)', paddingTop: 'var(--space-md)', borderTop: '1px solid var(--color-mist)' }}>
-                          <span style={{ fontSize: '11px', color: 'var(--color-silver)' }}>
-                            {article.author} · {article.read_time} {lang === 'en' ? 'min' : 'mnt'}
-                          </span>
-                          <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-navy)' }}>
-                            {lang === 'en' ? 'Read →' : 'Baca →'}
-                          </span>
+                          {/* Footer */}
+                          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'var(--space-lg)', paddingTop: 'var(--space-md)', borderTop: '1px solid var(--color-mist)' }}>
+                            <span style={{ fontSize: '11px', color: 'var(--color-silver)' }}>
+                              {article.author} · {article.read_time} {lang === 'en' ? 'min' : 'mnt'}
+                            </span>
+                            <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-navy)' }}>
+                              {lang === 'en' ? 'Read →' : 'Baca →'}
+                            </span>
+                          </div>
                         </div>
                       </article>
                     </Link>

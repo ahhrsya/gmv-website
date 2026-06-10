@@ -660,7 +660,7 @@ button {
   background: rgba(255,255,255,0.04);
   border: 1px solid rgba(255,255,255,0.08);
   padding: var(--space-lg);
-  border-radius: 4px;
+  border-radius: 0;
   transition: background 0.25s;
 }
 
@@ -669,7 +669,7 @@ button {
 }
 
 .why-card:last-child {
-  grid-column: span 3;
+  grid-column: span 1;
 }
 
 .why-card__icon {
