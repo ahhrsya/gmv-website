@@ -11,5 +11,44 @@
     "published": true,
     "author": "GMV Team",
     "read_time": 4
+  },
+  {
+    "slug": "gmv-melbourne-opening",
+    "title_en": "Melbourne Welcomes New Indonesian Restaurant Chain Padang Sederhana",
+    "title_id": "Melbourne Sambut Jaringan Restoran Indonesia Baru Padang Sederhana",
+    "date": "2026-04-20",
+    "category": "Expansion",
+    "cover_image": "/assets/sederhana.png",
+    "excerpt_en": "Global Minang Ventura brings Padang Sederhana to Melbourne, marking the brand's debut in the Australian market and introducing authentic Minang cuisine to food enthusiasts down under.",
+    "excerpt_id": "Global Minang Ventura membawa Padang Sederhana ke Melbourne, menandai debut merek di pasar Australia dan memperkenalkan kuliner Minang autentik kepada pecinta makanan di sana.",
+    "published": true,
+    "author": "GMV Team",
+    "read_time": 5
+  },
+  {
+    "slug": "gmv-tech-in-asia",
+    "title_en": "How a Minang VC is Betting Big on Indonesian Cuisine Going Global",
+    "title_id": "Bagaimana Sebuah VC Minang Bertaruh Besar pada Kuliner Indonesia Go Global",
+    "date": "2026-03-10",
+    "category": "Press",
+    "cover_image": "/assets/asset-6.png",
+    "excerpt_en": "Tech in Asia covers Global Minang Ventura's ambitious plan to scale Padang Sederhana across international markets, combining venture capital with cultural heritage.",
+    "excerpt_id": "Tech in Asia meliput rencana ambisius Global Minang Ventura untuk mengembangkan Padang Sederhana di pasar internasional, menggabungkan modal ventura dengan warisan budaya.",
+    "published": true,
+    "author": "GMV Team",
+    "read_time": 6
+  },
+  {
+    "slug": "gmv-asia-pacific-strategy",
+    "title_en": "Global Minang Ventura: Bringing Padang Sederhana to the Asia-Pacific Stage",
+    "title_id": "Global Minang Ventura: Membawa Padang Sederhana ke Panggung Asia-Pasifik",
+    "date": "2026-02-15",
+    "category": "Strategy",
+    "cover_image": "/assets/map.png",
+    "excerpt_en": "Global Minang Ventura outlines its comprehensive Asia-Pacific expansion strategy, targeting key markets with high demand for authentic Indonesian cuisine.",
+    "excerpt_id": "Global Minang Ventura menguraikan strategi ekspansi Asia-Pasifik komprehensifnya, menargetkan pasar kunci dengan permintaan tinggi untuk kuliner Indonesia autentik.",
+    "published": true,
+    "author": "GMV Team",
+    "read_time": 7
   }
 ]
