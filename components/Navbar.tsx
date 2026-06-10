@@ -11,15 +11,24 @@ interface NavbarProps {
   onLangChange: (lang: Lang) => void
 }
 
+const NAV_LINKS = {
+  en: [
+    { label: 'Home',     href: '/' },
+    { label: 'About',    href: '/about' },
+    { label: 'Articles', href: '/articles' },
+  ],
+  id: [
+    { label: 'Beranda',  href: '/' },
+    { label: 'Tentang',  href: '/about' },
+    { label: 'Artikel',  href: '/articles' },
+  ],
+}
+
 export default function Navbar({ lang, onLangChange }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()
-  const isHome = pathname === '/'
-  const t = content.nav
-
-  // Section anchors — only used on homepage
-  const navIds = ['about', 'vision', 'market', 'sederhana', 'expansion', 'why-gmv', 'footprint', 'press', 'contact']
+  const links = NAV_LINKS[lang]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60)
@@ -27,19 +36,9 @@ export default function Navbar({ lang, onLangChange }: NavbarProps) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const handleNavClick = (index: number) => {
-    setMenuOpen(false)
-    const id = navIds[index]
-    // Contact → /contact page
-    if (id === 'contact') {
-      window.location.href = '/contact'
-      return
-    }
-    if (isHome) {
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
-    } else {
-      window.location.href = `/#${id}`
-    }
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/'
+    return pathname.startsWith(href)
   }
 
   return (
@@ -69,26 +68,37 @@ export default function Navbar({ lang, onLangChange }: NavbarProps) {
           />
         </Link>
 
-        {/* Desktop nav */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-lg)' }} className="desktop-nav">
-          {t[lang].map((item, i) => (
-            <button
-              key={i}
-              onClick={() => handleNavClick(i)}
+        {/* Desktop nav links */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-xl)' }} className="desktop-nav">
+          {links.map(link => (
+            <Link
+              key={link.href}
+              href={link.href}
               style={{
-                fontFamily: 'var(--font-body)', fontWeight: 500, fontSize: '13px',
-                color: 'rgba(255,255,255,0.75)', cursor: 'pointer', transition: 'color 0.2s',
-                background: 'none',
+                fontFamily: 'var(--font-body)',
+                fontWeight: isActive(link.href) ? 700 : 500,
+                fontSize: '13px',
+                color: isActive(link.href) ? '#fff' : 'rgba(255,255,255,0.65)',
+                transition: 'color 0.2s',
+                textDecoration: 'none',
+                letterSpacing: '0.01em',
+                position: 'relative',
               }}
               onMouseEnter={e => (e.currentTarget.style.color = '#fff')}
-              onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.75)')}
+              onMouseLeave={e => (e.currentTarget.style.color = isActive(link.href) ? '#fff' : 'rgba(255,255,255,0.65)')}
             >
-              {item}
-            </button>
+              {link.label}
+              {isActive(link.href) && (
+                <span style={{
+                  position: 'absolute', bottom: '-4px', left: 0, right: 0,
+                  height: '1px', background: 'rgba(255,255,255,0.5)',
+                }} />
+              )}
+            </Link>
           ))}
         </div>
 
-        {/* Right side: lang toggle + CTA */}
+        {/* Right: lang toggle + CTA + hamburger */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-md)' }} className="desktop-nav">
           {/* Language toggle */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '2px', background: 'rgba(255,255,255,0.08)', borderRadius: '999px', padding: '3px' }}>
@@ -110,7 +120,7 @@ export default function Navbar({ lang, onLangChange }: NavbarProps) {
             ))}
           </div>
 
-          {/* CTA → /contact */}
+          {/* CTA */}
           <Link href="/contact" style={{ textDecoration: 'none' }}>
             <button
               style={{
@@ -128,7 +138,7 @@ export default function Navbar({ lang, onLangChange }: NavbarProps) {
             </button>
           </Link>
 
-          {/* Mobile hamburger */}
+          {/* Hamburger */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             style={{ display: 'none', color: 'var(--color-white)', background: 'none' }}
@@ -142,28 +152,28 @@ export default function Navbar({ lang, onLangChange }: NavbarProps) {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div
-          style={{
-            position: 'fixed', top: '64px', left: 0, right: 0,
-            background: 'rgba(0,33,86,0.97)', backdropFilter: 'blur(16px)',
-            zIndex: 49, padding: 'var(--space-lg)',
-            borderTop: '1px solid rgba(255,255,255,0.08)',
-          }}
-        >
-          {t[lang].map((item, i) => (
-            <button
-              key={i}
-              onClick={() => handleNavClick(i)}
+        <div style={{
+          position: 'fixed', top: '64px', left: 0, right: 0,
+          background: 'rgba(0,33,86,0.97)', backdropFilter: 'blur(16px)',
+          zIndex: 49, padding: 'var(--space-lg)',
+          borderTop: '1px solid rgba(255,255,255,0.08)',
+        }}>
+          {links.map(link => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
               style={{
-                display: 'block', width: '100%', textAlign: 'left',
-                padding: 'var(--space-md) 0',
+                display: 'block', padding: 'var(--space-md) 0',
                 borderBottom: '1px solid rgba(255,255,255,0.06)',
-                fontFamily: 'var(--font-body)', fontWeight: 500, fontSize: '15px',
-                color: 'rgba(255,255,255,0.8)', background: 'none', cursor: 'pointer',
+                fontFamily: 'var(--font-body)', fontWeight: isActive(link.href) ? 700 : 500,
+                fontSize: '15px',
+                color: isActive(link.href) ? '#fff' : 'rgba(255,255,255,0.7)',
+                textDecoration: 'none',
               }}
             >
-              {item}
-            </button>
+              {link.label}
+            </Link>
           ))}
           <div style={{ display: 'flex', gap: '8px', marginTop: 'var(--space-lg)' }}>
             {(['en', 'id'] as Lang[]).map(l => (
