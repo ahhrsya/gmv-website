@@ -1,5 +1,8 @@
-import { content, Lang } from '@/lib/content'
+'use client'
+
+import { useMemo } from 'react'
 import Link from 'next/link'
+import { content, Lang } from '@/lib/content'
 import articlesData from '@/public/articles-index.json'
 
 interface Article {
@@ -18,11 +21,12 @@ interface Article {
 
 interface PressProps { lang: Lang }
 
-const articles: Article[] = articlesData as Article[]
-
 export default function Press({ lang }: PressProps) {
   const t = content.press[lang]
-  const filteredArticles = articles.filter(a => a.published).slice(0, 4)
+  
+  const articles = useMemo(() => {
+    return (articlesData as Article[]).filter(a => a.published).slice(0, 4)
+  }, [])
 
   const formatDate = (d: string) => {
     try {
@@ -44,7 +48,7 @@ export default function Press({ lang }: PressProps) {
         </div>
 
         <div className="press-grid">
-          {filteredArticles.map((article) => (
+          {articles.map((article) => (
             <Link
               key={article.slug}
               href={`/articles/${article.slug}`}
