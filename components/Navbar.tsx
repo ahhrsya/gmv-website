@@ -1,6 +1,8 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { Menu, X, ArrowRight } from 'lucide-react'
 import { content, Lang } from '@/lib/content'
 
@@ -12,8 +14,11 @@ interface NavbarProps {
 export default function Navbar({ lang, onLangChange }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
+  const pathname = usePathname()
+  const isHome = pathname === '/'
   const t = content.nav
 
+  // Section anchors — only used on homepage
   const navIds = ['about', 'vision', 'market', 'sederhana', 'expansion', 'why-gmv', 'footprint', 'press', 'contact']
 
   useEffect(() => {
@@ -22,9 +27,19 @@ export default function Navbar({ lang, onLangChange }: NavbarProps) {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const scrollTo = (id: string) => {
+  const handleNavClick = (index: number) => {
     setMenuOpen(false)
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    const id = navIds[index]
+    // Contact → /contact page
+    if (id === 'contact') {
+      window.location.href = '/contact'
+      return
+    }
+    if (isHome) {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      window.location.href = `/#${id}`
+    }
   }
 
   return (
@@ -32,9 +47,7 @@ export default function Navbar({ lang, onLangChange }: NavbarProps) {
       <nav
         style={{
           position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
+          top: 0, left: 0, right: 0,
           zIndex: 'var(--z-nav)' as any,
           padding: '0 var(--space-lg)',
           height: '64px',
@@ -48,48 +61,23 @@ export default function Navbar({ lang, onLangChange }: NavbarProps) {
         }}
       >
         {/* Logo */}
-        <button
-          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          style={{
-            cursor: 'pointer',
-            background: 'none',
-            border: 'none',
-            padding: 0,
-            display: 'flex',
-            alignItems: 'center',
-          }}
-        >
+        <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
           <img
-            src={(content as any).nav_logo_src || "/assets/logo.svg"}
+            src={(content as any).nav_logo_src || '/assets/logo.svg'}
             alt="Global Minang Ventura"
-            style={{
-              height: '100px',
-              width: 'auto',
-              display: 'block',
-            }}
+            style={{ height: '100px', width: 'auto', display: 'block' }}
           />
-        </button>
+        </Link>
 
-        {/* Desktop nav links */}
-        <div
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: 'var(--space-lg)',
-          }}
-          className="desktop-nav"
-        >
+        {/* Desktop nav */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-lg)' }} className="desktop-nav">
           {t[lang].map((item, i) => (
             <button
               key={i}
-              onClick={() => scrollTo(navIds[i])}
+              onClick={() => handleNavClick(i)}
               style={{
-                fontFamily: 'var(--font-body)',
-                fontWeight: 500,
-                fontSize: '13px',
-                color: 'rgba(255,255,255,0.75)',
-                cursor: 'pointer',
-                transition: 'color 0.2s',
+                fontFamily: 'var(--font-body)', fontWeight: 500, fontSize: '13px',
+                color: 'rgba(255,255,255,0.75)', cursor: 'pointer', transition: 'color 0.2s',
                 background: 'none',
               }}
               onMouseEnter={e => (e.currentTarget.style.color = '#fff')}
@@ -100,107 +88,107 @@ export default function Navbar({ lang, onLangChange }: NavbarProps) {
           ))}
         </div>
 
-        {/* Right: lang toggle + CTA */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-md)' }}>
-          <div className="lang-toggle desktop-nav">
-            <button
-              className={`lang-toggle__btn ${lang === 'en' ? 'active' : ''}`}
-              onClick={() => onLangChange('en')}
-            >
-              EN
-            </button>
-            <button
-              className={`lang-toggle__btn ${lang === 'id' ? 'active' : ''}`}
-              onClick={() => onLangChange('id')}
-            >
-              ID
-            </button>
+        {/* Right side: lang toggle + CTA */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-md)' }} className="desktop-nav">
+          {/* Language toggle */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '2px', background: 'rgba(255,255,255,0.08)', borderRadius: '999px', padding: '3px' }}>
+            {(['en', 'id'] as Lang[]).map(l => (
+              <button
+                key={l}
+                onClick={() => onLangChange(l)}
+                style={{
+                  padding: '5px 12px', borderRadius: '999px', fontSize: '12px', fontWeight: 700,
+                  letterSpacing: '0.06em', textTransform: 'uppercase', cursor: 'pointer',
+                  transition: 'all 0.2s',
+                  background: lang === l ? 'var(--color-white)' : 'transparent',
+                  color: lang === l ? 'var(--color-navy)' : 'rgba(255,255,255,0.6)',
+                  border: 'none',
+                }}
+              >
+                {l.toUpperCase()}
+              </button>
+            ))}
           </div>
+
+          {/* CTA → /contact */}
+          <Link href="/contact" style={{ textDecoration: 'none' }}>
+            <button
+              style={{
+                display: 'flex', alignItems: 'center', gap: '8px',
+                background: 'var(--color-white)', color: 'var(--color-black)',
+                fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '13px',
+                padding: '10px 22px', borderRadius: '999px', cursor: 'pointer',
+                transition: 'all 0.25s var(--ease-out)', border: 'none',
+              }}
+              onMouseEnter={e => { e.currentTarget.style.background = 'var(--color-bone)'; e.currentTarget.style.transform = 'scale(1.02)' }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'var(--color-white)'; e.currentTarget.style.transform = 'scale(1)' }}
+            >
+              {content.hero[lang].ctaPrimary}
+              <ArrowRight size={14} />
+            </button>
+          </Link>
+
+          {/* Mobile hamburger */}
           <button
-            onClick={() => scrollTo('contact')}
-            className="btn-primary desktop-nav"
-            style={{ fontSize: '13px', padding: '10px 20px' }}
+            onClick={() => setMenuOpen(!menuOpen)}
+            style={{ display: 'none', color: 'var(--color-white)', background: 'none' }}
+            className="mobile-menu-btn"
+            aria-label="Toggle menu"
           >
-            {lang === 'en' ? 'Join the Journey' : 'Bergabung'} <ArrowRight size={14} />
-          </button>
-          {/* Hamburger */}
-          <button
-            className="mobile-nav"
-            onClick={() => setMenuOpen(true)}
-            style={{ color: 'var(--color-white)', cursor: 'pointer', display: 'flex' }}
-            aria-label="Open menu"
-          >
-            <Menu size={22} />
+            {menuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile overlay */}
-      <div
-        style={{
-          position: 'fixed',
-          inset: 0,
-          zIndex: 200,
-          background: 'var(--color-navy)',
-          display: 'flex',
-          flexDirection: 'column',
-          padding: 'var(--space-lg)',
-          transform: menuOpen ? 'translateX(0)' : 'translateX(100%)',
-          transition: 'transform 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-        }}
-      >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-3xl)' }}>
-          <span style={{ fontFamily: 'var(--font-body)', fontWeight: 600, fontSize: '15px', color: 'var(--color-white)' }}>GMV</span>
-          <button onClick={() => setMenuOpen(false)} style={{ color: 'var(--color-white)', cursor: 'pointer', display: 'flex' }} aria-label="Close menu">
-            <X size={22} />
-          </button>
-        </div>
-        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 'var(--space-sm)' }}>
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div
+          style={{
+            position: 'fixed', top: '64px', left: 0, right: 0,
+            background: 'rgba(0,33,86,0.97)', backdropFilter: 'blur(16px)',
+            zIndex: 49, padding: 'var(--space-lg)',
+            borderTop: '1px solid rgba(255,255,255,0.08)',
+          }}
+        >
           {t[lang].map((item, i) => (
             <button
               key={i}
-              onClick={() => scrollTo(navIds[i])}
+              onClick={() => handleNavClick(i)}
               style={{
-                fontFamily: 'var(--font-display)',
-                fontWeight: 600,
-                fontSize: '26px',
-                color: 'var(--color-white)',
-                textAlign: 'left',
-                cursor: 'pointer',
-                padding: 'var(--space-xs) 0',
-                borderBottom: '1px solid rgba(255,255,255,0.07)',
-                transition: 'color 0.2s',
+                display: 'block', width: '100%', textAlign: 'left',
+                padding: 'var(--space-md) 0',
+                borderBottom: '1px solid rgba(255,255,255,0.06)',
+                fontFamily: 'var(--font-body)', fontWeight: 500, fontSize: '15px',
+                color: 'rgba(255,255,255,0.8)', background: 'none', cursor: 'pointer',
               }}
             >
               {item}
             </button>
           ))}
-        </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-sm)', marginTop: 'var(--space-xl)' }}>
-          <div className="lang-toggle" style={{ alignSelf: 'flex-start' }}>
-            <button className={`lang-toggle__btn ${lang === 'en' ? 'active' : ''}`} onClick={() => onLangChange('en')}>EN</button>
-            <button className={`lang-toggle__btn ${lang === 'id' ? 'active' : ''}`} onClick={() => onLangChange('id')}>ID</button>
+          <div style={{ display: 'flex', gap: '8px', marginTop: 'var(--space-lg)' }}>
+            {(['en', 'id'] as Lang[]).map(l => (
+              <button
+                key={l}
+                onClick={() => { onLangChange(l); setMenuOpen(false) }}
+                style={{
+                  padding: '8px 16px', borderRadius: '999px', fontSize: '13px', fontWeight: 700,
+                  letterSpacing: '0.06em', textTransform: 'uppercase', cursor: 'pointer',
+                  background: lang === l ? 'var(--color-white)' : 'rgba(255,255,255,0.1)',
+                  color: lang === l ? 'var(--color-navy)' : 'rgba(255,255,255,0.7)',
+                  border: 'none',
+                }}
+              >
+                {l.toUpperCase()}
+              </button>
+            ))}
           </div>
-          <button
-            onClick={() => scrollTo('contact')}
-            className="btn-primary"
-            style={{ alignSelf: 'flex-start' }}
-          >
-            {lang === 'en' ? 'Join the Journey' : 'Bergabung'} <ArrowRight size={14} />
-          </button>
         </div>
-      </div>
+      )}
 
       <style>{`
-        .desktop-logo { display: inline; }
-        .mobile-logo { display: none; }
-        .desktop-nav { display: flex !important; }
-        .mobile-nav { display: none !important; }
-        @media (max-width: 1023px) {
+        @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
-          .mobile-nav { display: flex !important; }
-          .desktop-logo { display: none; }
-          .mobile-logo { display: inline; }
+          .mobile-menu-btn { display: flex !important; }
         }
       `}</style>
     </>
