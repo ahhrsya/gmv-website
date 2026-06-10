@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { content, Lang } from '@/lib/content'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import articlesData from '@/public/articles-index.json'
 
 interface ArticleData {
   slug: string
@@ -12,6 +13,7 @@ interface ArticleData {
   title_id: string
   date: string
   category: string
+  cover_image: string
   excerpt_en: string
   excerpt_id: string
   published: boolean
@@ -27,38 +29,35 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
   const [related, setRelated] = useState<ArticleData[]>([])
   const [loading, setLoading] = useState(true)
   const [notFound, setNotFound] = useState(false)
-  const [copied, setCopied] = useState(false)
-
-  // Next.js 15/16: unwrap params safely
-  const slug = typeof params?.then === 'function'
-    ? (typeof window !== 'undefined' ? window.location.pathname.split('/').pop() || '' : '')
-    : (params as { slug: string }).slug
+  
+  const { slug } = params
 
   useEffect(() => {
     if (!slug) return
-    fetch(`/articles/${slug}.json`)
-      .then(r => { if (!r.ok) throw new Error('not found'); return r.json() })
-      .then((data: ArticleData) => {
-        setArticle(data)
-        setLoading(false)
-        fetch('/articles-index.json')
-          .then(r => r.json())
-          .then((all: ArticleData[]) =>
-            setRelated(all.filter(a => a.slug !== slug && a.published && a.category === data.category).slice(0, 3))
-          ).catch(() => {})
-      })
-      .catch(() => { setNotFound(true); setLoading(false) })
+    
+    // Find article from imported data
+    const found = (articlesData as ArticleData[]).find(a => a.slug === slug && a.published)
+    
+    if (!found) {
+      setNotFound(true)
+      setLoading(false)
+      return
+    }
+    
+    setArticle(found)
+    
+    // Get related articles
+    const relatedArticles = (articlesData as ArticleData[])
+      .filter(a => a.slug !== slug && a.published && a.category === found.category)
+      .slice(0, 3)
+    
+    setRelated(relatedArticles)
+    setLoading(false)
   }, [slug])
 
   const formatDate = (d: string) => {
     try { return new Date(d).toLocaleDateString(lang === 'en' ? 'en-GB' : 'id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) }
     catch { return d }
-  }
-
-  const copyLink = () => {
-    navigator.clipboard.writeText(window.location.href)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 2000)
   }
 
   const title = article ? (lang === 'en' ? article.title_en : article.title_id) : ''
@@ -101,17 +100,11 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
           <div className="container">
             {/* Breadcrumb */}
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: 'var(--space-xl)' }}>
-              <Link href="/" style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)' }}
-                onMouseEnter={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}
-                onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.35)')}
-              >
+              <Link href="/" style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)' }}>
                 {lang === 'en' ? 'Home' : 'Beranda'}
               </Link>
               <span style={{ color: 'rgba(255,255,255,0.2)' }}>›</span>
-              <Link href="/articles" style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)' }}
-                onMouseEnter={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.7)')}
-                onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.35)')}
-              >
+              <Link href="/articles" style={{ fontSize: '12px', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)' }}>
                 {lang === 'en' ? 'Articles' : 'Artikel'}
               </Link>
               <span style={{ color: 'rgba(255,255,255,0.2)' }}>›</span>
@@ -160,6 +153,17 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
                   {excerpt}
                 </p>
 
+                {/* Cover Image */}
+                {article.cover_image && (
+                  <div style={{ marginBottom: 'var(--space-3xl)', borderRadius: 0, overflow: 'hidden' }}>
+                    <img 
+                      src={article.cover_image} 
+                      alt={title} 
+                      style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 0 }} 
+                    />
+                  </div>
+                )}
+
                 {/* Body */}
                 <div>
                   {body.split('\n').filter(Boolean).map((para, i) => {
@@ -174,33 +178,8 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
               {/* Sidebar */}
               <aside style={{ position: 'sticky', top: '84px' }}>
 
-                {/* Share */}
-                <div style={{ border: '1px solid var(--color-mist)', borderRadius: '2px', padding: 'var(--space-lg)', marginBottom: 'var(--space-lg)' }}>
-                  <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-silver)', marginBottom: 'var(--space-md)' }}>
-                    {lang === 'en' ? 'Share' : 'Bagikan'}
-                  </p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    {[
-                      { label: lang === 'en' ? '𝕏  Share on X' : '𝕏  Bagikan di X', href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}` },
-                      { label: lang === 'en' ? 'in  Share on LinkedIn' : 'in  Bagikan di LinkedIn', href: `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}&title=${encodeURIComponent(title)}` },
-                    ].map((s, i) => (
-                      <a key={i} href={s.href} target="_blank" rel="noopener noreferrer"
-                        style={{ display: 'flex', alignItems: 'center', padding: '8px 12px', border: '1px solid var(--color-mist)', borderRadius: '2px', fontSize: '13px', fontWeight: 600, color: 'var(--color-navy)', transition: 'background 0.2s', textDecoration: 'none' }}
-                        onMouseEnter={e => (e.currentTarget.style.background = 'var(--color-bone)')}
-                        onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
-                      >
-                        {s.label}
-                      </a>
-                    ))}
-                    <button onClick={copyLink}
-                      style={{ display: 'flex', alignItems: 'center', padding: '8px 12px', border: '1px solid var(--color-mist)', borderRadius: '2px', fontSize: '13px', fontWeight: 600, color: copied ? 'var(--color-navy)' : 'var(--color-gray)', background: copied ? 'var(--color-bone)' : 'transparent', cursor: 'pointer', transition: 'all 0.2s' }}>
-                      {copied ? '✓ ' : '🔗 '}{lang === 'en' ? (copied ? 'Copied!' : 'Copy link') : (copied ? 'Tersalin!' : 'Salin tautan')}
-                    </button>
-                  </div>
-                </div>
-
                 {/* Author */}
-                <div style={{ border: '1px solid var(--color-mist)', borderRadius: '2px', padding: 'var(--space-lg)' }}>
+                <div style={{ border: '1px solid var(--color-mist)', borderRadius: '2px', padding: 'var(--space-lg)', marginBottom: 'var(--space-lg)' }}>
                   <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-silver)', marginBottom: 'var(--space-md)' }}>
                     {lang === 'en' ? 'Author' : 'Penulis'}
                   </p>
@@ -212,6 +191,18 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
                       <div style={{ fontSize: '14px', fontWeight: 700, color: 'var(--color-navy)' }}>{article.author}</div>
                       <div style={{ fontSize: '12px', color: 'var(--color-gray)' }}>Global Minang Ventura</div>
                     </div>
+                  </div>
+                </div>
+
+                {/* Share */}
+                <div style={{ border: '1px solid var(--color-mist)', borderRadius: '2px', padding: 'var(--space-lg)' }}>
+                  <p style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-silver)', marginBottom: 'var(--space-md)' }}>
+                    {lang === 'en' ? 'Share' : 'Bagikan'}
+                  </p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <a href={`/articles/${article.slug}`} style={{ display: 'flex', alignItems: 'center', padding: '8px 12px', border: '1px solid var(--color-mist)', borderRadius: '2px', fontSize: '13px', fontWeight: 600, color: 'var(--color-navy)', transition: 'background 0.2s', textDecoration: 'none' }}>
+                      🔗 {lang === 'en' ? 'Copy link' : 'Salin tautan'}
+                    </a>
                   </div>
                 </div>
 
@@ -236,8 +227,6 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
                   <Link key={rel.slug} href={`/articles/${rel.slug}`} style={{ textDecoration: 'none' }}>
                     <article
                       style={{ borderRight: '1px solid var(--color-mist)', borderBottom: '1px solid var(--color-mist)', padding: 'var(--space-xl) var(--space-lg)', cursor: 'pointer', transition: 'background 0.2s' }}
-                      onMouseEnter={e => (e.currentTarget.style.background = 'var(--color-white)')}
-                      onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
                     >
                       <p style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-silver)', marginBottom: '8px' }}>{rel.category}</p>
                       <h3 className="t-body-lg" style={{ color: 'var(--color-navy)', fontWeight: 700, marginBottom: 'var(--space-sm)', lineHeight: 1.3 }}>{lang === 'en' ? rel.title_en : rel.title_id}</h3>
@@ -257,10 +246,7 @@ export default function ArticleDetailPage({ params }: { params: { slug: string }
         <section style={{ background: 'var(--color-navy)', padding: 'var(--space-3xl) 0' }}>
           <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 'var(--space-lg)' }}>
             <Link href="/articles">
-              <button style={{ padding: '12px 24px', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '999px', fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.65)', background: 'transparent', cursor: 'pointer', transition: 'all 0.2s' }}
-                onMouseEnter={e => { e.currentTarget.style.color = '#fff'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.5)' }}
-                onMouseLeave={e => { e.currentTarget.style.color = 'rgba(255,255,255,0.65)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.2)' }}
-              >
+              <button style={{ padding: '12px 24px', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '999px', fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.65)', background: 'transparent', cursor: 'pointer', transition: 'all 0.2s' }}>
                 ← {lang === 'en' ? 'All Articles' : 'Semua Artikel'}
               </button>
             </Link>
