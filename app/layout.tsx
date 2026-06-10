@@ -3,8 +3,7 @@ import Script from 'next/script'
 import './globals.css'
 import { content } from '@/lib/content'
 
-const ga4Id = (content as any).ga4_id || ''
-const fbPixelId = (content as any).fb_pixel_id || ''
+const headScripts = (content as any).head_scripts || ''
 
 export const metadata: Metadata = {
   title: 'Global Minang Ventura — From Minang to the World',
@@ -42,46 +41,17 @@ export default function RootLayout({
           rel="stylesheet"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* Custom head scripts from CMS — GA4, FB Pixel, GTM, etc */}
+        {headScripts && (
+          <Script
+            id="cms-head-scripts"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{ __html: headScripts }}
+          />
+        )}
       </head>
-      <body>
-        {children}
-
-        {/* Google Analytics 4 — injected only when GA4 ID is set in CMS */}
-        {ga4Id && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${ga4Id}');
-              `}
-            </Script>
-          </>
-        )}
-
-        {/* Facebook Pixel — injected only when Pixel ID is set in CMS */}
-        {fbPixelId && (
-          <Script id="facebook-pixel" strategy="afterInteractive">
-            {`
-              !function(f,b,e,v,n,t,s)
-              {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-              n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-              if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-              n.queue=[];t=b.createElement(e);t.async=!0;
-              t.src=v;s=b.getElementsByTagName(e)[0];
-              s.parentNode.insertBefore(t,s)}(window, document,'script',
-              'https://connect.facebook.net/en_US/fbevents.js');
-              fbq('init', '${fbPixelId}');
-              fbq('track', 'PageView');
-            `}
-          </Script>
-        )}
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
