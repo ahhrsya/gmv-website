@@ -9,15 +9,42 @@ interface ContactProps { lang: Lang }
 export default function Contact({ lang }: ContactProps) {
   const t = content.contact[lang]
   const [submitted, setSubmitted] = useState(false)
+  const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    setError('')
     setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
+
+    const form = e.currentTarget
+    const formData = new FormData(form)
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.get('name'),
+          email: formData.get('email'),
+          organization: formData.get('organization'),
+          market: formData.get('market'),
+          message: formData.get('message'),
+          lang,
+        }),
+      })
+
+      if (!res.ok) {
+        const data = await res.json()
+        throw new Error(data.error || 'Failed to send message')
+      }
+
       setSubmitted(true)
-    }, 1200)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : (lang === 'en' ? 'Failed to send message. Please try again.' : 'Gagal mengirim pesan. Silakan coba lagi.'))
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -87,30 +114,36 @@ export default function Contact({ lang }: ContactProps) {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="contact-form" noValidate>
+                {error && (
+                  <div style={{ background: 'rgba(220,50,50,0.15)', border: '1px solid rgba(220,50,50,0.4)', borderRadius: '4px', padding: '12px 16px', marginBottom: 'var(--space-sm)' }}>
+                    <p style={{ fontSize: '14px', color: '#ff6b6b', margin: 0 }}>{error}</p>
+                  </div>
+                )}
                 <div className="form-row">
                   <div className="form-field">
                     <label htmlFor="contact-name">{t.fields.name}</label>
-                    <input id="contact-name" type="text" placeholder={t.fields.name} required />
+                    <input id="contact-name" name="name" type="text" placeholder={t.fields.name} required />
                   </div>
                   <div className="form-field">
                     <label htmlFor="contact-email">{t.fields.email}</label>
-                    <input id="contact-email" type="email" placeholder={t.fields.email} required />
+                    <input id="contact-email" name="email" type="email" placeholder={t.fields.email} required />
                   </div>
                 </div>
                 <div className="form-row">
                   <div className="form-field">
                     <label htmlFor="contact-org">{t.fields.org}</label>
-                    <input id="contact-org" type="text" placeholder={t.fields.org} />
+                    <input id="contact-org" name="organization" type="text" placeholder={t.fields.org} />
                   </div>
                   <div className="form-field">
                     <label htmlFor="contact-market">{t.fields.market}</label>
-                    <input id="contact-market" type="text" placeholder={t.fields.market} />
+                    <input id="contact-market" name="market" type="text" placeholder={t.fields.market} />
                   </div>
                 </div>
                 <div className="form-field">
                   <label htmlFor="contact-message">{t.fields.message}</label>
                   <textarea
                     id="contact-message"
+                    name="message"
                     placeholder={t.fields.message}
                     rows={5}
                     required
