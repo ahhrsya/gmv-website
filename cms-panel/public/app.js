@@ -321,6 +321,10 @@ function h(tag, attrs = {}, ...children) {
     if (k === 'class') el.className = v;
     else if (k === 'style' && typeof v === 'object') Object.assign(el.style, v);
     else if (k.startsWith('on') && typeof v === 'function') el.addEventListener(k.slice(2).toLowerCase(), v);
+    else if (k === 'value') {
+      if (tag === 'textarea') el.textContent = v;
+      else el.value = v;
+    }
     else if (v != null) el.setAttribute(k, v);
   }
   for (const c of children.flat()) {
