@@ -1,5 +1,5 @@
 import { Resend } from 'resend';
-import { ContactEmail } from '@/components/ContactEmail';
+import { generateContactEmailHtml } from '@/lib/contact-email';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -17,7 +17,7 @@ export async function POST(request: Request) {
     subject: lang === 'id'
       ? `Pesan Baru dari ${name}`
       : `New Contact Form Submission from ${name}`,
-    react: ContactEmail({ name, email, organization, market, message, lang }),
+    html: generateContactEmailHtml({ name, email, organization, market, message, lang }),
     tags: [
       { name: 'source', value: 'contact-form' },
       { name: 'lang', value: lang || 'en' },
