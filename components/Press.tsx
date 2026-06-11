@@ -61,17 +61,7 @@ export default function Press({ lang }: PressProps) {
                 onMouseEnter={e => (e.currentTarget.style.background = 'var(--color-bone)')}
                 onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
               >
-                {article.cover_image && (
-                  <div style={{ width: '100%', aspectRatio: '16/9', overflow: 'hidden', background: 'var(--color-black)', borderRadius: 0, marginBottom: '12px' }}>
-                    <img
-                      src={article.cover_image}
-                      alt={lang === 'en' ? article.title_en : article.title_id}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.4s var(--ease-out)' }}
-                      onMouseEnter={e => ((e.currentTarget as HTMLImageElement).style.transform = 'scale(1.04)')}
-                      onMouseLeave={e => ((e.currentTarget as HTMLImageElement).style.transform = 'scale(1)')}
-                    />
-                  </div>
-                )}
+
                 <div className="press-card__pub">{article.category}</div>
                 <div className="press-card__headline">
                   {lang === 'en' ? article.title_en : article.title_id}
