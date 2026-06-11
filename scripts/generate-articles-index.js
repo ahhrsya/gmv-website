@@ -84,3 +84,36 @@ files.forEach(file => {
 index.sort((a, b) => new Date(b.date) - new Date(a.date))
 fs.writeFileSync(INDEX_OUT, JSON.stringify(index, null, 2))
 console.log(`\n\u2713 Generated ${index.length} articles \u2192 public/articles-index.json`)
+
+// ── Generate about-content.json ─────────────────────────────────
+const aboutMd = path.join(process.cwd(), 'content', 'about.md')
+if (fs.existsSync(aboutMd)) {
+  const raw = fs.readFileSync(aboutMd, 'utf-8')
+  const { meta: _, content: body } = parseFrontmatter(raw)
+  // Simple block parser for about.md
+  const blocks = {}; let block = null
+  raw.replace(/^---[\s\S]*?---/, '').split('\n').forEach(line => {
+    const bm = line.match(/^(en|id|shared):\s*$/)
+    if (bm) { block = bm[1]; blocks[block] = {}; return }
+    if (!block) return
+    const kv = line.match(/^  ([a-zA-Z0-9_]+):\s*"?(.*?)"?\s*$/)
+    if (kv) blocks[block][kv[1]] = kv[2]
+  })
+  fs.writeFileSync(path.join(process.cwd(), 'public', 'about-content.json'), JSON.stringify(blocks, null, 2))
+  console.log('\u2713 Generated public/about-content.json')
+}
+
+// ── Generate contact-content.json ───────────────────────────────
+const contactMd = path.join(process.cwd(), 'content', 'contact.md')
+if (fs.existsSync(contactMd)) {
+  const blocks = {}; let block = null
+  fs.readFileSync(contactMd, 'utf-8').replace(/^---[\s\S]*?---/, '').split('\n').forEach(line => {
+    const bm = line.match(/^(en|id|shared):\s*$/)
+    if (bm) { block = bm[1]; blocks[block] = {}; return }
+    if (!block) return
+    const kv = line.match(/^  ([a-zA-Z0-9_]+):\s*"?(.*?)"?\s*$/)
+    if (kv) blocks[block][kv[1]] = kv[2]
+  })
+  fs.writeFileSync(path.join(process.cwd(), 'public', 'contact-content.json'), JSON.stringify(blocks, null, 2))
+  console.log('\u2713 Generated public/contact-content.json')
+}
