@@ -68,8 +68,8 @@ export default function Navbar({ lang, onLangChange }: NavbarProps) {
           />
         </Link>
 
-        {/* Desktop nav links */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-xl)' }} className="desktop-nav">
+        {/* Desktop nav links — absolutely centered so right-section width changes don't shift them */}
+        <div style={{ position: 'absolute', left: '50%', transform: 'translateX(-50%)', display: 'flex', alignItems: 'center', gap: 'var(--space-xl)' }} className="desktop-nav">
           {links.map(link => (
             <Link
               key={link.href}

@@ -70,7 +70,7 @@ export default function AboutPage() {
       <main>
 
         {/* HERO */}
-        <section style={{ minHeight: '52vh', display: 'flex', alignItems: 'flex-end', background: 'var(--color-black)', paddingBottom: 'var(--space-3xl)', position: 'relative' }}>
+        <section style={{ minHeight: '52vh', display: 'flex', alignItems: 'flex-end', background: 'var(--color-black)', paddingTop: '80px', paddingBottom: 'var(--space-3xl)', position: 'relative' }}>
           <div style={{ position: 'absolute', inset: 0, backgroundImage: `url('/assets/map.png')`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.1 }} />
           <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,33,86,0.98) 0%, rgba(0,33,86,0.65) 100%)' }} />
           <div className="container" style={{ position: 'relative', zIndex: 2 }}>
