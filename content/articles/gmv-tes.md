@@ -1,5 +1,5 @@
 ---
-title_en: tes
+title_en: testing
 title_id: ""
 slug: gmv-tes
 excerpt_en: ""
@@ -12,7 +12,7 @@ category: News
 tags_en: []
 tags_id: []
 featured: false
-published: false
+published: true
 ---
 
 [EN_CONTENT]
