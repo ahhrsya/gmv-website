@@ -142,7 +142,7 @@ export default function ArticlesPage() {
                 </p>
 
                 {/* Article grid */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--color-mist)', border: '1px solid var(--color-mist)' }} className="articles-grid">
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--color-mist)' }} className="articles-grid">
                   {paginated.map((article) => (
                     <Link key={article.slug} href={`/articles/${article.slug}`}
                       style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'background 0.2s' }}
