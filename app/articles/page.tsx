@@ -141,7 +141,7 @@ export default function ArticlesPage() {
                   {lang === 'en' ? `${filtered.length} article${filtered.length !== 1 ? 's' : ''}` : `${filtered.length} artikel`}
                 </p>
 
-                {/* Article grid with thumbnails */}
+                {/* Article grid */}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', borderTop: '1px solid var(--color-mist)', borderLeft: '1px solid var(--color-mist)' }} className="articles-grid">
                   {paginated.map((article) => (
                     <Link key={article.slug} href={`/articles/${article.slug}`} style={{ textDecoration: 'none' }}>
