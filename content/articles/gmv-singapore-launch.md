@@ -2,16 +2,17 @@
 title_en: "GMV Launches Operations in Singapore: A New Chapter for Padang Cuisine"
 title_id: "GMV Meluncur di Singapura: Babak Baru bagi Kuliner Padang"
 slug: gmv-singapore-launch
-date: 2026-05-15
+date: 2026-05-15T00:00:00.000Z
 category: Expansion
 cover_image: /assets/map.png
-show_image: false
-excerpt_en: "Global Minang Ventura marks a major milestone with the official launch of its Singapore operations, bringing authentic Padang cuisine to one of Asia's most competitive culinary markets."
-excerpt_id: "Global Minang Ventura mencatat tonggak sejarah penting dengan peluncuran resmi operasi di Singapura, membawa kuliner Padang autentik ke salah satu pasar kuliner paling kompetitif di Asia."
+show_image: true
+excerpt_en: Global Minang Ventura marks a major milestone with the official launch of its Singapore operations, bringing authentic Padang cuisine to one of Asia's most competitive culinary markets.
+excerpt_id: Global Minang Ventura mencatat tonggak sejarah penting dengan peluncuran resmi operasi di Singapura, membawa kuliner Padang autentik ke salah satu pasar kuliner paling kompetitif di Asia.
 published: true
 author: GMV Team
 read_time: 6
 ---
+
 [EN_CONTENT]
 Global Minang Ventura has officially launched its Singapore operations, marking a significant milestone in the company's international expansion journey. The launch represents years of preparation, market research, and strategic planning — all in service of one goal: bringing authentic Padang cuisine to the world without compromising the cultural integrity that makes it extraordinary.
 
@@ -62,6 +63,8 @@ Each expansion will follow the same model: rigorous partner selection, uncomprom
 The goal is not to build a fast food chain. The goal is to build a global institution — one that honors the heritage of Minangkabau culinary tradition while making it accessible to people everywhere who want to experience something genuinely extraordinary.
 
 For franchise inquiries and partnership opportunities, contact GMV through the official channels listed on this website.
+
+Terimakasiih
 
 [ID_CONTENT]
 Global Minang Ventura secara resmi telah meluncurkan operasi Singapuranya, menandai tonggak sejarah penting dalam perjalanan ekspansi internasional perusahaan. Peluncuran ini merepresentasikan bertahun-tahun persiapan, riset pasar, dan perencanaan strategis — semua demi satu tujuan: membawa kuliner Padang autentik ke dunia tanpa mengorbankan integritas budaya yang membuatnya luar biasa.
