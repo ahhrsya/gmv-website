@@ -102,6 +102,23 @@ html, body { height: 100%; background: var(--bg); color: var(--text); font-famil
 .array-divider { font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); font-family: var(--mono); margin-top: 24px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
 .array-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
+/* article list */
+.article-list { display: flex; flex-direction: column; gap: 10px; }
+.article-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r); padding: 14px 16px; cursor: pointer; transition: border-color .15s, background .15s; }
+.article-card:hover { border-color: var(--gold-border); background: var(--surface-2); }
+.article-name { font-size: 13px; font-weight: 600; color: var(--text); }
+.article-path { font-size: 10px; font-family: var(--mono); color: var(--dim); margin-top: 4px; }
+
+/* back button */
+.back-btn { display: flex; align-items: center; gap: 6px; padding: 6px 14px; background: var(--surface-2); color: var(--muted); border: 1px solid var(--border); border-radius: var(--r); font-family: var(--font); font-size: 12px; font-weight: 600; cursor: pointer; transition: .15s; white-space: nowrap; }
+.back-btn:hover { color: var(--text); border-color: var(--border-hi); }
+
+/* field group title */
+.field-group-title { font-size: 14px; font-weight: 700; color: var(--text); margin-top: 8px; margin-bottom: 4px; letter-spacing: -0.02em; }
+
+/* sidebar divider */
+.sidebar-divider { height: 1px; background: var(--border); margin: 8px 14px; }
+
 /* mobile */
 @media (max-width: 700px) {
   .root { grid-template-columns: 1fr; }
