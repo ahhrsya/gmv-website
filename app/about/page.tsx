@@ -73,11 +73,6 @@ export default function AboutPage() {
                 <p className="section-label">{a.label}</p>
                 <h2 className="t-section-title" style={{ color: 'var(--color-navy)' }}>{a.title}</h2>
                 <div className="divider" />
-                {a.badge && (
-                  <div style={{ display: 'inline-flex', marginTop: 'var(--space-lg)', padding: '8px 16px', background: 'var(--color-navy)', borderRadius: '2px' }}>
-                    <span style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.8)' }}>{a.badge}</span>
-                  </div>
-                )}
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-lg)' }}>
                 <p className="t-body-lg" style={{ color: 'var(--color-navy)' }}>{a.p1}</p>
