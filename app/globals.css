@@ -73,11 +73,14 @@
 html {
   scroll-behavior: smooth;
   font-size: 16px;
+  background-color: var(--color-black);
+  overscroll-behavior: none;
 }
 
 body {
   font-family: var(--font-body);
   background-color: var(--color-bone);
+  overscroll-behavior: none;
   color: var(--color-black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
