@@ -1,5 +1,5 @@
 ---
-title_en: Taking Minang Cuisine from West Sumatra to the World
+title_en: Taking Minang Cuisine from West Sumatra to the Worlds
 title_id: ""
 slug: gmv-taking-minang-cuisine-from-west-sumatra-to-the-world
 excerpt_en: ""
@@ -12,7 +12,7 @@ category: Information
 tags_en: []
 tags_id: []
 featured: false
-published: false
+published: true
 ---
 
 [EN_CONTENT]
