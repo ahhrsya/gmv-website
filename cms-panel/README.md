@@ -18,8 +18,6 @@ The panel is a **static HTML/JS site** (deployable to Cloudflare Pages, Netlify,
 - `public/index.html` — UI shell
 - `public/app.js` — all logic (GitHub API calls, frontmatter parser, bilingual editor)
 - `public/styles.css` — styling
-- `src/worker.js` — *(optional)* Cloudflare Worker for any server-side needs
-- `wrangler.toml` — *(optional)* Cloudflare Pages deploy config
 
 ## GitHub PAT requirements
 

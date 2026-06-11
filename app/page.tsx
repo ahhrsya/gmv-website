@@ -1,43 +1,21 @@
-'use client'
+import { promises as fs } from 'fs'
+import path from 'path'
+import HomeClient from '@/components/HomeClient'
 
-import { useState } from 'react'
-import { content, Lang } from '@/lib/content'
-import Navbar from '@/components/Navbar'
-import Hero from '@/components/Hero'
-import About from '@/components/About'
-import Vision from '@/components/Vision'
-import Market from '@/components/Market'
-import Sederhana from '@/components/Sederhana'
-import Expansion from '@/components/Expansion'
-import WhyGmv from '@/components/WhyGmv'
-import Footprint from '@/components/Footprint'
-import Team from '@/components/Team'
-import Press from '@/components/Press'
-import Contact from '@/components/Contact'
-import Footer from '@/components/Footer'
+export const revalidate = 0
 
-const s = content.sections
+type CmsFile = { sections: Record<string, { en?: Record<string, string>; id?: Record<string, string>; shared?: Record<string, string> }> }
 
-export default function Home() {
-  const [lang, setLang] = useState<Lang>('en')
+async function loadCms() {
+  try {
+    const raw = await fs.readFile(path.join(process.cwd(), 'content', 'cms', 'home.json'), 'utf-8')
+    return JSON.parse(raw) as CmsFile
+  } catch {
+    return null
+  }
+}
 
-  return (
-    <>
-      <Navbar lang={lang} onLangChange={setLang} />
-      <main>
-        <Hero lang={lang} />
-        {s.about     && <About lang={lang} />}
-        {s.vision    && <Vision lang={lang} />}
-        {s.market    && <Market lang={lang} />}
-        {s.sederhana && <Sederhana lang={lang} />}
-        {s.expansion && <Expansion lang={lang} />}
-        {s.whyGmv    && <WhyGmv lang={lang} />}
-        {s.footprint && <Footprint lang={lang} />}
-        {s.team      && <Team lang={lang} />}
-        {s.press     && <Press lang={lang} />}
-        {s.contact   && <Contact lang={lang} />}
-      </main>
-      <Footer lang={lang} />
-    </>
-  )
+export default async function Home() {
+  const cms = await loadCms()
+  return <HomeClient overrides={cms?.sections ?? null} />
 }

@@ -7,7 +7,7 @@ const CONFIG = {
   file: 'content/home.md',
 };
 
-// ─── Section field definitions ────────────────────────────────────────────────
+// ─── Section field definitions ───────────────────────────────────────────────
 
 const SECTIONS = {
   hero: {
@@ -201,7 +201,7 @@ const SECTIONS = {
   },
   footer: {
     label: 'Footer',
-    icon: '▬',
+    icon: '',
     fields: [
       { key: 'footer_copyright', label: 'Copyright', type: 'text', block: 'bilingual' },
       { key: 'footer_tagline',   label: 'Tagline',   type: 'text', block: 'bilingual' },
@@ -257,7 +257,7 @@ function setToken(t) {
   else localStorage.removeItem('gmv_pat');
 }
 
-// ─── GitHub API ───────────────────────────────────────────────────────────────
+// ─── GitHub API ──────────────────────────────────────────────────────────────
 
 const ghHeaders = (token) => ({
   'Authorization': `Bearer ${token}`,
@@ -396,7 +396,7 @@ async function saveContent() {
   render();
 }
 
-// ─── Render ───────────────────────────────────────────────────────────────────
+// ─── Render ──────────────────────────────────────────────────────────────────
 
 function render() {
   const root = $('#root');
