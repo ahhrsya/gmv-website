@@ -2,7 +2,7 @@ import { promises as fs } from 'fs'
 import path from 'path'
 import HomeClient from '@/components/HomeClient'
 
-export const revalidate = 0
+export const dynamic = 'force-static'
 
 type CmsFile = { sections: Record<string, { en?: Record<string, string>; id?: Record<string, string>; shared?: Record<string, string> }> }
 
