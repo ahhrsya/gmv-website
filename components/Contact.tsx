@@ -1,8 +1,20 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { content, Lang } from '@/lib/content'
 import { ArrowRight, Mail } from 'lucide-react'
+
+const TURNSTILE_SITE_KEY = '0x4AAAAAADiu42m5KRANBsw8'
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (container: string | HTMLElement, options: Record<string, unknown>) => string
+      reset: (widgetId: string) => void
+      remove: (widgetId: string) => void
+    }
+  }
+}
 
 interface ContactProps { lang: Lang }
 
@@ -11,13 +23,56 @@ export default function Contact({ lang }: ContactProps) {
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
-  const [formLoadedAt] = useState(() => Date.now())
+  const turnstileRef = useRef<HTMLDivElement>(null)
+  const widgetIdRef = useRef<string | null>(null)
+  const tokenRef = useRef<string>('')
+
+  useEffect(() => {
+    const scriptId = 'cf-turnstile-script'
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement('script')
+      script.id = scriptId
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js'
+      script.async = true
+      script.defer = true
+      document.head.appendChild(script)
+    }
+
+    const tryRender = () => {
+      if (window.turnstile && turnstileRef.current && !widgetIdRef.current) {
+        widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
+          sitekey: TURNSTILE_SITE_KEY,
+          theme: 'dark',
+          callback: (token: string) => { tokenRef.current = token },
+          'expired-callback': () => { tokenRef.current = '' },
+          'error-callback': () => { tokenRef.current = '' },
+        })
+      }
+    }
+
+    const interval = setInterval(() => {
+      if (window.turnstile) { tryRender(); clearInterval(interval) }
+    }, 100)
+
+    return () => {
+      clearInterval(interval)
+      if (window.turnstile && widgetIdRef.current) {
+        window.turnstile.remove(widgetIdRef.current)
+        widgetIdRef.current = null
+      }
+    }
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setError('')
-    setLoading(true)
 
+    if (!tokenRef.current) {
+      setError(lang === 'en' ? 'Please complete the security check.' : 'Silakan selesaikan verifikasi keamanan.')
+      return
+    }
+
+    setLoading(true)
     const form = e.currentTarget
     const formData = new FormData(form)
 
@@ -32,7 +87,7 @@ export default function Contact({ lang }: ContactProps) {
           market: formData.get('market'),
           message: formData.get('message'),
           website: formData.get('website'),
-          formLoadedAt,
+          turnstileToken: tokenRef.current,
           lang,
         }),
       })
@@ -45,6 +100,8 @@ export default function Contact({ lang }: ContactProps) {
       setSubmitted(true)
     } catch (err) {
       setError(err instanceof Error ? err.message : (lang === 'en' ? 'Failed to send message. Please try again.' : 'Gagal mengirim pesan. Silakan coba lagi.'))
+      tokenRef.current = ''
+      if (window.turnstile && widgetIdRef.current) window.turnstile.reset(widgetIdRef.current)
     } finally {
       setLoading(false)
     }
@@ -157,6 +214,7 @@ export default function Contact({ lang }: ContactProps) {
                   <label htmlFor="contact-website">Website</label>
                   <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
                 </div>
+                <div ref={turnstileRef} style={{ marginBottom: 'var(--space-sm)' }} />
                 <button
                   type="submit"
                   className="btn-primary"

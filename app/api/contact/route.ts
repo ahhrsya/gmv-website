@@ -6,11 +6,23 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const submissions = new Map<string, number[]>();
 const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
 const RATE_LIMIT_MAX = 3;
-const MIN_FORM_TIME_MS = 2000;
-const MAX_FORM_TIME_MS = 30 * 60 * 1000;
 const MIN_MESSAGE_LENGTH = 10;
 const MAX_MESSAGE_LENGTH = 5000;
 const MAX_URLS_IN_MESSAGE = 5;
+
+async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
+  const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      secret: process.env.TURNSTILE_SECRET_KEY,
+      response: token,
+      remoteip: ip,
+    }),
+  });
+  const data = await res.json();
+  return data.success === true;
+}
 
 function getClientIp(request: Request): string {
   const forwarded = request.headers.get('x-forwarded-for');
@@ -32,7 +44,7 @@ function isRateLimited(ip: string): boolean {
 
 export async function POST(request: Request) {
   const body = await request.json();
-  const { name, email, organization, market, message, website, formLoadedAt, lang } = body;
+  const { name, email, organization, market, message, website, turnstileToken, lang } = body;
 
   if (!name || !email || !message) {
     return Response.json({ error: 'Missing required fields' }, { status: 400 });
@@ -43,16 +55,14 @@ export async function POST(request: Request) {
     return Response.json({ error: 'Spam detected' }, { status: 400 });
   }
 
-  // Anti-spam: time check
-  const now = Date.now();
-  if (formLoadedAt) {
-    const elapsed = now - formLoadedAt;
-    if (elapsed < MIN_FORM_TIME_MS) {
-      return Response.json({ error: 'Form submitted too quickly' }, { status: 400 });
-    }
-    if (elapsed > MAX_FORM_TIME_MS) {
-      return Response.json({ error: 'Form session expired' }, { status: 400 });
-    }
+  // Anti-spam: Turnstile
+  const ip = getClientIp(request);
+  if (!turnstileToken) {
+    return Response.json({ error: 'Security check required' }, { status: 400 });
+  }
+  const turnstileValid = await verifyTurnstile(turnstileToken, ip);
+  if (!turnstileValid) {
+    return Response.json({ error: 'Security check failed. Please try again.' }, { status: 400 });
   }
 
   // Anti-spam: content validation
@@ -65,7 +75,6 @@ export async function POST(request: Request) {
   }
 
   // Rate limit
-  const ip = getClientIp(request);
   if (isRateLimited(ip)) {
     return Response.json({ error: 'Too many submissions. Please try again later.' }, { status: 429 });
   }
