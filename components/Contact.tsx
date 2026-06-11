@@ -11,6 +11,7 @@ export default function Contact({ lang }: ContactProps) {
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
   const [loading, setLoading] = useState(false)
+  const [formLoadedAt] = useState(() => Date.now())
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -30,6 +31,8 @@ export default function Contact({ lang }: ContactProps) {
           organization: formData.get('organization'),
           market: formData.get('market'),
           message: formData.get('message'),
+          website: formData.get('website'),
+          formLoadedAt,
           lang,
         }),
       })
@@ -113,7 +116,7 @@ export default function Contact({ lang }: ContactProps) {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="contact-form" noValidate>
+              <form onSubmit={handleSubmit} className="contact-form" noValidate style={{ position: 'relative' }}>
                 {error && (
                   <div style={{ background: 'rgba(220,50,50,0.15)', border: '1px solid rgba(220,50,50,0.4)', borderRadius: '4px', padding: '12px 16px', marginBottom: 'var(--space-sm)' }}>
                     <p style={{ fontSize: '14px', color: '#ff6b6b', margin: 0 }}>{error}</p>
@@ -148,6 +151,11 @@ export default function Contact({ lang }: ContactProps) {
                     rows={5}
                     required
                   />
+                </div>
+                {/* Honeypot — hidden from real users, bots fill it */}
+                <div style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }} aria-hidden="true">
+                  <label htmlFor="contact-website">Website</label>
+                  <input id="contact-website" name="website" type="text" tabIndex={-1} autoComplete="off" />
                 </div>
                 <button
                   type="submit"
