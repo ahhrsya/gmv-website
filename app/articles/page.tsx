@@ -189,6 +189,10 @@ export default function ArticlesPage() {
                       </article>
                     </Link>
                   ))}
+                  {/* Fill empty grid cells so last row doesn't show gray background */}
+                  {Array.from({ length: (3 - (paginated.length % 3)) % 3 }).map((_, i) => (
+                    <div key={`empty-${i}`} style={{ background: 'var(--color-white)' }} />
+                  ))}
                 </div>
 
                 {/* Pagination */}
