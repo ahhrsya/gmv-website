@@ -1,10 +1,11 @@
-// AUTO-RUN via prebuild — reads content/home.md, writes lib/content.ts
+// AUTO-RUN via prebuild — reads content/home.md + content/about.md, writes lib/content.ts
 const fs = require('fs')
 const path = require('path')
 const matter = require('gray-matter')
 
-const HOME_MD = path.join(process.cwd(), 'content', 'home.md')
-const OUT_TS  = path.join(process.cwd(), 'lib', 'content.ts')
+const HOME_MD  = path.join(process.cwd(), 'content', 'home.md')
+const ABOUT_MD = path.join(process.cwd(), 'content', 'about.md')
+const OUT_TS   = path.join(process.cwd(), 'lib', 'content.ts')
 
 if (!fs.existsSync(HOME_MD)) {
   console.log('[generate-content] content/home.md not found — skipping')
@@ -17,6 +18,12 @@ const d = parsed.data          // { shared, en, id }
 const sh = d.shared || {}
 const en = d.en || {}
 const id = d.id || {}
+
+// ── about.md (about-page-specific fields) ────────────────────────────────────
+const aboutRaw    = fs.existsSync(ABOUT_MD) ? fs.readFileSync(ABOUT_MD, 'utf-8') : '---\nen: {}\nid: {}\n---'
+const aboutParsed = matter(aboutRaw)
+const aEn = aboutParsed.data.en || {}
+const aId = aboutParsed.data.id || {}
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 function esc(v) {
@@ -236,8 +243,36 @@ const content = {
     videoSrc: sh.hero_video_src || '',
   },
   about: {
-    en: { label: en.about_label || '', title: en.about_title || '', p1: en.about_p1 || '', p2: en.about_p2 || '', badge: en.about_badge || '' },
-    id: { label: id.about_label || '', title: id.about_title || '', p1: id.about_p1 || '', p2: id.about_p2 || '', badge: id.about_badge || '' },
+    en: {
+      label: en.about_label || '', title: en.about_title || '', p1: en.about_p1 || '', p2: en.about_p2 || '', badge: en.about_badge || '',
+      heroTitle: aEn.hero_title || '', heroSubtitle: aEn.hero_subtitle || '',
+      ctaTitle: aEn.cta_title || '', ctaBody: aEn.cta_body || '', ctaButton: aEn.cta_button || '',
+      vision: {
+        label: aEn.vision_label || '', title: aEn.vision_title || '',
+        visionLabel: aEn.vision_vision_label || '', visionText: aEn.vision_vision_text || '',
+        missionLabel: aEn.vision_mission_label || '',
+        pillars: [0,1,2,3].map(i => ({ title: aEn[`vision_pillar_${i}_title`] || '', body: aEn[`vision_pillar_${i}_body`] || '' })),
+      },
+      whyGmv: {
+        label: aEn.whygmv_label || '', title: aEn.whygmv_title || '', subtitle: aEn.whygmv_subtitle || '',
+        points: [0,1,2,3,4,5].map(i => ({ title: aEn[`whygmv_point_${i}_title`] || '', body: aEn[`whygmv_point_${i}_body`] || '' })),
+      },
+    },
+    id: {
+      label: id.about_label || '', title: id.about_title || '', p1: id.about_p1 || '', p2: id.about_p2 || '', badge: id.about_badge || '',
+      heroTitle: aId.hero_title || '', heroSubtitle: aId.hero_subtitle || '',
+      ctaTitle: aId.cta_title || '', ctaBody: aId.cta_body || '', ctaButton: aId.cta_button || '',
+      vision: {
+        label: aId.vision_label || '', title: aId.vision_title || '',
+        visionLabel: aId.vision_vision_label || '', visionText: aId.vision_vision_text || '',
+        missionLabel: aId.vision_mission_label || '',
+        pillars: [0,1,2,3].map(i => ({ title: aId[`vision_pillar_${i}_title`] || '', body: aId[`vision_pillar_${i}_body`] || '' })),
+      },
+      whyGmv: {
+        label: aId.whygmv_label || '', title: aId.whygmv_title || '', subtitle: aId.whygmv_subtitle || '',
+        points: [0,1,2,3,4,5].map(i => ({ title: aId[`whygmv_point_${i}_title`] || '', body: aId[`whygmv_point_${i}_body`] || '' })),
+      },
+    },
   },
   vision: {
     en: { label: en.vision_label || '', title: en.vision_title || '', visionLabel: en.vision_vision_label || '', visionText: en.vision_vision_text || '', missionLabel: en.vision_mission_label || '', pillars: mkPillars('en') },

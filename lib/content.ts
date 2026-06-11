@@ -51,14 +51,136 @@ export const content = {
       "title": "We Don't Just Build Brands. We Scale Heritage.",
       "p1": "Global Minang Ventura is a venture capital firm built on a singular conviction: Minang cuisine deserves a place on the global stage. We are the official licensed partner of Restoran Sederhana — Indonesia's most iconic Padang restaurant chain — and we bring its legacy to international markets through structured expansion, cultural integrity, and strategic partnerships.",
       "p2": "GMV provides the licensing, operational framework, quality control, and market entry strategy that transforms a regional giant into a global brand. Our role is to ensure that every plate served internationally tastes as authentic as one served in Indonesia. With active operations in Australia and Singapore, GMV is building the infrastructure for Indonesian cuisine to become the next great global food movement.",
-      "badge": "Official Licensed Partner of Restoran Sederhana"
+      "badge": "Official Licensed Partner of Restoran Sederhana",
+      "heroTitle": "We Scale Heritage.",
+      "heroSubtitle": "GMV bridges Indonesian heritage brands to global markets — with strategy, capital, and execution.",
+      "ctaTitle": "Ready to Scale Your Brand?",
+      "ctaBody": "Let's talk about how GMV can help your brand reach its full potential.",
+      "ctaButton": "Get in Touch",
+      "vision": {
+        "label": "OUR PURPOSE",
+        "title": "The Future We Build",
+        "visionLabel": "VISION",
+        "visionText": "To establish Minang cuisine as a globally recognized culinary force.",
+        "missionLabel": "MISSION",
+        "pillars": [
+          {
+            "title": "Expand",
+            "body": "Expand across countries with a scalable approach, bringing Minang cuisine to high-potential international markets."
+          },
+          {
+            "title": "Standardize",
+            "body": "Build consistent operational systems and SOPs across every location worldwide, ensuring the same quality from Jakarta to Singapore."
+          },
+          {
+            "title": "Preserve Authenticity",
+            "body": "Maintain the cultural and culinary integrity of every dish — no shortcuts, no dilution, no compromise on heritage."
+          },
+          {
+            "title": "Enable Partners",
+            "body": "Enable long-term growth through strategic partnerships, empowering regional partners to succeed in their local markets."
+          }
+        ]
+      },
+      "whyGmv": {
+        "label": "WHY GMV",
+        "title": "Why Partner With Us",
+        "subtitle": "What sets Global Minang Ventura apart.",
+        "points": [
+          {
+            "title": "Proven Brand",
+            "body": "You're not betting on an idea — you're partnering with a 54-year-old brand that serves 28.4 million people a year. Padang Sederhana is Indonesia's #1 restaurant chain by customer volume."
+          },
+          {
+            "title": "Cultural Authenticity",
+            "body": "We are rooted in the Minangkabau tradition. Our expansion isn't about creating a 'fusion' version of Padang food — it's about bringing the real thing to the world, with full cultural integrity."
+          },
+          {
+            "title": "Structured System",
+            "body": "GMV provides complete operational playbooks — from kitchen SOPs and supply chain sourcing to staff training and brand guidelines. Partners receive a system, not a concept."
+          },
+          {
+            "title": "Scalable Model",
+            "body": "Our licensing and operational framework is designed to replicate across markets. What works in Singapore works in Sydney. What works in Sydney works in regional hubs."
+          },
+          {
+            "title": "Certified by Sederhana Brand",
+            "body": "GMV operates under official certification from Restoran Sederhana. This is not an imitation — this is the authorized global expansion of Indonesia's most trusted Padang restaurant."
+          },
+          {
+            "title": "Global Network & Support",
+            "body": "As a GMV partner, you gain access to our growing international network — shared supply chains, cross-market marketing, and a community of operators building the future of Padang cuisine together."
+          }
+        ]
+      }
     },
     "id": {
       "label": "SIAPA KAMI",
       "title": "Kami Tidak Sekadar Membangun Merek. Kami Mengembangkan Warisan.",
       "p1": "Global Minang Ventura adalah perusahaan modal ventura yang dibangun di atas satu keyakinan: kuliner Minang layak tampil di panggung dunia. Kami adalah mitra lisensi resmi Restoran Sederhana — jaringan restoran Padang paling ikonik di Indonesia — dan kami membawa warisannya ke pasar internasional melalui ekspansi terstruktur, integritas budaya, dan kemitraan strategis.",
       "p2": "GMV menyediakan lisensi, kerangka operasional, kontrol kualitas, dan strategi masuk pasar yang mengubah raksasa regional menjadi merek global. Dengan operasi aktif di Australia dan Singapura, GMV membangun infrastruktur agar kuliner Indonesia menjadi gerakan kuliner global berikutnya.",
-      "badge": "Mitra Lisensi Resmi Restoran Sederhana"
+      "badge": "Mitra Lisensi Resmi Restoran Sederhana",
+      "heroTitle": "Kami Mengembangkan Warisan.",
+      "heroSubtitle": "GMV menjembatani merek warisan Indonesia ke pasar global — dengan strategi, modal, dan eksekusi.",
+      "ctaTitle": "Siap Mengembangkan Merek Anda?",
+      "ctaBody": "Mari bicara tentang bagaimana GMV dapat membantu merek Anda mencapai potensi penuhnya.",
+      "ctaButton": "Hubungi Kami",
+      "vision": {
+        "label": "TUJUAN KAMI",
+        "title": "Masa Depan yang Kami Bangun",
+        "visionLabel": "VISI",
+        "visionText": "Menjadikan kuliner Minang sebagai kekuatan kuliner yang diakui secara global.",
+        "missionLabel": "MISI",
+        "pillars": [
+          {
+            "title": "Ekspansi",
+            "body": "Berekspansi ke berbagai negara dengan pendekatan yang terukur, membawa kuliner Minang ke pasar internasional berpotensi tinggi."
+          },
+          {
+            "title": "Standarisasi",
+            "body": "Membangun sistem operasional dan SOP yang konsisten di setiap lokasi di seluruh dunia, memastikan kualitas yang sama dari Jakarta hingga Singapura."
+          },
+          {
+            "title": "Jaga Keaslian",
+            "body": "Menjaga integritas budaya dan kuliner dari setiap hidangan — tanpa jalan pintas, tanpa pengenceran, tanpa kompromi pada warisan."
+          },
+          {
+            "title": "Dukung Mitra",
+            "body": "Memungkinkan pertumbuhan jangka panjang melalui kemitraan strategis, memberdayakan mitra regional untuk sukses di pasar lokal mereka."
+          }
+        ]
+      },
+      "whyGmv": {
+        "label": "MENGAPA GMV",
+        "title": "Mengapa Bermitra Dengan Kami",
+        "subtitle": "Yang membedakan Global Minang Ventura.",
+        "points": [
+          {
+            "title": "Merek Terbukti",
+            "body": "Anda tidak bertaruh pada sebuah ide — Anda bermitra dengan merek berusia 54 tahun yang melayani 28,4 juta orang setahun."
+          },
+          {
+            "title": "Keaslian Budaya",
+            "body": "Kami berakar pada tradisi Minangkabau. Ekspansi kami bukan tentang menciptakan versi 'fusion' makanan Padang — ini tentang membawa yang asli ke dunia."
+          },
+          {
+            "title": "Sistem Terstruktur",
+            "body": "GMV menyediakan buku panduan operasional lengkap — dari SOP dapur hingga pedoman merek. Mitra menerima sistem, bukan konsep."
+          },
+          {
+            "title": "Model Terukur",
+            "body": "Kerangka lisensi dan operasional kami dirancang untuk direplikasi lintas pasar. Yang berhasil di Singapura berhasil di Sydney."
+          },
+          {
+            "title": "Tersertifikasi oleh Merek Sederhana",
+            "body": "GMV beroperasi di bawah sertifikasi resmi dari Restoran Sederhana. Ini adalah ekspansi global resmi dari restoran Padang paling terpercaya di Indonesia."
+          },
+          {
+            "title": "Jaringan Global & Dukungan",
+            "body": "Sebagai mitra GMV, Anda mendapatkan akses ke jaringan internasional kami yang terus berkembang — rantai pasokan bersama, pemasaran lintas pasar, dan komunitas operator."
+          }
+        ]
+      }
     }
   },
   "vision": {

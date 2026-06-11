@@ -6,22 +6,6 @@ import { content, Lang } from '@/lib/content'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
-const aboutCta = {
-  en: {
-    hero_title: 'We Scale Heritage.',
-    hero_subtitle: 'GMV bridges Indonesian heritage brands to global markets — with strategy, capital, and execution.',
-    cta_title: 'Ready to Scale Your Brand?',
-    cta_body: "Let's talk about how GMV can help your brand reach its full potential.",
-    cta_button: 'Get in Touch',
-  },
-  id: {
-    hero_title: 'Kami Mengembangkan Warisan.',
-    hero_subtitle: 'GMV menjembatani merek warisan Indonesia ke pasar global — dengan strategi, modal, dan eksekusi.',
-    cta_title: 'Siap Mengembangkan Merek Anda?',
-    cta_body: 'Mari bicara tentang bagaimana GMV dapat membantu merek Anda mencapai potensi penuhnya.',
-    cta_button: 'Hubungi Kami',
-  },
-}
 
 function Breadcrumb({ lang }: { lang: Lang }) {
   return (
@@ -41,9 +25,8 @@ function Breadcrumb({ lang }: { lang: Lang }) {
 export default function AboutPage() {
   const [lang, setLang] = useState<Lang>('en')
   const a = content.about[lang]
-  const v = content.vision[lang]
-  const w = content.whyGmv[lang]
-  const cta = aboutCta[lang]
+  const v = a.vision
+  const w = a.whyGmv
 
   return (
     <>
@@ -57,10 +40,10 @@ export default function AboutPage() {
           <div className="container" style={{ position: 'relative', zIndex: 2 }}>
             <Breadcrumb lang={lang} />
             <h1 className="t-hero" style={{ color: 'var(--color-white)', maxWidth: '700px' }}>
-              {cta.hero_title}
+              {a.heroTitle}
             </h1>
             <p className="t-body-lg" style={{ color: 'rgba(255,255,255,0.55)', marginTop: 'var(--space-lg)', maxWidth: '520px' }}>
-              {cta.hero_subtitle}
+              {a.heroSubtitle}
             </p>
           </div>
         </section>
@@ -132,10 +115,10 @@ export default function AboutPage() {
         <section style={{ background: 'var(--color-navy)', padding: 'var(--space-3xl) 0' }}>
           <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 'var(--space-lg)' }}>
             <div>
-              <h3 className="t-subsection" style={{ color: 'var(--color-white)', marginBottom: 'var(--space-xs)' }}>{cta.cta_title}</h3>
-              <p className="t-body" style={{ color: 'rgba(255,255,255,0.5)' }}>{cta.cta_body}</p>
+              <h3 className="t-subsection" style={{ color: 'var(--color-white)', marginBottom: 'var(--space-xs)' }}>{a.ctaTitle}</h3>
+              <p className="t-body" style={{ color: 'rgba(255,255,255,0.5)' }}>{a.ctaBody}</p>
             </div>
-            <Link href="/contact"><button className="btn-primary">{cta.cta_button} →</button></Link>
+            <Link href="/contact"><button className="btn-primary">{a.ctaButton} →</button></Link>
           </div>
         </section>
       </main>
