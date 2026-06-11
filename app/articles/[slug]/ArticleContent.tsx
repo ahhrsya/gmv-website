@@ -115,6 +115,11 @@ export default function ArticleContent({ article, related }: ArticleContentProps
                   {body.split('\n').filter(Boolean).map((para, i) => {
                     if (para.startsWith('## ')) return <h2 key={i} className="t-subsection" style={{ color: 'var(--color-navy)', margin: 'var(--space-3xl) 0 var(--space-lg)' }}>{para.slice(3)}</h2>
                     if (para.startsWith('### ')) return <h3 key={i} className="t-body-lg" style={{ color: 'var(--color-navy)', fontWeight: 700, margin: 'var(--space-xl) 0 var(--space-sm)' }}>{para.slice(4)}</h3>
+                    if (para.startsWith('> ')) return (
+                      <blockquote key={i} style={{ borderLeft: '3px solid var(--color-navy)', paddingLeft: 'var(--space-lg)', margin: 'var(--space-xl) 0', fontStyle: 'italic' }}>
+                        <p className="t-body-lg" style={{ color: 'var(--color-navy)', lineHeight: 1.7 }}>{para.slice(2)}</p>
+                      </blockquote>
+                    )
                     if (para.startsWith('- ')) return <li key={i} className="t-body" style={{ color: 'var(--color-charcoal)', marginLeft: 'var(--space-lg)', marginBottom: 'var(--space-xs)', lineHeight: 1.8 }}>{para.slice(2)}</li>
                     return <p key={i} className="t-body" style={{ color: 'var(--color-charcoal)', marginBottom: 'var(--space-lg)', lineHeight: 1.85 }}>{para}</p>
                   })}

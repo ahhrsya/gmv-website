@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node scripts/generate-articles-index.js && next dev",
+    "dev": "node scripts/generate-content.js && node scripts/generate-articles-index.js && next dev",
     "build": "next build",
     "start": "next start",
-    "prebuild": "node scripts/generate-articles-index.js"
+    "prebuild": "node scripts/generate-content.js && node scripts/generate-articles-index.js"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
