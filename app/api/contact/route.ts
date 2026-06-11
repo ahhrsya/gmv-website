@@ -10,15 +10,13 @@ const MIN_MESSAGE_LENGTH = 10;
 const MAX_MESSAGE_LENGTH = 5000;
 const MAX_URLS_IN_MESSAGE = 5;
 
-async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
+async function verifyTurnstile(token: string): Promise<boolean> {
+  const formData = new FormData();
+  formData.append('secret', process.env.TURNSTILE_SECRET_KEY || '');
+  formData.append('response', token);
   const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      secret: process.env.TURNSTILE_SECRET_KEY,
-      response: token,
-      remoteip: ip,
-    }),
+    body: formData,
   });
   const data = await res.json();
   return data.success === true;
@@ -60,7 +58,7 @@ export async function POST(request: Request) {
   if (!turnstileToken) {
     return Response.json({ error: 'Security check required' }, { status: 400 });
   }
-  const turnstileValid = await verifyTurnstile(turnstileToken, ip);
+  const turnstileValid = await verifyTurnstile(turnstileToken);
   if (!turnstileValid) {
     return Response.json({ error: 'Security check failed. Please try again.' }, { status: 400 });
   }
