@@ -1,10 +1,11 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import { content, Lang } from '@/lib/content'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import aboutContentJson from '@/public/about-content.json'
 
 interface AboutContent {
   hero_title: string
@@ -17,21 +18,6 @@ interface AboutContent {
   cta_title: string
   cta_body: string
   cta_button: string
-}
-
-function parseAboutMd(raw: string, lang: string): AboutContent {
-  const m = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/)
-  if (!m) return {} as AboutContent
-  const lines = m[1].split('\n')
-  const result: Record<string, string> = {}
-  let block = ''
-  lines.forEach(line => {
-    if (/^(en|id|shared):\s*$/.test(line)) { block = line.trim().replace(':',''); return }
-    if (block !== lang) return
-    const kv = line.match(/^  ([a-zA-Z0-9_]+):\s*"?(.*?)"?\s*$/)
-    if (kv) result[kv[1]] = kv[2]
-  })
-  return result as unknown as AboutContent
 }
 
 function Breadcrumb({ lang }: { lang: Lang }) {
@@ -51,18 +37,9 @@ function Breadcrumb({ lang }: { lang: Lang }) {
 
 export default function AboutPage() {
   const [lang, setLang] = useState<Lang>('en')
-  const [about, setAbout] = useState<AboutContent | null>(null)
   const v = content.vision[lang]
   const w = content.whyGmv[lang]
-
-  useEffect(() => {
-    fetch('/about-content.json')
-      .then(r => r.json())
-      .then(d => setAbout(d[lang]))
-      .catch(() => {})
-  }, [lang])
-
-  const t = about
+  const t = (aboutContentJson as Record<string, AboutContent>)[lang]
 
   return (
     <>
