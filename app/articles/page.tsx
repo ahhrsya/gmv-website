@@ -144,9 +144,9 @@ export default function ArticlesPage() {
                 {/* Article grid */}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', borderTop: '1px solid var(--color-mist)', borderLeft: '1px solid var(--color-mist)' }} className="articles-grid">
                   {paginated.map((article) => (
-                    <Link key={article.slug} href={`/articles/${article.slug}`} style={{ textDecoration: 'none' }}>
+                    <Link key={article.slug} href={`/articles/${article.slug}`} style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', height: '100%' }}>
                       <article
-                        style={{ borderRight: '1px solid var(--color-mist)', borderBottom: '1px solid var(--color-mist)', display: 'flex', flexDirection: 'column', height: '100%', cursor: 'pointer', transition: 'background 0.2s' }}
+                        style={{ borderRight: '1px solid var(--color-mist)', borderBottom: '1px solid var(--color-mist)', display: 'flex', flexDirection: 'column', flex: 1, cursor: 'pointer', transition: 'background 0.2s' }}
                         onMouseEnter={e => (e.currentTarget.style.background = 'var(--color-bone)')}
                         onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
                       >

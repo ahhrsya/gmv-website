@@ -99,9 +99,9 @@ export default function AboutPage() {
               <div className="divider" />
               <p className="t-body" style={{ color: 'var(--color-gray)', marginTop: 'var(--space-md)' }}>{w.subtitle}</p>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', borderTop: '1px solid var(--color-mist)' }} className="why-grid">
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', borderTop: '1px solid var(--color-mist)', borderLeft: '1px solid var(--color-mist)' }} className="why-grid">
               {w.points.map((point,i) => (
-                <div key={i} style={{ padding: 'var(--space-xl) var(--space-lg)', borderBottom: i<3?'1px solid var(--color-mist)':'none', borderRight: (i+1)%3!==0?'1px solid var(--color-mist)':'none' }}>
+                <div key={i} style={{ padding: 'var(--space-xl) var(--space-lg)', borderBottom: '1px solid var(--color-mist)', borderRight: '1px solid var(--color-mist)' }}>
                   <div style={{ fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-silver)', marginBottom: 'var(--space-md)' }}>0{i+1}</div>
                   <h3 className="t-body-lg" style={{ color: 'var(--color-navy)', marginBottom: 'var(--space-sm)', fontWeight: 600 }}>{point.title}</h3>
                   <p className="t-body" style={{ color: 'var(--color-gray)' }}>{point.body}</p>
