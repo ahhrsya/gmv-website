@@ -1,14 +1,14 @@
 ---
-title_en: "Taking Minang Cuisine from West Sumatra to the World"
+title_en: Taking Minang Cuisine from West Sumatra to the World
 title_id: ""
-slug: "gmv-taking-minang-cuisine-from-west-sumatra-to-the-world"
+slug: gmv-taking-minang-cuisine-from-west-sumatra-to-the-world
 excerpt_en: ""
 excerpt_id: ""
 cover_image: ""
 show_image: true
-author: "GMV Team"
+author: GMV Team
 date: "2026-06-11"
-category: "News"
+category: Information
 tags_en: []
 tags_id: []
 featured: false
@@ -16,5 +16,38 @@ published: false
 ---
 
 [EN_CONTENT]
+Every great cuisine carries a story. Minang food — born in the highlands of West Sumatra — carries centuries of culture, philosophy, and identity. Global Minang Ventura is building the infrastructure to share that story with the world.When most people outside of Southeast Asia think of Indonesian food, they reach for generalizations. But Minang cuisine is anything but general. Bold, complex, and unmistakably specific — it is a culinary tradition shaped by the Minangkabau people: one of the world's largest matrilineal societies, and producers of one of the world's most beloved dishes, Rendang.
+Global Minang Ventura (GMV) was established on a single conviction: that Minang cuisine deserves a permanent place on the global culinary map, and that building that place requires more than ambition — it requires a platform.
+
+## A Proven Brand at the Core
+
+At the heart of GMV's global strategy is Restoran Sederhana — a name that has meant "authentic Padang food" to Indonesians for over five decades. Founded in 1972, Sederhana built its reputation not on spectacle but on consistency: real flavors, accessible pricing, and a kitchen culture that passes knowledge from cook to cook, generation to generation.
+Today, with approximately 200 locations across Indonesia, Sederhana is not a brand that needs to prove its concept domestically. The work of GMV is to translate that proven concept into a format that travels — one that maintains authenticity across borders, time zones, and audiences who have never tasted Rendang.
+
+> "We don't just bring Minang to the world. We build the path for it to belong there."
+
+## The GMV Model
+
+GMV operates as a strategic investment and licensing platform — not a franchise in the traditional sense, but a structured partnership model designed for international market realities. The framework rests on four pillars:
+01 — Brand Licensing
+Authorized use of the Restoran Sederhana name and identity, with full quality and brand protection built in from day one.
+02 — Expansion Support
+End-to-end guidance for entering new markets — from location strategy and venue setup to pre-opening operations and launch execution.
+03 — Operational Standards
+24/7 operational support, kitchen protocols, and staff training systems that ensure every plate is consistent, regardless of geography.
+04 — Quality Control
+Ongoing certification and auditing, so the Sederhana name carries the same weight in Singapore or Melbourne as it does in Jakarta.
+
+## First Stops: Singapore and Melbourne
+
+GMV's inaugural international locations are not chosen by accident. Singapore's dense Indonesian diaspora and appetite for authentic regional cuisine make it an ideal proving ground. Melbourne's multicultural food culture — and an Indonesian community that has long missed the taste of proper Padang — makes it equally compelling.
+LocationAddressOpening🇸🇬 Singapore738 N Bridge RoadGrand Opening Jun 10–20, 2026🇦🇺 Melbourne, Australia207 Queen StreetGrand Opening July 2026
+Both restaurants moved through location assessment, renovation, staff training, and soft openings on tight, disciplined timelines — a deliberate signal that GMV is operationally serious, not just strategically ambitious.
+
+## *Why Minang? Why Now?*
+
+The global appetite for authentic, culturally rooted cuisine has never been higher. Thai, Japanese, Korean, and Indian food all have robust international footprints. Indonesian food — despite being among the most complex and diverse culinary traditions on earth — remains underrepresented on the global stage.
+Minang cuisine is positioned to close that gap. Rendang has already entered global consciousness, named among the world's greatest dishes by international food media. GMV's bet is that this recognition is a door, not a ceiling: the beginning of a much larger story about what Minang food can mean to a global audience.
+The company is also building a broader strategic support ecosystem — spice export facilitation, embassy and diaspora network partnerships, government expansion incentives, and media presence in each target market. Global food expansion, done properly, is never just about restaurants.
 
 [ID_CONTENT]
