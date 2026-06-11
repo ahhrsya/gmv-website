@@ -2,15 +2,17 @@
 title_en: "Global Minang Ventura: Bringing Padang Sederhana to the Asia-Pacific Stage"
 title_id: "Global Minang Ventura: Membawa Padang Sederhana ke Panggung Asia-Pasifik"
 slug: gmv-asia-pacific-strategy
-date: 2026-02-15
+date: 2026-02-15T00:00:00.000Z
 category: Strategy
 cover_image: /assets/map.png
-excerpt_en: "Global Minang Ventura outlines its comprehensive Asia-Pacific expansion strategy, targeting key markets with high demand for authentic Indonesian cuisine."
-excerpt_id: "Global Minang Ventura menguraikan strategi ekspansi Asia-Pasifik komprehensifnya, menargetkan pasar kunci dengan permintaan tinggi untuk kuliner Indonesia autentik."
+excerpt_en: Global Minang Ventura outlines its comprehensive Asia-Pacific expansion strategy, targeting key markets with high demand for authentic Indonesian cuisine.
+excerpt_id: Global Minang Ventura menguraikan strategi ekspansi Asia-Pasifik komprehensifnya, menargetkan pasar kunci dengan permintaan tinggi untuk kuliner Indonesia autentik.
 published: true
 author: GMV Team
 read_time: 7
+show_image: true
 ---
+
 [EN_CONTENT]
 Global Minang Ventura has unveiled its comprehensive Asia-Pacific expansion strategy, targeting key markets with high demand for authentic Indonesian cuisine.
 
