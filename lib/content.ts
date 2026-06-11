@@ -750,7 +750,7 @@ export const content = {
       "tagline": "From Minang to the World.",
       "navCols": [
         {
-          "heading": "Navigate",
+          "heading": "Home",
           "links": [
             "About",
             "Vision",
@@ -761,10 +761,10 @@ export const content = {
           ]
         },
         {
-          "heading": "Presence",
+          "heading": "Pages",
           "links": [
-            "Footprint",
-            "Press"
+            "About Us",
+            "Articles"
           ]
         },
         {
@@ -787,7 +787,7 @@ export const content = {
       "tagline": "Dari Minang untuk Dunia.",
       "navCols": [
         {
-          "heading": "Navigasi",
+          "heading": "Beranda",
           "links": [
             "Tentang",
             "Visi",
@@ -798,10 +798,10 @@ export const content = {
           ]
         },
         {
-          "heading": "Kehadiran",
+          "heading": "Halaman",
           "links": [
-            "Jejak Global",
-            "Media"
+            "Tentang Kami",
+            "Artikel"
           ]
         },
         {

@@ -194,13 +194,13 @@ const mkOffices = (lang) => {
 const mkFooterNavCols = (lang) => {
   // These are static — not CMS-editable yet
   if (lang === 'en') return [
-    { heading: 'Navigate', links: ['About','Vision','Market','Sederhana','Expansion','Why GMV'] },
-    { heading: 'Presence', links: ['Footprint','Press'] },
+    { heading: 'Home', links: ['About','Vision','Market','Sederhana','Expansion','Why GMV'] },
+    { heading: 'Pages', links: ['About Us','Articles'] },
     { heading: 'Connect', links: ['Contact','LinkedIn','Instagram','Twitter/X'] }
   ]
   return [
-    { heading: 'Navigasi', links: ['Tentang','Visi','Pasar','Sederhana','Ekspansi','Mengapa GMV'] },
-    { heading: 'Kehadiran', links: ['Jejak Global','Media'] },
+    { heading: 'Beranda', links: ['Tentang','Visi','Pasar','Sederhana','Ekspansi','Mengapa GMV'] },
+    { heading: 'Halaman', links: ['Tentang Kami','Artikel'] },
     { heading: 'Terhubung', links: ['Kontak','LinkedIn','Instagram','Twitter/X'] }
   ]
 }

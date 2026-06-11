@@ -21,15 +21,20 @@ const TwitterIcon = () => (
 interface FooterProps { lang: Lang }
 
 const navAnchors: Record<string, string> = {
-  'About': '#about', 'Vision': '#vision', 'Market': '#market',
-  'Sederhana': '#sederhana', 'Expansion': '#expansion', 'Why GMV': '#why-gmv',
-  'Footprint': '#footprint', 'Press': '#press',
-  'Contact': '#contact', 'LinkedIn': '#', 'Instagram': '#', 'Twitter/X': '#',
-  // ID
-  'Tentang': '#about', 'Visi': '#vision', 'Pasar': '#market',
-  'Ekspansi': '#expansion', 'Mengapa GMV': '#why-gmv',
-  'Jejak Global': '#footprint', 'Media': '#press',
-  'Kontak': '#contact',
+  // Home section anchors (cross-page safe)
+  'About': '/#about', 'Vision': '/#vision', 'Market': '/#market',
+  'Sederhana': '/#sederhana', 'Expansion': '/#expansion', 'Why GMV': '/#why-gmv',
+  // Inner pages
+  'About Us': '/about', 'Articles': '/articles',
+  // Connect
+  'Contact': '/contact', 'LinkedIn': '#', 'Instagram': '#', 'Twitter/X': '#',
+  // ID — Home section anchors
+  'Tentang': '/#about', 'Visi': '/#vision', 'Pasar': '/#market',
+  'Ekspansi': '/#expansion', 'Mengapa GMV': '/#why-gmv',
+  // ID — Inner pages
+  'Tentang Kami': '/about', 'Artikel': '/articles',
+  // ID — Connect
+  'Kontak': '/contact',
 }
 
 export default function Footer({ lang }: FooterProps) {
