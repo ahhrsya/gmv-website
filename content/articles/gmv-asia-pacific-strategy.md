@@ -1,5 +1,5 @@
 ---
-title_en: "Global Minang Ventura: Bringing Padang Sederhana to the Asia-Pacific Stage"
+title_en: "Global Minang Ventura: Bringing Padang Sederhana to the Asia-Pacific Stages"
 title_id: "Global Minang Ventura: Membawa Padang Sederhana ke Panggung Asia-Pasifik"
 slug: gmv-asia-pacific-strategy
 date: 2026-02-15T00:00:00.000Z
@@ -10,7 +10,7 @@ excerpt_id: Global Minang Ventura menguraikan strategi ekspansi Asia-Pasifik kom
 published: true
 author: GMV Team
 read_time: 7
-show_image: true
+show_image: false
 ---
 
 [EN_CONTENT]
