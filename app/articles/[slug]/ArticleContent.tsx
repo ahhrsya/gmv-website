@@ -205,19 +205,6 @@ export default function ArticleContent({ article, related }: ArticleContentProps
           </section>
         )}
 
-        {/* ── BOTTOM CTA ── */}
-        <section style={{ background: 'var(--color-navy)', padding: 'var(--space-3xl) 0' }}>
-          <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: 'var(--space-lg)' }}>
-            <Link href="/articles">
-              <button style={{ padding: '12px 24px', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '999px', fontSize: '13px', fontWeight: 600, color: 'rgba(255,255,255,0.65)', background: 'transparent', cursor: 'pointer', transition: 'all 0.2s' }}>
-                ← {lang === 'en' ? 'All Articles' : 'Semua Artikel'}
-              </button>
-            </Link>
-            <Link href="/contact">
-              <button className="btn-primary">{lang === 'en' ? 'Partner with GMV →' : 'Bermitra dengan GMV →'}</button>
-            </Link>
-          </div>
-        </section>
 
       </main>
       <Footer lang={lang} />
