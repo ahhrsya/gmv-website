@@ -102,14 +102,10 @@ export default function ArticleContent({ article, related }: ArticleContentProps
                   {excerpt}
                 </p>
 
-                {/* Cover Image */}
-                {article.cover_image && (
-                  <div style={{ marginBottom: 'var(--space-3xl)', borderRadius: 0, overflow: 'hidden' }}>
-                    <img 
-                      src={article.cover_image} 
-                      alt={title} 
-                      style={{ width: '100%', height: 'auto', display: 'block', borderRadius: 0 }} 
-                    />
+                {/* Cover Image — show_image field controls visibility */}
+                {article.cover_image && (article as any).show_image !== false && (
+                  <div style={{ marginBottom: 'var(--space-3xl)', overflow: 'hidden' }}>
+                    <img src={article.cover_image} alt={title} style={{ width: '100%', height: 'auto', display: 'block' }} />
                   </div>
                 )}
 
@@ -149,9 +145,21 @@ export default function ArticleContent({ article, related }: ArticleContentProps
                     {lang === 'en' ? 'Share' : 'Bagikan'}
                   </p>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                    <a href={`/articles/${article.slug}`} style={{ display: 'flex', alignItems: 'center', padding: '8px 12px', border: '1px solid var(--color-mist)', borderRadius: '2px', fontSize: '13px', fontWeight: 600, color: 'var(--color-navy)', transition: 'background 0.2s', textDecoration: 'none' }}>
-                      {lang === 'en' ? '🔗 Copy link' : '🔗 Salin tautan'}
-                    </a>
+                    <a
+                      href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}
+                      target="_blank" rel="noopener noreferrer"
+                      style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 12px', border: '1px solid var(--color-mist)', borderRadius: '2px', fontSize: '13px', fontWeight: 600, color: 'var(--color-navy)', textDecoration: 'none', transition: 'background 0.2s' }}
+                      onMouseEnter={e => (e.currentTarget.style.background = 'var(--color-bone)')}
+                      onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
+                    >𝕏 {lang === 'en' ? 'Share on X' : 'Bagikan di X'}</a>
+                    <a
+                      href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}&title=${encodeURIComponent(title)}`}
+                      target="_blank" rel="noopener noreferrer"
+                      style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 12px', border: '1px solid var(--color-mist)', borderRadius: '2px', fontSize: '13px', fontWeight: 600, color: 'var(--color-navy)', textDecoration: 'none', transition: 'background 0.2s' }}
+                      onMouseEnter={e => (e.currentTarget.style.background = 'var(--color-bone)')}
+                      onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
+                    >in {lang === 'en' ? 'Share on LinkedIn' : 'Bagikan di LinkedIn'}</a>
+                    <CopyLinkButton lang={lang} />
                   </div>
                 </div>
 
