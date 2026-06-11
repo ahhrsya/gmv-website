@@ -131,7 +131,7 @@ en:
   contact_field_market: Your Market / Region
   contact_field_message: Tell us about your experience and interest
   contact_field_submit: Send Message
-  footer_copyright: ÃÂ© 2026 Global Minang Ventura. All rights reserved.
+  footer_copyright: © 2026 Global Minang Ventura. All rights reserved.
   footer_tagline: From Minang to the World.
   footer_legal_0: Privacy Policy
   footer_legal_1: Terms of Use
@@ -267,7 +267,7 @@ id:
   contact_field_market: Pasar / Wilayah Anda
   contact_field_message: Ceritakan pengalaman dan minat Anda
   contact_field_submit: Kirim Pesan
-  footer_copyright: ÃÂ© 2026 Global Minang Ventura. Hak cipta dilindungi.
+  footer_copyright: © 2026 Global Minang Ventura. Hak cipta dilindungi.
   footer_tagline: Dari Minang untuk Dunia.
   footer_legal_0: Kebijakan Privasi
   footer_legal_1: Syarat Penggunaan

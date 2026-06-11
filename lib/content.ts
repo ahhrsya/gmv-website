@@ -150,8 +150,8 @@ export const content = {
   ], fields: { name: "Nama Anda", email: "Alamat Email", org: "Organisasi", market: "Pasar / Wilayah Anda", message: "Ceritakan pengalaman dan minat Anda", submit: "Kirim Pesan" } },
   },
   footer: {
-    en: { copyright: "ÃÂ© 2026 Global Minang Ventura. All rights reserved.", tagline: "From Minang to the World.", navCols: [{ heading: 'Navigate', links: ['About','Vision','Market','Sederhana','Expansion','Why GMV'] },{ heading: 'Presence', links: ['Footprint','Press'] },{ heading: 'Connect', links: ['Contact','LinkedIn','Instagram','Twitter/X'] }], legal: ["Privacy Policy", "Terms of Use"] },
-    id: { copyright: "ÃÂ© 2026 Global Minang Ventura. Hak cipta dilindungi.", tagline: "Dari Minang untuk Dunia.", navCols: [{ heading: 'Navigasi', links: ['Tentang','Visi','Pasar','Sederhana','Ekspansi','Mengapa GMV'] },{ heading: 'Kehadiran', links: ['Jejak Global','Media'] },{ heading: 'Terhubung', links: ['Kontak','LinkedIn','Instagram','Twitter/X'] }], legal: ["Kebijakan Privasi", "Syarat Penggunaan"] },
+    en: { copyright: "© 2026 Global Minang Ventura. All rights reserved.", tagline: "From Minang to the World.", navCols: [{ heading: 'Navigate', links: ['About','Vision','Market','Sederhana','Expansion','Why GMV'] },{ heading: 'Presence', links: ['Footprint','Press'] },{ heading: 'Connect', links: ['Contact','LinkedIn','Instagram','Twitter/X'] }], legal: ["Privacy Policy", "Terms of Use"] },
+    id: { copyright: "© 2026 Global Minang Ventura. Hak cipta dilindungi.", tagline: "Dari Minang untuk Dunia.", navCols: [{ heading: 'Navigasi', links: ['Tentang','Visi','Pasar','Sederhana','Ekspansi','Mengapa GMV'] },{ heading: 'Kehadiran', links: ['Jejak Global','Media'] },{ heading: 'Terhubung', links: ['Kontak','LinkedIn','Instagram','Twitter/X'] }], legal: ["Kebijakan Privasi", "Syarat Penggunaan"] },
   },
   sections: {
     about: true,

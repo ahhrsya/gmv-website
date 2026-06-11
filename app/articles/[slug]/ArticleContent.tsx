@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { Lang } from '@/lib/content'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import CopyLinkButton from '@/components/CopyLinkButton'
 
 interface ArticleData {
   slug: string
