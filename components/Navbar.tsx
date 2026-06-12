@@ -62,7 +62,7 @@ export default function Navbar({ lang, onLangChange }: NavbarProps) {
         {/* Logo */}
         <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
           <img
-            src={(content as any).nav_logo_src || '/assets/logo.svg'}
+            src={(content as any).nav_logo_src || '/assets/logo.png'}
             alt="Global Minang Ventura"
             style={{ height: '100px', width: 'auto', display: 'block' }}
           />
