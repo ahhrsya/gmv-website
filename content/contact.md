@@ -16,7 +16,7 @@ en:
   field_submit: Send Message
 id:
   label: BERGABUNG DENGAN KAMI
-  title: Bergabung dalam Perjalanan
+  title: Bergabung dalam Perjalanan Kita
   p1: Kami mencari mitra regional dengan akses pasar dan pengalaman ekspansi.
   cta_button: Bermitra Dengan Kami
   field_name: Nama Anda
