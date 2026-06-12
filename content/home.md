@@ -132,7 +132,7 @@ en:
   hero_label: GLOBAL MINANG VENTURA
   hero_headline: |
     From Minang
-    To the World
+    To the Worlds
   hero_subheadline: Minang cuisine is heritage. Indonesia holds untapped global culinary power. We are the bridge that brings it to every table on earth.
   hero_cta_primary: Join Our Journey
   hero_cta_secondary: Explore Our Vision
