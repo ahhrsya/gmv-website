@@ -240,7 +240,7 @@ en:
   press_item_3_headline: How a Minang VC is Betting Big on Indonesian Cuisine Going Global
   press_item_3_date: May 2026
   contact_label: JOIN US
-  contact_title: Join the Journey
+  contact_title: Join the Journeys
   contact_p1: We're looking for regional partners with market access and expansion experience.
   contact_cta_button: Partner With Us
   contact_office_0_label: Headquarters
