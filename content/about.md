@@ -1,7 +1,7 @@
 ---
 shared: {}
 en:
-  hero_title: We Scale Indonesia.
+  hero_title: We Scale Heritage.
   hero_subtitle: GMV bridges Indonesian heritage brands to global markets — with strategy, capital, and execution.
   about_label: WHO WE ARE
   about_title: We Don't Just Build Brands. We Scale Heritage.
@@ -16,7 +16,7 @@ en:
   vision_vision_label: VISION
   vision_vision_text: To establish Minang cuisine as a globally recognized culinary force.
   vision_mission_label: MISSION
-  vision_pillar_0_title: Expand
+  vision_pillar_0_title: Expands
   vision_pillar_0_body: Expand across countries with a scalable approach, bringing Minang cuisine to high-potential international markets.
   vision_pillar_1_title: Standardize
   vision_pillar_1_body: Build consistent operational systems and SOPs across every location worldwide, ensuring the same quality from Jakarta to Singapore.
