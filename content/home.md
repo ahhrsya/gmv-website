@@ -1,6 +1,6 @@
 ---
 shared:
-  head_scripts: "<!-- Google Analytics -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-QQK1NFZY88\"></script>\n<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQK1NFZY88');</script>\n<!-- End Google Analytics -->\n<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-W5LLRWL3');</script>\n<!-- End Google Tag Manager -->"
+  head_scripts: "<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-W5LLRWL3');</script>\n<!-- End Google Tag Manager -->\n<!-- Google Analytics -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-QQK1NFZY88\"></script>\n<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQK1NFZY88');</script>\n<!-- End Google Analytics -->\n<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-W5LLRWL3');</script>\n<!-- End Google Tag Manager -->"
   nav_logo_src: /assets/logo.svg
   footer_logo_src: /assets/Logo-Footer.svg
   section_about_visible: true
@@ -60,7 +60,7 @@ shared:
   contact_instagram: sederhanaglobal
   contact_office_0_city: Indonesia
   contact_office_count: 1
-  gtm_id: ""
+  gtm_id: "GTM-W5LLRWL3"
   ga4_id: "G-QQK1NFZY88"
   fb_pixel_id: ""
   head_scripts_custom: "<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-W5LLRWL3');</script>\n<!-- End Google Tag Manager -->\n"
