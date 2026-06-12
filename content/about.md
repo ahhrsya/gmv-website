@@ -40,7 +40,7 @@ en:
   whygmv_point_5_title: Global Network & Support
   whygmv_point_5_body: As a GMV partner, you gain access to our growing international network — shared supply chains, cross-market marketing, and a community of operators building the future of Padang cuisine together.
 id:
-  hero_title: Kami Mengembangkan Warisan Global.
+  hero_title: Kami Mengembangkan Warisan.
   hero_subtitle: GMV menjembatani merek warisan Indonesia ke pasar global — dengan strategi, modal, dan eksekusi.
   about_label: SIAPA KAMI
   about_title: Kami Tidak Sekadar Membangun Merek. Kami Mengembangkan Warisan.
