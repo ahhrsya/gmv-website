@@ -48,7 +48,7 @@ id:
   about_p2: GMV menyediakan lisensi, kerangka operasional, kontrol kualitas, dan strategi masuk pasar yang mengubah raksasa regional menjadi merek global. Dengan operasi aktif di Australia dan Singapura, GMV membangun infrastruktur agar kuliner Indonesia menjadi gerakan kuliner global berikutnya. ---
   about_badge: Mitra Lisensi Resmi Restoran Sederhana --
   cta_title: Siap Mengembangkan Merek Anda?
-  cta_body: Mari bicara tentang bagaimana GMV dapat membantu merek Anda mencapai potensi penuhnya.
+  cta_body: Mari bicara tentang bagaimana GMV dapat membantu merek Anda mencapai potensi penuh.
   cta_button: Hubungi Kami
   vision_label: TUJUAN KAMI
   vision_title: Masa Depan yang Kami Bangun
