@@ -46,7 +46,7 @@ shared:
   section_contact_visible: true
   nav_count: 9
   hero_video_src: /assets/02178055573667900000000000000000000ffffc0a8b0d3236198.mp4
-  sederhana_image_src: https://raw.githubusercontent.com/ahhrsya/gmv-website/main/content/assets/1781252690153-221220592.jpg
+  sederhana_image_src: https://raw.githubusercontent.com/ahhrsya/gmv-website/main/content/assets/1781253167023-aa.png
   sederhana_timeline_0_date: 1972
   sederhana_timeline_1_date: 1975
   sederhana_timeline_2_date: 1998
