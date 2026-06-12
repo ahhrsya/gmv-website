@@ -13,9 +13,11 @@ tags_en: []
 tags_id: []
 featured: false
 published: false
+read_time: "5"
 ---
 
 [EN_CONTENT]
-
+lorem ipsum
 
 [ID_CONTENT]
+lorem ipsum
