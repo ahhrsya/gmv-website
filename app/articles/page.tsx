@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import Link from 'next/link'
 import { content, Lang } from '@/lib/content'
+import { usePersistedLang } from '@/lib/usePersistedLang'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 
@@ -39,7 +40,7 @@ function Breadcrumb({ lang }: { lang: Lang }) {
 }
 
 export default function ArticlesPage() {
-  const [lang, setLang] = useState<Lang>('en')
+  const [lang, setLang] = usePersistedLang()
   const [articles, setArticles] = useState<Article[]>([])
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')

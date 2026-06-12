@@ -1,8 +1,8 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
 import { Lang } from '@/lib/content'
+import { usePersistedLang } from '@/lib/usePersistedLang'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import CopyLinkButton from '@/components/CopyLinkButton'
@@ -29,7 +29,7 @@ interface ArticleContentProps {
 }
 
 export default function ArticleContent({ article, related }: ArticleContentProps) {
-  const [lang, setLang] = useState<Lang>('en')
+  const [lang, setLang] = usePersistedLang()
 
   const formatDate = (d: string) => {
     try { return new Date(d).toLocaleDateString(lang === 'en' ? 'en-GB' : 'id-ID', { day: 'numeric', month: 'long', year: 'numeric' }) }

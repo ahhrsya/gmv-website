@@ -1,8 +1,8 @@
 'use client'
 
-import { useState } from 'react'
 import Link from 'next/link'
 import { content, Lang } from '@/lib/content'
+import { usePersistedLang } from '@/lib/usePersistedLang'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Contact from '@/components/Contact'
@@ -27,7 +27,7 @@ function Breadcrumb({ lang }: { lang: Lang }) {
 }
 
 export default function ContactPage() {
-  const [lang, setLang] = useState<Lang>('en')
+  const [lang, setLang] = usePersistedLang()
   return (
     <>
       <Navbar lang={lang} onLangChange={setLang} />

@@ -1,7 +1,7 @@
 'use client'
 
-import { useState } from 'react'
-import { content, Lang } from '@/lib/content'
+import { content } from '@/lib/content'
+import { usePersistedLang } from '@/lib/usePersistedLang'
 import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
@@ -19,7 +19,7 @@ import Footer from '@/components/Footer'
 const s = content.sections
 
 export default function HomeBody() {
-  const [lang, setLang] = useState<Lang>('en')
+  const [lang, setLang] = usePersistedLang()
 
   return (
     <>
