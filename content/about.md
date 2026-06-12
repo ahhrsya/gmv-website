@@ -1,7 +1,7 @@
 ---
 shared: {}
 en:
-  hero_title: We Scale Heritage.
+  hero_title: We Scale Indonesia.
   hero_subtitle: GMV bridges Indonesian heritage brands to global markets — with strategy, capital, and execution.
   about_label: WHO WE ARE
   about_title: We Don't Just Build Brands. We Scale Heritage.
