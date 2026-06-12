@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import Script from 'next/script'
 import './globals.css'
 import { content } from '@/lib/content'
 
@@ -37,11 +36,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {headScripts && (
-          <Script
-            id="cms-head-scripts"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{ __html: headScripts }}
-          />
+          <script dangerouslySetInnerHTML={{ __html: headScripts }} />
         )}
       </head>
       <body>{children}</body>
