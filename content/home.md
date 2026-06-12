@@ -32,7 +32,7 @@ shared:
     src=\\\"https://www.facebook.com/tr?id=1551044266611937&ev=PageView&noscript=1\\\"
     /></noscript>
     <!-- End Meta Pixel Code -->
-  nav_logo_src: ""
+  nav_logo_src: https://raw.githubusercontent.com/ahhrsya/gmv-website/main/content/assets/1781251945936-logo.svg
   footer_logo_src: /assets/Logo-Footer.svg
   section_about_visible: true
   section_vision_visible: true
