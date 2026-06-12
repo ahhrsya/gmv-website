@@ -5,7 +5,7 @@ shared:
   instagram: sederhanaglobal
 en:
   label: JOIN US
-  title: Join the Heritages
+  title: Join the Journey
   p1: We're looking for regional partners with market access and expansion experience.
   cta_button: Partner With Us
   field_name: Your Name
