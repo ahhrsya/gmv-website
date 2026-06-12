@@ -42,3 +42,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Never commit — contains GitHub PAT, Cloudflare deploy state, session outputs
+cms-panel/
+OUTPUTS/
+wrangler.toml
+.wrangler/
