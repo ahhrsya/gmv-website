@@ -98,7 +98,7 @@ export default function Navbar({ lang, onLangChange }: NavbarProps) {
           ))}
         </div>
 
-        {/* Right: lang toggle + CTA + hamburger */}
+        {/* Right: lang toggle + CTA (desktop only) */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-md)' }} className="desktop-nav">
           {/* Language toggle */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '2px', background: 'rgba(255,255,255,0.08)', borderRadius: '999px', padding: '3px' }}>
@@ -137,17 +137,22 @@ export default function Navbar({ lang, onLangChange }: NavbarProps) {
               <ArrowRight size={14} />
             </button>
           </Link>
-
-          {/* Hamburger */}
-          <button
-            onClick={() => setMenuOpen(!menuOpen)}
-            style={{ display: 'none', color: 'var(--color-white)', background: 'none' }}
-            className="mobile-menu-btn"
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? <X size={22} /> : <Menu size={22} />}
-          </button>
         </div>
+
+        {/* Hamburger — outside .desktop-nav so it stays visible on mobile */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="mobile-menu-btn"
+          aria-label="Toggle menu"
+          style={{
+            display: 'none',
+            alignItems: 'center', justifyContent: 'center',
+            color: 'var(--color-white)', background: 'none',
+            border: 'none', cursor: 'pointer', padding: '4px',
+          }}
+        >
+          {menuOpen ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </nav>
 
       {/* Mobile menu */}
