@@ -1,11 +1,12 @@
-// AUTO-RUN via prebuild — reads content/home.md + content/about.md, writes lib/content.ts
+// AUTO-RUN via prebuild — reads content/home.md + content/about.md + content/contact.md, writes lib/content.ts
 const fs = require('fs')
 const path = require('path')
 const matter = require('gray-matter')
 
-const HOME_MD  = path.join(process.cwd(), 'content', 'home.md')
-const ABOUT_MD = path.join(process.cwd(), 'content', 'about.md')
-const OUT_TS   = path.join(process.cwd(), 'lib', 'content.ts')
+const HOME_MD    = path.join(process.cwd(), 'content', 'home.md')
+const ABOUT_MD   = path.join(process.cwd(), 'content', 'about.md')
+const CONTACT_MD = path.join(process.cwd(), 'content', 'contact.md')
+const OUT_TS     = path.join(process.cwd(), 'lib', 'content.ts')
 
 if (!fs.existsSync(HOME_MD)) {
   console.log('[generate-content] content/home.md not found — skipping')
@@ -24,6 +25,13 @@ const aboutRaw    = fs.existsSync(ABOUT_MD) ? fs.readFileSync(ABOUT_MD, 'utf-8')
 const aboutParsed = matter(aboutRaw)
 const aEn = aboutParsed.data.en || {}
 const aId = aboutParsed.data.id || {}
+
+// ── contact.md (contact-page-specific fields) ─────────────────────────────────
+const contactRaw    = fs.existsSync(CONTACT_MD) ? fs.readFileSync(CONTACT_MD, 'utf-8') : '---\nen: {}\nid: {}\nshared: {}\n---'
+const contactParsed = matter(contactRaw)
+const cEn = contactParsed.data.en || {}
+const cId = contactParsed.data.id || {}
+const cSh = contactParsed.data.shared || {}
 
 // ── helpers ──────────────────────────────────────────────────────────────────
 function esc(v) {
@@ -309,25 +317,40 @@ const content = {
   },
   contact: {
     en: {
-      label: en.contact_label || '', title: en.contact_title || '', p1: en.contact_p1 || '',
-      ctaButton: en.contact_cta_button || '', email: sh.contact_email || '',
-      phone: sh.contact_phone || '', instagram: sh.contact_instagram || '',
+      // contact.md takes priority over home.md fallbacks
+      label:     cEn.label      || en.contact_label      || '',
+      title:     cEn.title      || en.contact_title      || '',
+      p1:        cEn.p1         || en.contact_p1         || '',
+      ctaButton: cEn.cta_button || en.contact_cta_button || '',
+      email:     cSh.email      || sh.contact_email      || '',
+      phone:     cSh.phone      || sh.contact_phone      || '',
+      instagram: cSh.instagram  || sh.contact_instagram  || '',
       offices: mkOffices('en'),
       fields: {
-        name: en.contact_field_name || '', email: en.contact_field_email || '',
-        org: en.contact_field_org || '', market: en.contact_field_market || '',
-        message: en.contact_field_message || '', submit: en.contact_field_submit || ''
+        name:    cEn.field_name    || en.contact_field_name    || '',
+        email:   cEn.field_email   || en.contact_field_email   || '',
+        org:     cEn.field_org     || en.contact_field_org     || '',
+        market:  cEn.field_market  || en.contact_field_market  || '',
+        message: cEn.field_message || en.contact_field_message || '',
+        submit:  cEn.field_submit  || en.contact_field_submit  || '',
       }
     },
     id: {
-      label: id.contact_label || '', title: id.contact_title || '', p1: id.contact_p1 || '',
-      ctaButton: id.contact_cta_button || '', email: sh.contact_email || '',
-      phone: sh.contact_phone || '', instagram: sh.contact_instagram || '',
+      label:     cId.label      || id.contact_label      || '',
+      title:     cId.title      || id.contact_title      || '',
+      p1:        cId.p1         || id.contact_p1         || '',
+      ctaButton: cId.cta_button || id.contact_cta_button || '',
+      email:     cSh.email      || sh.contact_email      || '',
+      phone:     cSh.phone      || sh.contact_phone      || '',
+      instagram: cSh.instagram  || sh.contact_instagram  || '',
       offices: mkOffices('id'),
       fields: {
-        name: id.contact_field_name || '', email: id.contact_field_email || '',
-        org: id.contact_field_org || '', market: id.contact_field_market || '',
-        message: id.contact_field_message || '', submit: id.contact_field_submit || ''
+        name:    cId.field_name    || id.contact_field_name    || '',
+        email:   cId.field_email   || id.contact_field_email   || '',
+        org:     cId.field_org     || id.contact_field_org     || '',
+        market:  cId.field_market  || id.contact_field_market  || '',
+        message: cId.field_message || id.contact_field_message || '',
+        submit:  cId.field_submit  || id.contact_field_submit  || '',
       }
     },
   },
