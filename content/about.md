@@ -41,7 +41,7 @@ en:
   whygmv_point_5_body: As a GMV partner, you gain access to our growing international network — shared supply chains, cross-market marketing, and a community of operators building the future of Padang cuisine together.
 id:
   hero_title: Kami Mengembangkan Warisan.
-  hero_subtitle: GMV menjembatani merek warisan Indonesia ke pasar global — dengan strategi, modal, dan eksekusi.
+  hero_subtitle: GMV menjembatani merek warisan Indonesia ke pasar global — dengan strategi, modal, dan eksekusi gas.
   about_label: SIAPA KAMIII
   about_title: Kami Tidak Sekadar Membangun Merek. Kami Mengembangkan Warisan Global.
   about_p1: "Global Minang Ventura adalah perusahaan modal ventura yang dibangun di atas satu keyakinan: kuliner Minang layak tampil di panggung dunia. Kami adalah mitra lisensi resmi Restoran Sederhana — jaringan restoran Padang paling ikonik di Indonesia — dan kami membawa warisannya ke pasar internasional melalui ekspansi terstruktur, integritas budaya, dan kemitraan strategis. ---"
