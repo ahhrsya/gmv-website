@@ -1,6 +1,6 @@
 ---
 shared:
-  head_scripts: null
+  head_scripts: "<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-W5LLRWL3');</script>\n<!-- End Google Tag Manager -->"
   nav_logo_src: /assets/logo.svg
   footer_logo_src: /assets/Logo-Footer.svg
   section_about_visible: true
@@ -60,6 +60,10 @@ shared:
   contact_instagram: sederhanaglobal
   contact_office_0_city: Indonesia
   contact_office_count: 1
+  gtm_id: ""
+  ga4_id: ""
+  fb_pixel_id: ""
+  head_scripts_custom: "<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-W5LLRWL3');</script>\n<!-- End Google Tag Manager -->\n"
 en:
   nav_0: About
   nav_1: Vision
@@ -72,7 +76,7 @@ en:
   nav_8: Contact
   hero_label: GLOBAL MINANG VENTURA
   hero_headline: |
-    From Minag
+    From Minang
     To the World
   hero_subheadline: Minang cuisine is heritage. Indonesia holds untapped global culinary power. We are the bridge that brings it to every table on earth.
   hero_cta_primary: Join Our Journey
@@ -192,7 +196,7 @@ en:
   contact_field_market: Your Market / Region
   contact_field_message: Tell us about your experience and interest
   contact_field_submit: Send Message
-  footer_copyright: © 2026 Global Minang Ventura. All rights reserved.
+  footer_copyright: Â© 2026 Global Minang Ventura. All rights reserved.
   footer_tagline: From Minang to the World.
   footer_legal_0: Privacy Policy
   footer_legal_1: Terms of Use
@@ -328,7 +332,7 @@ id:
   contact_field_market: Pasar / Wilayah Anda
   contact_field_message: Ceritakan pengalaman dan minat Anda
   contact_field_submit: Kirim Pesan
-  footer_copyright: © 2026 Global Minang Ventura. Hak cipta dilindungi.
+  footer_copyright: Â© 2026 Global Minang Ventura. Hak cipta dilindungi.
   footer_tagline: Dari Minang untuk Dunia.
   footer_legal_0: Kebijakan Privasi
   footer_legal_1: Syarat Penggunaan
