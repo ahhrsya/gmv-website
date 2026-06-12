@@ -14,6 +14,8 @@ tags_id: []
 featured: false
 published: false
 read_time: "5"
+keywords:
+  - skskwd
 ---
 
 [EN_CONTENT]
