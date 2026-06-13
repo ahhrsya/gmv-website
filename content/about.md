@@ -8,11 +8,11 @@ en:
   about_p1: "Global Minang Ventura is a venture capital firm built on a singular conviction: Minang cuisine deserves a place on the global stage. We are the official licensed partner of Restoran Sederhana — Indonesia's most iconic Padang restaurant chain — and we bring its legacy to international markets through structured expansion, cultural integrity, and strategic partnerships."
   about_p2: GMV provides the licensing, operational framework, quality control, and market entry strategy that transforms a regional giant into a global brand. Our role is to ensure that every plate served internationally tastes as authentic as one served in Indonesia. With active operations in Australia and Singapore, GMV is building the infrastructure for Indonesian cuisine to become the next great global food movement.
   about_badge: Official Licensed Partner of Restoran Sederhana
-  cta_title: Ready to Scale Your Brand?
+  cta_title: Ready to Scale Your BrandS?
   cta_body: Let's talk about how GMV can help your brand reach its full potential.
   cta_button: Get in Touch
-  vision_label: OUR PURPOSE
-  vision_title: The Future We Buildsss
+  vision_label: OUR PURPOSES
+  vision_title: The Future We Builds
   vision_vision_label: VISION
   vision_vision_text: To establish Minang cuisine as a globally recognized culinary force.
   vision_mission_label: MISSION
@@ -24,7 +24,7 @@ en:
   vision_pillar_2_body: Maintain the cultural and culinary integrity of every dish — no shortcuts, no dilution, no compromise on heritage.
   vision_pillar_3_title: Enable Partners
   vision_pillar_3_body: Enable long-term growth through strategic partnerships, empowering regional partners to succeed in their local markets.
-  whygmv_label: WHY GMV
+  whygmv_label: WHY GMVvv
   whygmv_title: Why Partner With Us
   whygmv_subtitle: What sets Global Minang Ventura apart.
   whygmv_point_0_title: Proven Brand
@@ -63,7 +63,7 @@ id:
   vision_pillar_2_body: Menjaga integritas budaya dan kuliner dari setiap hidangan — tanpa jalan pintas, tanpa pengenceran, tanpa kompromi pada warisan.
   vision_pillar_3_title: Dukung Mitra
   vision_pillar_3_body: Memungkinkan pertumbuhan jangka panjang melalui kemitraan strategis, memberdayakan mitra regional untuk sukses di pasar lokal mereka.
-  whygmv_label: MENGAPA GMVV
+  whygmv_label: MENGAPA GMV
   whygmv_title: Mengapa Bermitra Dengan Kami
   whygmv_subtitle: Yang membedakan Global Minang Ventura.
   whygmv_point_0_title: Merek Terbukti
