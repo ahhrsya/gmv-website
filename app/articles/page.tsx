@@ -142,57 +142,46 @@ export default function ArticlesPage() {
                   {lang === 'en' ? `${filtered.length} article${filtered.length !== 1 ? 's' : ''}` : `${filtered.length} artikel`}
                 </p>
 
-                {/* Article grid */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1px', background: 'var(--color-mist)' }} className="articles-grid">
+                {/* Article grid — clean shared borders, equal-height cards,
+                    matches the look of the Press section on the home page but
+                    at 3 columns instead of 4. Card visuals/borders are in
+                    globals.css under "ARTICLES GRID". */}
+                <div className="articles-grid">
                   {paginated.map((article) => (
-                    <Link key={article.slug} href={`/articles/${article.slug}`}
-                      style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', background: 'var(--color-white)', transition: 'background 0.2s' }}
-                      onMouseEnter={e => (e.currentTarget.style.background = 'var(--color-bone)')}
-                      onMouseLeave={e => (e.currentTarget.style.background = 'var(--color-white)')}
+                    <Link
+                      key={article.slug}
+                      href={`/articles/${article.slug}`}
+                      className="article-card"
+                      aria-label={lang === 'en' ? article.title_en : article.title_id}
                     >
-                      <article
-                        style={{ display: 'flex', flexDirection: 'column', flex: 1, cursor: 'pointer' }}
-                      >
+                      <div className="article-card__meta">
+                        <span className="article-card__category">{article.category}</span>
+                        <span className="article-card__date">{formatDate(article.date)}</span>
+                      </div>
 
-                        
-                        {/* Content */}
-                        <div style={{ padding: 'var(--space-xl) var(--space-lg)', display: 'flex', flexDirection: 'column', flex: 1 }}>
-                          {/* Category + date */}
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: 'var(--space-md)' }}>
-                            <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--color-navy)', background: 'var(--color-bone)', padding: '3px 8px', borderRadius: '0px' }}>
-                              {article.category}
-                            </span>
-                            <span style={{ fontSize: '11px', color: 'var(--color-silver)' }}>
-                              {formatDate(article.date)}
-                            </span>
-                          </div>
+                      <h2 className="article-card__title">
+                        {lang === 'en' ? article.title_en : article.title_id}
+                      </h2>
 
-                          {/* Title */}
-                          <h2 className="t-body-lg" style={{ color: 'var(--color-navy)', fontWeight: 700, marginBottom: 'var(--space-sm)', lineHeight: 1.3 }}>
-                            {lang === 'en' ? article.title_en : article.title_id}
-                          </h2>
+                      <p className="article-card__excerpt">
+                        {lang === 'en' ? article.excerpt_en : article.excerpt_id}
+                      </p>
 
-                          {/* Excerpt */}
-                          <p className="t-body" style={{ color: 'var(--color-gray)', flex: 1, display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                            {lang === 'en' ? article.excerpt_en : article.excerpt_id}
-                          </p>
-
-                          {/* Footer */}
-                          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 'var(--space-lg)', paddingTop: 'var(--space-md)', borderTop: '1px solid var(--color-mist)' }}>
-                            <span style={{ fontSize: '11px', color: 'var(--color-silver)' }}>
-                              {article.author} · {article.read_time} {lang === 'en' ? 'min' : 'mnt'}
-                            </span>
-                            <span style={{ fontSize: '12px', fontWeight: 600, color: 'var(--color-navy)' }}>
-                              {lang === 'en' ? 'Read →' : 'Baca →'}
-                            </span>
-                          </div>
-                        </div>
-                      </article>
+                      <div className="article-card__footer">
+                        <span className="article-card__author">
+                          {article.author} · {article.read_time} {lang === 'en' ? 'min' : 'mnt'}
+                        </span>
+                        <span className="article-card__link">
+                          {lang === 'en' ? 'Read →' : 'Baca →'}
+                        </span>
+                      </div>
                     </Link>
                   ))}
-                  {/* Fill empty grid cells so last row doesn't show gray background */}
+                  {/* Fill the last row so the right and bottom edges of the
+                      grid stay clean even when paginated.length is not a
+                      multiple of the current column count. */}
                   {Array.from({ length: (3 - (paginated.length % 3)) % 3 }).map((_, i) => (
-                    <div key={`empty-${i}`} style={{ background: 'var(--color-white)' }} />
+                    <div key={`empty-${i}`} className="article-card-empty" aria-hidden="true" />
                   ))}
                 </div>
 
@@ -222,10 +211,6 @@ export default function ArticlesPage() {
 
       </main>
       <Footer lang={lang} />
-      <style>{`
-        @media(max-width:900px){ .articles-grid{grid-template-columns:repeat(2,1fr)!important} }
-        @media(max-width:600px){ .articles-grid{grid-template-columns:1fr!important} }
-      `}</style>
     </>
   )
 }
