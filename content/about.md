@@ -12,7 +12,7 @@ en:
   cta_body: Let's talk about how GMV can help your brand reach its full potential.
   cta_button: Get in Touch
   vision_label: OUR PURPOSE
-  vision_title: The Future We Build
+  vision_title: The Future We Buildsss
   vision_vision_label: VISION
   vision_vision_text: To establish Minang cuisine as a globally recognized culinary force.
   vision_mission_label: MISSION
