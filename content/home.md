@@ -138,7 +138,7 @@ en:
   hero_cta_secondary: Explore Our Vision
   hero_scroll_label: Scroll to discover
   about_label: WHO WE ARE
-  about_title: We Don't Just Build Brands. We Scale Heritage.
+  about_title: We Don't Just Build Brands. We Scale Heritages.
   about_p1: "Global Minang Ventura is a venture capital firm built on a singular conviction: Minang cuisine deserves a place on the global stage. We are the official licensed partner of Restoran Sederhana — Indonesia's most iconic Padang restaurant chain — and we bring its legacy to international markets through structured expansion, cultural integrity, and strategic partnerships."
   about_p2: GMV provides the licensing, operational framework, quality control, and market entry strategy that transforms a regional giant into a global brand. Our role is to ensure that every plate served internationally tastes as authentic as one served in Indonesia. With active operations in Australia and Singapore, GMV is building the infrastructure for Indonesian cuisine to become the next great global food movement.
   about_badge: Official Licensed Partner of Restoran Sederhana
