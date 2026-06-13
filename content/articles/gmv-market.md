@@ -4,20 +4,20 @@ title_id: "1"
 slug: gmv-market
 excerpt_en: "1"
 excerpt_id: "1"
-cover_image: ""
-show_image: false
+cover_image: https://raw.githubusercontent.com/ahhrsya/gmv-website/main/public/assets/articles/1781316300358-sederhana.webp
+show_image: true
 author: GMV Team
 date: "2026-06-12"
 category: News
 tags_en: []
 tags_id: []
 featured: false
-published: false
+published: true
 read_time: "-1"
 ---
 
 [EN_CONTENT]
-1
+TESS
 
 [ID_CONTENT]
 1
