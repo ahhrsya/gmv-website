@@ -63,7 +63,7 @@ id:
   vision_pillar_2_body: Menjaga integritas budaya dan kuliner dari setiap hidangan — tanpa jalan pintas, tanpa pengenceran, tanpa kompromi pada warisan.
   vision_pillar_3_title: Dukung Mitra
   vision_pillar_3_body: Memungkinkan pertumbuhan jangka panjang melalui kemitraan strategis, memberdayakan mitra regional untuk sukses di pasar lokal mereka.
-  whygmv_label: MENGAPA GMV
+  whygmv_label: MENGAPA GMVV
   whygmv_title: Mengapa Bermitra Dengan Kami
   whygmv_subtitle: Yang membedakan Global Minang Ventura.
   whygmv_point_0_title: Merek Terbukti
