@@ -252,9 +252,25 @@ const content = {
   },
   about: {
     en: {
+      // ── Home page About section ────────────────────────────────────────────
+      // The /(home) page renders components/About.tsx which reads these flat
+      // fields. They're sourced from home.md (CMS: Home → About section).
       label: en.about_label || '', title: en.about_title || '', p1: en.about_p1 || '', p2: en.about_p2 || '', badge: en.about_badge || '',
+      // ── /about page sections (all from about.md, CMS: About → ...) ─────────
       heroTitle: aEn.hero_title || '', heroSubtitle: aEn.hero_subtitle || '',
       ctaTitle: aEn.cta_title || '', ctaBody: aEn.cta_body || '', ctaButton: aEn.cta_button || '',
+      // /about page's "WHO WE ARE" block. Distinct from the home page's About
+      // section above — same field names but a SEPARATE content surface, edited
+      // in CMS via the About page's "About" section (writes about.md).
+      // Empty fallbacks ensure renderers can read .aboutSection.label safely
+      // even when about.md is missing the field.
+      aboutSection: {
+        label: aEn.about_label || '',
+        title: aEn.about_title || '',
+        p1:    aEn.about_p1    || '',
+        p2:    aEn.about_p2    || '',
+        badge: aEn.about_badge || '',
+      },
       vision: {
         label: aEn.vision_label || '', title: aEn.vision_title || '',
         visionLabel: aEn.vision_vision_label || '', visionText: aEn.vision_vision_text || '',
@@ -267,9 +283,17 @@ const content = {
       },
     },
     id: {
+      // Mirror of EN above — see comments there.
       label: id.about_label || '', title: id.about_title || '', p1: id.about_p1 || '', p2: id.about_p2 || '', badge: id.about_badge || '',
       heroTitle: aId.hero_title || '', heroSubtitle: aId.hero_subtitle || '',
       ctaTitle: aId.cta_title || '', ctaBody: aId.cta_body || '', ctaButton: aId.cta_button || '',
+      aboutSection: {
+        label: aId.about_label || '',
+        title: aId.about_title || '',
+        p1:    aId.about_p1    || '',
+        p2:    aId.about_p2    || '',
+        badge: aId.about_badge || '',
+      },
       vision: {
         label: aId.vision_label || '', title: aId.vision_title || '',
         visionLabel: aId.vision_vision_label || '', visionText: aId.vision_vision_text || '',

@@ -48,18 +48,23 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* WHO WE ARE */}
+        {/* WHO WE ARE — edited via CMS About → About section (writes about.md).
+            Use `a.aboutSection.*` here so this block stays independent from the
+            home page's About section, which uses `t.label/title/p1/p2` from home.md.
+            Optional chaining + fallback to legacy `a.label` keeps this safe even
+            if the build runs against an older lib/content.ts that predates the
+            aboutSection split. */}
         <section className="section-light">
           <div className="container" style={{ paddingTop: 'var(--space-3xl)' }}>
             <div className="split">
               <div>
-                <p className="section-label">{a.label}</p>
-                <h2 className="t-section-title" style={{ color: 'var(--color-navy)' }}>{a.title}</h2>
+                <p className="section-label">{a.aboutSection?.label ?? a.label}</p>
+                <h2 className="t-section-title" style={{ color: 'var(--color-navy)' }}>{a.aboutSection?.title ?? a.title}</h2>
                 <div className="divider" />
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-lg)' }}>
-                <p className="t-body-lg" style={{ color: 'var(--color-navy)' }}>{a.p1}</p>
-                <p className="t-body" style={{ color: 'var(--color-gray)' }}>{a.p2}</p>
+                <p className="t-body-lg" style={{ color: 'var(--color-navy)' }}>{a.aboutSection?.p1 ?? a.p1}</p>
+                <p className="t-body" style={{ color: 'var(--color-gray)' }}>{a.aboutSection?.p2 ?? a.p2}</p>
               </div>
             </div>
           </div>
