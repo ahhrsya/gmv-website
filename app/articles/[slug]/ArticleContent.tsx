@@ -28,6 +28,8 @@ interface ArticleContentProps {
   related: ArticleData[]
 }
 
+const BASE_URL = 'https://global-minang-ventura.vercel.app'
+
 export default function ArticleContent({ article, related }: ArticleContentProps) {
   const [lang, setLang] = usePersistedLang()
 
@@ -39,6 +41,7 @@ export default function ArticleContent({ article, related }: ArticleContentProps
   const title = lang === 'en' ? article.title_en : article.title_id
   const body = lang === 'en' ? article.content_en : article.content_id
   const excerpt = lang === 'en' ? article.excerpt_en : article.excerpt_id
+  const pageUrl = `${BASE_URL}/articles/${article.slug}/`
 
   return (
     <>
@@ -152,14 +155,14 @@ export default function ArticleContent({ article, related }: ArticleContentProps
                   </p>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
                     <a
-                      href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}`}
+                      href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(pageUrl)}`}
                       target="_blank" rel="noopener noreferrer"
                       style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 12px', border: '1px solid var(--color-mist)', borderRadius: '2px', fontSize: '13px', fontWeight: 600, color: 'var(--color-navy)', textDecoration: 'none', transition: 'background 0.2s' }}
                       onMouseEnter={e => (e.currentTarget.style.background = 'var(--color-bone)')}
                       onMouseLeave={e => (e.currentTarget.style.background = 'transparent')}
                     >𝕏 {lang === 'en' ? 'Share on X' : 'Bagikan di X'}</a>
                     <a
-                      href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(typeof window !== 'undefined' ? window.location.href : '')}&title=${encodeURIComponent(title)}`}
+                      href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(pageUrl)}&title=${encodeURIComponent(title)}`}
                       target="_blank" rel="noopener noreferrer"
                       style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 12px', border: '1px solid var(--color-mist)', borderRadius: '2px', fontSize: '13px', fontWeight: 600, color: 'var(--color-navy)', textDecoration: 'none', transition: 'background 0.2s' }}
                       onMouseEnter={e => (e.currentTarget.style.background = 'var(--color-bone)')}

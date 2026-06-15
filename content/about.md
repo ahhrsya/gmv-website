@@ -1,22 +1,22 @@
 ---
 shared: {}
 en:
-  hero_title: We Scale Heritages
+  hero_title: We Scale Heritage
   hero_subtitle: GMV bridges Indonesian heritage brands to global markets — with strategy, capital, and execution.
-  about_label: WHO WE AREEE
+  about_label: WHO WE ARE
   about_title: We Don't Just Build Brands. We Scale Heritage.
   about_p1: "Global Minang Ventura is a venture capital firm built on a singular conviction: Minang cuisine deserves a place on the global stage. We are the official licensed partner of Restoran Sederhana — Indonesia's most iconic Padang restaurant chain — and we bring its legacy to international markets through structured expansion, cultural integrity, and strategic partnerships."
   about_p2: GMV provides the licensing, operational framework, quality control, and market entry strategy that transforms a regional giant into a global brand. Our role is to ensure that every plate served internationally tastes as authentic as one served in Indonesia. With active operations in Australia and Singapore, GMV is building the infrastructure for Indonesian cuisine to become the next great global food movement.
   about_badge: Official Licensed Partner of Restoran Sederhana
-  cta_title: Ready to Scale Your BrandS?
+  cta_title: Ready to Scale Your Brand?
   cta_body: Let's talk about how GMV can help your brand reach its full potential.
   cta_button: Get in Touch
-  vision_label: OUR PURPOSES
-  vision_title: The Future We Builds
+  vision_label: OUR PURPOSE
+  vision_title: The Future We Build
   vision_vision_label: VISION
   vision_vision_text: To establish Minang cuisine as a globally recognized culinary force.
   vision_mission_label: MISSION
-  vision_pillar_0_title: Expands
+  vision_pillar_0_title: Expand
   vision_pillar_0_body: Expand across countries with a scalable approach, bringing Minang cuisine to high-potential international markets.
   vision_pillar_1_title: Standardize
   vision_pillar_1_body: Build consistent operational systems and SOPs across every location worldwide, ensuring the same quality from Jakarta to Singapore.
@@ -24,7 +24,7 @@ en:
   vision_pillar_2_body: Maintain the cultural and culinary integrity of every dish — no shortcuts, no dilution, no compromise on heritage.
   vision_pillar_3_title: Enable Partners
   vision_pillar_3_body: Enable long-term growth through strategic partnerships, empowering regional partners to succeed in their local markets.
-  whygmv_label: WHY GMVvv
+  whygmv_label: WHY GMV
   whygmv_title: Why Partner With Us
   whygmv_subtitle: What sets Global Minang Ventura apart.
   whygmv_point_0_title: Proven Brand
@@ -42,11 +42,11 @@ en:
 id:
   hero_title: Kami Mengembangkan Warisan.
   hero_subtitle: GMV menjembatani merek warisan Indonesia ke pasar global — dengan strategi, modal, dan eksekusi gas.
-  about_label: SIAPA KAMIIIIII
+  about_label: SIAPA KAMI
   about_title: Kami Tidak Sekadar Membangun Merek. Kami Mengembangkan Warisan Global.
-  about_p1: "Global Minang Ventura adalah perusahaan modal ventura yang dibangun di atas satu keyakinan: kuliner Minang layak tampil di panggung dunia. Kami adalah mitra lisensi resmi Restoran Sederhana — jaringan restoran Padang paling ikonik di Indonesia — dan kami membawa warisannya ke pasar internasional melalui ekspansi terstruktur, integritas budaya, dan kemitraan strategis. ---"
-  about_p2: GMV menyediakan lisensi, kerangka operasional, kontrol kualitas, dan strategi masuk pasar yang mengubah raksasa regional menjadi merek global. Dengan operasi aktif di Australia dan Singapura, GMV membangun infrastruktur agar kuliner Indonesia menjadi gerakan kuliner global berikutnya. ---
-  about_badge: Mitra Lisensi Resmi Restoran Sederhana --
+  about_p1: "Global Minang Ventura adalah perusahaan modal ventura yang dibangun di atas satu keyakinan: kuliner Minang layak tampil di panggung dunia. Kami adalah mitra lisensi resmi Restoran Sederhana — jaringan restoran Padang paling ikonik di Indonesia — dan kami membawa warisannya ke pasar internasional melalui ekspansi terstruktur, integritas budaya, dan kemitraan strategis."
+  about_p2: GMV menyediakan lisensi, kerangka operasional, kontrol kualitas, dan strategi masuk pasar yang mengubah raksasa regional menjadi merek global. Dengan operasi aktif di Australia dan Singapura, GMV membangun infrastruktur agar kuliner Indonesia menjadi gerakan kuliner global berikutnya.
+  about_badge: Mitra Lisensi Resmi Restoran Sederhana
   cta_title: Siap Mengembangkan Merek Anda?
   cta_body: Mari bicara tentang bagaimana GMV dapat membantu merek Anda mencapai potensi penuh.
   cta_button: Hubungi Kami
