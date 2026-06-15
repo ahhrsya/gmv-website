@@ -2,7 +2,7 @@
 title_en: Taking Minang Cuisine from West Sumatra to the World
 title_id: ""
 slug: gmv-taking-minang-cuisine-from-west-sumatra-to-the-world
-excerpt_en: ""
+excerpt_en: "How Global Minang Ventura is building the infrastructure to bring Minang cuisine — born in the highlands of West Sumatra — to international markets through brand licensing, operational standards, and cultural integrity."
 excerpt_id: ""
 cover_image: ""
 show_image: true

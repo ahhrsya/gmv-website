@@ -9,7 +9,7 @@
     "show_image": true,
     "excerpt_en": "test",
     "excerpt_id": "tes",
-    "published": true,
+    "published": false,
     "author": "GMV Team",
     "read_time": "5"
   },
@@ -23,7 +23,7 @@
     "show_image": true,
     "excerpt_en": "",
     "excerpt_id": "",
-    "published": true,
+    "published": false,
     "author": "GMV Team",
     "read_time": 1
   },
@@ -37,7 +37,7 @@
     "show_image": true,
     "excerpt_en": "1",
     "excerpt_id": "1",
-    "published": true,
+    "published": false,
     "author": "GMV Team",
     "read_time": "-1"
   },
@@ -63,7 +63,7 @@
     "category": "Information",
     "cover_image": "",
     "show_image": true,
-    "excerpt_en": "Every great cuisine carries a story. Minang food — born in the highlands of West Sumatra — carries centuries of culture, philosophy, and identity. Global Minang",
+    "excerpt_en": "How Global Minang Ventura is building the infrastructure to bring Minang cuisine — born in the highlands of West Sumatra — to international markets through brand licensing, operational standards, and cultural integrity.",
     "excerpt_id": "",
     "published": true,
     "author": "GMV Team",
@@ -79,7 +79,7 @@
     "show_image": true,
     "excerpt_en": "![image-11.png](https://raw.githubusercontent.com/ahhrsya/gmv-website/main/content/assets/articles/1781166520063-image-11.png)1. ini adalah testing",
     "excerpt_id": "",
-    "published": true,
+    "published": false,
     "author": "GMV Team",
     "read_time": "3"
   },
@@ -99,7 +99,7 @@
   },
   {
     "slug": "gmv-asia-pacific-strategy",
-    "title_en": "Global Minang Ventura: Bringing Padang Sederhana to the Asia-Pacific Stages",
+    "title_en": "Global Minang Ventura: Bringing Padang Sederhana to the Asia-Pacific Stage",
     "title_id": "Global Minang Ventura: Membawa Padang Sederhana ke Panggung Asia-Pasifik",
     "date": "2026-02-15T00:00:00.000Z",
     "category": "Strategy",
