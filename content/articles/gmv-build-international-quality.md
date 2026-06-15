@@ -12,7 +12,7 @@ category: News
 tags_en: []
 tags_id: []
 featured: false
-published: true
+published: false
 read_time: "5"
 keywords:
   - skskwd
@@ -20,6 +20,7 @@ twitter_card: app
 ---
 
 [EN_CONTENT]
-
+lorem ipsum
 
 [ID_CONTENT]
+lorem ipsum
