@@ -2,7 +2,7 @@
 export type Lang = 'en' | 'id'
 export const content = {
   "head_scripts": "<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-KJKRT6PC');</script>\n<!-- End Google Tag Manager -->\n<!-- Google Analytics -->\n<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-QQK1NFZY88\"></script>\n<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-QQK1NFZY88');</script>\n<!-- End Google Analytics -->\n<!-- Google Tag Manager -->\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n})(window,document,'script','dataLayer','GTM-W5LLRWL3');</script>\n<!-- End Google Tag Manager -->\n<!-- Meta Pixel Code -->\n<script>\n!function(f,b,e,v,n,t,s)\n{if(f.fbq)return;n=f.fbq=function(){n.callMethod?\nn.callMethod.apply(n,arguments):n.queue.push(arguments)};\nif(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';\nn.queue=[];t=b.createElement(e);t.async=!0;\nt.src=v;s=b.getElementsByTagName(e)[0];\ns.parentNode.insertBefore(t,s)}(window, document,'script',\n'https://connect.facebook.net/en_US/fbevents.js');\nfbq('init', '1551044266611937');\nfbq('track', 'PageView');\n</script>\n<noscript><img height=\\\\\\\"1\\\\\\\" width=\\\\\\\"1\\\\\\\" style=\\\\\\\"display:none\\\\\\\"\nsrc=\\\\\\\"https://www.facebook.com/tr?id=1551044266611937&ev=PageView&noscript=1\\\\\\\"\n/></noscript>\n<!-- End Meta Pixel Code -->",
-  "nav_logo_src": "/assets/logo.png",
+  "nav_logo_src": "https://raw.githubusercontent.com/ahhrsya/gmv-website/main/content/assets/1781327294423-logo.svg",
   "footer_logo_src": "/assets/Logo-Footer.svg",
   "nav": {
     "en": [
@@ -48,17 +48,17 @@ export const content = {
   "about": {
     "en": {
       "label": "WHO WE ARE",
-      "title": "We Don't Just Build Brands. We Scale Heritage.",
+      "title": "We Don't Just Build Brands. We Scale Heritages.",
       "p1": "Global Minang Ventura is a venture capital firm built on a singular conviction: Minang cuisine deserves a place on the global stage. We are the official licensed partner of Restoran Sederhana — Indonesia's most iconic Padang restaurant chain — and we bring its legacy to international markets through structured expansion, cultural integrity, and strategic partnerships.",
       "p2": "GMV provides the licensing, operational framework, quality control, and market entry strategy that transforms a regional giant into a global brand. Our role is to ensure that every plate served internationally tastes as authentic as one served in Indonesia. With active operations in Australia and Singapore, GMV is building the infrastructure for Indonesian cuisine to become the next great global food movement.",
       "badge": "Official Licensed Partner of Restoran Sederhana",
-      "heroTitle": "We Scale Heritagess",
+      "heroTitle": "We Scale Heritage",
       "heroSubtitle": "GMV bridges Indonesian heritage brands to global markets — with strategy, capital, and execution.",
       "ctaTitle": "Ready to Scale Your Brand?",
       "ctaBody": "Let's talk about how GMV can help your brand reach its full potential.",
       "ctaButton": "Get in Touch",
       "aboutSection": {
-        "label": "WHO WE AREE",
+        "label": "WHO WE ARE",
         "title": "We Don't Just Build Brands. We Scale Heritage.",
         "p1": "Global Minang Ventura is a venture capital firm built on a singular conviction: Minang cuisine deserves a place on the global stage. We are the official licensed partner of Restoran Sederhana — Indonesia's most iconic Padang restaurant chain — and we bring its legacy to international markets through structured expansion, cultural integrity, and strategic partnerships.",
         "p2": "GMV provides the licensing, operational framework, quality control, and market entry strategy that transforms a regional giant into a global brand. Our role is to ensure that every plate served internationally tastes as authentic as one served in Indonesia. With active operations in Australia and Singapore, GMV is building the infrastructure for Indonesian cuisine to become the next great global food movement.",
@@ -72,7 +72,7 @@ export const content = {
         "missionLabel": "MISSION",
         "pillars": [
           {
-            "title": "Expands",
+            "title": "Expand",
             "body": "Expand across countries with a scalable approach, bringing Minang cuisine to high-potential international markets."
           },
           {
@@ -133,11 +133,11 @@ export const content = {
       "ctaBody": "Mari bicara tentang bagaimana GMV dapat membantu merek Anda mencapai potensi penuh.",
       "ctaButton": "Hubungi Kami",
       "aboutSection": {
-        "label": "SIAPA KAMII",
+        "label": "SIAPA KAMI",
         "title": "Kami Tidak Sekadar Membangun Merek. Kami Mengembangkan Warisan Global.",
-        "p1": "Global Minang Ventura adalah perusahaan modal ventura yang dibangun di atas satu keyakinan: kuliner Minang layak tampil di panggung dunia. Kami adalah mitra lisensi resmi Restoran Sederhana — jaringan restoran Padang paling ikonik di Indonesia — dan kami membawa warisannya ke pasar internasional melalui ekspansi terstruktur, integritas budaya, dan kemitraan strategis. ---",
-        "p2": "GMV menyediakan lisensi, kerangka operasional, kontrol kualitas, dan strategi masuk pasar yang mengubah raksasa regional menjadi merek global. Dengan operasi aktif di Australia dan Singapura, GMV membangun infrastruktur agar kuliner Indonesia menjadi gerakan kuliner global berikutnya. ---",
-        "badge": "Mitra Lisensi Resmi Restoran Sederhana --"
+        "p1": "Global Minang Ventura adalah perusahaan modal ventura yang dibangun di atas satu keyakinan: kuliner Minang layak tampil di panggung dunia. Kami adalah mitra lisensi resmi Restoran Sederhana — jaringan restoran Padang paling ikonik di Indonesia — dan kami membawa warisannya ke pasar internasional melalui ekspansi terstruktur, integritas budaya, dan kemitraan strategis.",
+        "p2": "GMV menyediakan lisensi, kerangka operasional, kontrol kualitas, dan strategi masuk pasar yang mengubah raksasa regional menjadi merek global. Dengan operasi aktif di Australia dan Singapura, GMV membangun infrastruktur agar kuliner Indonesia menjadi gerakan kuliner global berikutnya.",
+        "badge": "Mitra Lisensi Resmi Restoran Sederhana"
       },
       "vision": {
         "label": "TUJUAN KAMI",
@@ -710,8 +710,8 @@ export const content = {
   },
   "contact": {
     "en": {
-      "label": "JOIN US",
-      "title": "Join the Journey",
+      "label": "JOIN USS",
+      "title": "Join the Journeys",
       "p1": "We're looking for regional partners with market access and expansion experience.",
       "ctaButton": "Partner With Us",
       "email": "globalminangventura@gmail.com",
@@ -734,7 +734,7 @@ export const content = {
       }
     },
     "id": {
-      "label": "BERGABUNG ",
+      "label": "BERGABUNG S",
       "title": "Bergabung dalam Perjalanan",
       "p1": "Kami mencari mitra regional dengan akses pasar dan pengalaman ekspansi.",
       "ctaButton": "Bermitra Dengan Kami",
