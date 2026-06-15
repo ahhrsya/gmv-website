@@ -129,7 +129,7 @@ en:
   nav_6: Footprint
   nav_7: Press
   nav_8: Contact
-  hero_label: GLOBAL MINANG VENTURA
+  hero_label: GLOBAL MINANG VENTURAS
   hero_headline: |
     From Minang
     To the World
