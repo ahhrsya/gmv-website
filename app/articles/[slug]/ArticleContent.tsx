@@ -109,7 +109,7 @@ export default function ArticleContent({ article, related }: ArticleContentProps
                 {/* Cover Image — show_image field controls visibility */}
                 {article.cover_image && (article as any).show_image !== false && (
                   <div style={{ marginBottom: 'var(--space-3xl)', overflow: 'hidden' }}>
-                    <img src={article.cover_image} alt={title} style={{ width: '100%', height: 'auto', display: 'block' }} />
+                    <img src={article.cover_image} alt={title} width={1200} height={630} style={{ width: '100%', height: 'auto', display: 'block' }} />
                   </div>
                 )}
 

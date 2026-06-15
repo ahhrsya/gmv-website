@@ -111,6 +111,8 @@ export default function Footer({ lang }: FooterProps) {
           className="footer-watermark__logo"
           src={(content as any).footer_logo_src || "/assets/Logo-Footer.svg"}
           alt=""
+          width={603}
+          height={281}
         />
       </div>
 

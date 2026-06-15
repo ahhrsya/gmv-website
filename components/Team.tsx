@@ -25,6 +25,8 @@ export default function Team({ lang }: TeamProps) {
                   <img
                     src={(member as any).photo}
                     alt={member.name}
+                    width={400}
+                    height={400}
                     style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'inherit' }}
                   />
                 ) : (

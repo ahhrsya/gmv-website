@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
+/* Font loaded via next/font/google in layout.tsx — no @import needed */
 
 /* ============================================================
    DESIGN TOKENS — Global Minang Ventura
@@ -31,9 +31,9 @@
   --overlay-cta:     rgba(0,33,86,0.92);
 
   /* Typography */
-  --font-display: 'Manrope', system-ui, sans-serif;
-  --font-body:    'Manrope', system-ui, sans-serif;
-  --font-mono:    'Manrope', system-ui, sans-serif;
+  --font-display: var(--font-manrope), system-ui, sans-serif;
+  --font-body:    var(--font-manrope), system-ui, sans-serif;
+  --font-mono:    var(--font-manrope), system-ui, sans-serif;
 
   /* Spacing */
   --space-xs:  8px;
