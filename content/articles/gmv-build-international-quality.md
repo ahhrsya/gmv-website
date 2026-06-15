@@ -12,7 +12,7 @@ category: News
 tags_en: []
 tags_id: []
 featured: false
-published: false
+published: true
 read_time: "5"
 keywords:
   - skskwd
